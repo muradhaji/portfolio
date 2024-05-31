@@ -1,0 +1,60 @@
+@use 'colors';
+@use 'fonts';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+figure,
+blockquote,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-family: fonts.$main;
+  font-size: var(--font-size-m);
+  color: colors.$black;
+}
+
+button,
+input,
+textarea,
+select {
+  outline: none;
+  color: inherit;
+}
+
+*::placeholder {
+  color: inherit;
+}
+
+img,
+video {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,176 @@
+$text-xs: var(--font-size-xs, 10px);
+$text-s: var(--font-size-s, 12px);
+$text-m: var(--font-size-m, 16px);
+$text-l: var(--font-size-l, 20px);
+$text-xl: var(--font-size-xl, 24px);
+$text-2xl: var(--font-size-2xl, 28px);
+$text-3xl: var(--font-size-3xl, 32px);
+$text-4xl: var(--font-size-4xl, 36px);
+$text-5xl: var(--font-size-5xl, 40px);
+$text-6xl: var(--font-size-6xl, 44px);
+$text-7xl: var(--font-size-7xl, 48px);
+$text-8xl: var(--font-size-8xl, 52px);
+$text-9xl: var(--font-size-9xl, 56px);
+
+$font-sizes: (
+  xs: 10px,
+  s: 12px,
+  m: 16px,
+  l: 20px,
+  xl: 24px,
+  2xl: 28px,
+  3xl: 32px,
+  4xl: 36px,
+  5xl: 40px,
+  6xl: 44px,
+  7xl: 48px,
+  8xl: 52px,
+  9xl: 56px,
+);
+
+$breakpoints: (
+  360px: (
+    xs: 11px,
+    s: 13px,
+    m: 17px,
+    l: 21px,
+    xl: 25px,
+    2xl: 29px,
+    3xl: 33px,
+    4xl: 37px,
+    5xl: 41px,
+    6xl: 45px,
+    7xl: 49px,
+    8xl: 53px,
+    9xl: 57px,
+  ),
+  600px: (
+    xs: 12px,
+    s: 14px,
+    m: 18px,
+    l: 24px,
+    xl: 28px,
+    2xl: 32px,
+    3xl: 36px,
+    4xl: 40px,
+    5xl: 44px,
+    6xl: 48px,
+    7xl: 52px,
+    8xl: 56px,
+    9xl: 60px,
+  ),
+  768px: (
+    xs: 13px,
+    s: 15px,
+    m: 19px,
+    l: 25px,
+    xl: 29px,
+    2xl: 33px,
+    3xl: 37px,
+    4xl: 41px,
+    5xl: 45px,
+    6xl: 49px,
+    7xl: 53px,
+    8xl: 57px,
+    9xl: 61px,
+  ),
+  900px: (
+    xs: 14px,
+    s: 16px,
+    m: 20px,
+    l: 28px,
+    xl: 32px,
+    2xl: 36px,
+    3xl: 40px,
+    4xl: 44px,
+    5xl: 48px,
+    6xl: 52px,
+    7xl: 56px,
+    8xl: 60px,
+    9xl: 64px,
+  ),
+  1024px: (
+    xs: 15px,
+    s: 17px,
+    m: 21px,
+    l: 30px,
+    xl: 34px,
+    2xl: 38px,
+    3xl: 42px,
+    4xl: 46px,
+    5xl: 50px,
+    6xl: 54px,
+    7xl: 58px,
+    8xl: 62px,
+    9xl: 66px,
+  ),
+  1200px: (
+    xs: 16px,
+    s: 18px,
+    m: 24px,
+    l: 32px,
+    xl: 36px,
+    2xl: 40px,
+    3xl: 44px,
+    4xl: 48px,
+    5xl: 52px,
+    6xl: 56px,
+    7xl: 60px,
+    8xl: 64px,
+    9xl: 68px,
+  ),
+  1440px: (
+    xs: 18px,
+    s: 20px,
+    m: 26px,
+    l: 34px,
+    xl: 38px,
+    2xl: 42px,
+    3xl: 46px,
+    4xl: 50px,
+    5xl: 54px,
+    6xl: 58px,
+    7xl: 62px,
+    8xl: 66px,
+    9xl: 70px,
+  ),
+  1600px: (
+    xs: 20px,
+    s: 22px,
+    m: 28px,
+    l: 36px,
+    xl: 40px,
+    2xl: 44px,
+    3xl: 48px,
+    4xl: 52px,
+    5xl: 56px,
+    6xl: 60px,
+    7xl: 64px,
+    8xl: 68px,
+    9xl: 72px,
+  ),
+);
+
+@mixin generate-font-sizes {
+  @each $size, $value in $font-sizes {
+    .text-#{$size} {
+      font-size: var(--font-size-#{$size}, #{$value});
+    }
+  }
+}
+
+@mixin generate-media-queries {
+  @each $breakpoint, $sizes in $breakpoints {
+    @media (min-width: #{$breakpoint}) {
+      :root {
+        @each $size, $value in $sizes {
+          --font-size-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+@include generate-font-sizes();
+
+@include generate-media-queries();

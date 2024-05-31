@@ -1,0 +1,26 @@
+$container-breakpoints: (
+  360px: 320px,
+  600px: 540px,
+  768px: 720px,
+  900px: 840px,
+  1024px: 960px,
+  1200px: 1140px,
+  1440px: 1320px,
+  1600px: 1440px,
+);
+
+@mixin generate-container {
+  .container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+
+    @each $breakpoint, $width in $container-breakpoints {
+      @media (min-width: #{$breakpoint}) {
+        max-width: #{$width};
+      }
+    }
+  }
+}
+
+@include generate-container();
