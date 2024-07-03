@@ -1,0 +1,33 @@
+@use '../colors';
+@use '../sizes';
+
+div.popUpMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: colors.$white;
+  padding: sizes.$size-l;
+
+  div.buttonContainer {
+    display: flex;
+    justify-content: end;
+    margin-bottom: sizes.$size-l;
+
+    svg.closeMenu {
+      width: sizes.$size-l;
+      height: sizes.$size-l;
+      cursor: pointer;
+    }
+  }
+
+  div.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: sizes.$size-l;
+
+    a.link {
+    }
+  }
+}

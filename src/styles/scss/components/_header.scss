@@ -1,0 +1,40 @@
+@use '../text';
+@use '../sizes';
+
+header {
+  padding: sizes.$size-xs;
+
+  nav.menu {
+    display: flex;
+    justify-content: space-between;
+
+    a.link {
+      font-size: text.$text-m;
+      font-weight: sizes.$font-weight-9;
+    }
+    a.link.logo {
+      font-size: text.$text-l;
+    }
+    a.link:not(.logo) {
+      display: none;
+    }
+    div.rightContainer {
+      display: flex;
+      align-items: center;
+      gap: sizes.$size-xs;
+
+      svg.toggleTheme {
+        width: sizes.$size-l;
+        height: sizes.$size-l;
+      }
+      svg.toggleMenu {
+        width: sizes.$size-l;
+        height: sizes.$size-l;
+      }
+      svg.toggleTheme,
+      svg.toggleMenu {
+        cursor: pointer;
+      }
+    }
+  }
+}

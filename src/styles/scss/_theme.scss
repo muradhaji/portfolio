@@ -1,0 +1,39 @@
+@use './colors';
+
+@mixin whitesvg {
+  path {
+    stroke: colors.$white;
+    fill: colors.$white;
+  }
+  circle {
+    stroke: colors.$white;
+  }
+}
+
+.dark {
+  body {
+    color: #ffffff;
+  }
+
+  header {
+    background-color: colors.$black;
+
+    nav.menu {
+      div.rightContainer {
+        svg.toggleTheme,
+        svg.toggleMenu {
+          @include whitesvg;
+        }
+      }
+    }
+  }
+
+  div.popUpMenu {
+    background-color: black;
+    div.buttonContainer {
+      svg.closeMenu {
+        @include whitesvg;
+      }
+    }
+  }
+}

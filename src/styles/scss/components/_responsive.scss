@@ -1,0 +1,43 @@
+@use '../text';
+@use '../sizes';
+
+@media (min-width: 360px) {
+  header {
+    padding: sizes.$size-s;
+
+    nav.menu {
+      div.rightContainer {
+        gap: sizes.$size-s;
+      }
+    }
+  }
+}
+@media (min-width: 600px) {
+  header {
+    padding: sizes.$size-m;
+
+    nav.menu {
+      a.link:not(.logo) {
+        display: block;
+      }
+      div.rightContainer {
+        gap: sizes.$size-m;
+        svg.toggleMenu {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 900px) {
+}
+@media (min-width: 1024px) {
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1440px) {
+}
+@media (min-width: 1600px) {
+}

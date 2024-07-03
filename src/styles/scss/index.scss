@@ -1,5 +1,13 @@
+// Common styles
 @use 'reset';
 @use 'container';
 @use 'text';
 @use 'colors';
 @use 'fonts';
+@use 'theme';
+@use 'tools';
+
+// Component styles
+@use './components/header';
+@use './components/menu.scss';
+@use './components/responsive';

@@ -300,3 +300,110 @@ a {
     --font-size-9xl: 72px;
   }
 }
+.dark body {
+  color: #ffffff;
+}
+.dark header {
+  background-color: #000000;
+}
+.dark header nav.menu div.rightContainer svg.toggleTheme path,
+.dark header nav.menu div.rightContainer svg.toggleMenu path {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+.dark header nav.menu div.rightContainer svg.toggleTheme circle,
+.dark header nav.menu div.rightContainer svg.toggleMenu circle {
+  stroke: #ffffff;
+}
+.dark div.popUpMenu {
+  background-color: black;
+}
+.dark div.popUpMenu div.buttonContainer svg.closeMenu path {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+.dark div.popUpMenu div.buttonContainer svg.closeMenu circle {
+  stroke: #ffffff;
+}
+
+header {
+  padding: 8px;
+}
+header nav.menu {
+  display: flex;
+  justify-content: space-between;
+}
+header nav.menu a.link {
+  font-size: var(--font-size-m, 16px);
+  font-weight: 900;
+}
+header nav.menu a.link.logo {
+  font-size: var(--font-size-l, 20px);
+}
+header nav.menu a.link:not(.logo) {
+  display: none;
+}
+header nav.menu div.rightContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header nav.menu div.rightContainer svg.toggleTheme {
+  width: 24px;
+  height: 24px;
+}
+header nav.menu div.rightContainer svg.toggleMenu {
+  width: 24px;
+  height: 24px;
+}
+header nav.menu div.rightContainer svg.toggleTheme,
+header nav.menu div.rightContainer svg.toggleMenu {
+  cursor: pointer;
+}
+
+div.popUpMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 24px;
+}
+div.popUpMenu div.buttonContainer {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 24px;
+}
+div.popUpMenu div.buttonContainer svg.closeMenu {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+div.popUpMenu div.linksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 360px) {
+  header {
+    padding: 12px;
+  }
+  header nav.menu div.rightContainer {
+    gap: 12px;
+  }
+}
+@media (min-width: 600px) {
+  header {
+    padding: 16px;
+  }
+  header nav.menu a.link:not(.logo) {
+    display: block;
+  }
+  header nav.menu div.rightContainer {
+    gap: 16px;
+  }
+  header nav.menu div.rightContainer svg.toggleMenu {
+    display: none;
+  }
+}
