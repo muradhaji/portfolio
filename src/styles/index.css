@@ -300,8 +300,17 @@ a {
     --font-size-9xl: 72px;
   }
 }
+body {
+  background: linear-gradient(90deg, #ffffff 0%, #d0d0d0 100%);
+}
+
+header {
+  background-color: #ffffff;
+}
+
 .dark body {
   color: #ffffff;
+  background: linear-gradient(90deg, #000000 0%, #212121 100%);
 }
 .dark header {
   background-color: #000000;
@@ -324,6 +333,100 @@ a {
 }
 .dark div.popUpMenu div.buttonContainer svg.closeMenu circle {
   stroke: #ffffff;
+}
+.dark a.button,
+.dark div.button {
+  outline-color: #000000;
+  color: #ffffff;
+}
+.dark a.button:hover,
+.dark div.button:hover {
+  outline-color: #ffffff;
+}
+.dark a.button.solid,
+.dark div.button.solid {
+  background: #000000;
+}
+.dark a.button.hasIcon span.icon svg path,
+.dark div.button.hasIcon span.icon svg path {
+  fill: #ffffff;
+}
+.dark a.socialIcon.stroke {
+  border: 2px dashed #ffffff;
+}
+.dark a.socialIcon svg path {
+  fill: #ffffff;
+}
+.dark section#intro div.container div.content div.text div.greeting div.profession div.line {
+  background: linear-gradient(270deg, #000000 0%, #212121 100%);
+}
+
+a.button,
+div.button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 12px;
+  outline: 2px solid #ffffff;
+  outline-offset: -2px;
+  color: #000000;
+  font-size: var(--font-size-xs, 10px);
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+a.button:hover,
+div.button:hover {
+  outline-color: #000000;
+}
+
+a.button.solid,
+div.button.solid {
+  background: #ffffff;
+}
+
+a.button.hasIcon,
+div.button.hasIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+}
+a.button.hasIcon span.icon,
+div.button.hasIcon span.icon {
+  display: flex;
+  align-items: center;
+}
+a.button.hasIcon span.icon svg,
+div.button.hasIcon span.icon svg {
+  width: 1em;
+  height: 1em;
+}
+a.button.hasIcon span.icon svg path,
+div.button.hasIcon span.icon svg path {
+  fill: #000000;
+}
+
+a.socialIcon {
+  display: inline-flex;
+  width: 2em;
+  height: 2em;
+  padding: 0.4em;
+}
+a.socialIcon.stroke {
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #000000;
+  border-radius: 50%;
+}
+a.socialIcon:hover svg {
+  scale: 1.2;
+}
+a.socialIcon svg {
+  width: 1em;
+  height: 1em;
+  transition: 0.25s;
+}
+a.socialIcon svg path {
+  fill: #000000;
 }
 
 header {
@@ -385,17 +488,70 @@ div.popUpMenu div.linksContainer {
   flex-direction: column;
   gap: 24px;
 }
+section#intro {
+  padding: 1em 8px;
+}
+section#intro div.container div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+}
+section#intro div.container div.content div.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+section#intro div.container div.content div.text div.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+section#intro div.container div.content div.text div.greeting h1 {
+  font-size: var(--font-size-3xl, 32px);
+  display: inline-block;
+}
+section#intro div.container div.content div.text div.greeting div.profession {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+section#intro div.container div.content div.text div.greeting div.profession div.line {
+  height: 3px;
+  background: linear-gradient(270deg, #ffffff 0%, #d0d0d0 100%);
+  flex: 1;
+}
+section#intro div.container div.content div.text p.summary {
+  font-size: var(--font-size-s, 12px);
+}
+section#intro div.container div.content div.text div.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  align-self: center;
+}
+section#intro div.container div.content div.socialIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+
 @media (min-width: 360px) {
   header {
-    padding: 12px;
+    padding: 12px 0;
   }
   header nav.menu div.rightContainer {
     gap: 12px;
   }
+  section#intro {
+    padding: 1em 0;
+  }
 }
 @media (min-width: 600px) {
   header {
-    padding: 16px;
+    padding: 16px 0;
   }
   header nav.menu a.link:not(.logo) {
     display: block;
@@ -405,5 +561,41 @@ div.popUpMenu div.linksContainer {
   }
   header nav.menu div.rightContainer svg.toggleMenu {
     display: none;
+  }
+  a.button,
+  div.button {
+    border-radius: 12px;
+    outline-width: 3px;
+    outline-offset: -3px;
+  }
+  a.socialIcon {
+    padding: 0.5em;
+  }
+  a.socialIcon.stroke {
+    border-width: 3px;
+  }
+  section#intro div.container div.content {
+    flex-direction: row;
+    padding: 1em 0;
+  }
+  section#intro div.container div.content div.text div.greeting h1 {
+    font-size: var(--font-size-6xl, 44px);
+  }
+  section#intro div.container div.content div.text p.summary {
+    font-size: var(--font-size-m, 16px);
+  }
+  section#intro div.container div.content div.text div.buttons {
+    align-self: flex-start;
+  }
+  section#intro div.container div.content div.socialIcons {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  section#intro div.container div.content div.text div.greeting h1 {
+    font-size: var(--font-size-9xl, 56px);
+  }
+  section#intro div.container div.content div.text div.greeting div.profession div.line {
+    height: 6px;
   }
 }

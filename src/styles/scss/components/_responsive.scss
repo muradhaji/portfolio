@@ -3,7 +3,7 @@
 
 @media (min-width: 360px) {
   header {
-    padding: sizes.$size-s;
+    padding: sizes.$size-s 0;
 
     nav.menu {
       div.rightContainer {
@@ -11,10 +11,14 @@
       }
     }
   }
+
+  section#intro {
+    padding: 1em 0;
+  }
 }
 @media (min-width: 600px) {
   header {
-    padding: sizes.$size-m;
+    padding: sizes.$size-m 0;
 
     nav.menu {
       a.link:not(.logo) {
@@ -31,8 +35,7 @@
 
   a.button,
   div.button {
-    font-size: text.$text-m;
-    border-radius: sizes.$size-m;
+    border-radius: sizes.$size-s;
     outline-width: 3px;
     outline-offset: -3px;
   }
@@ -43,8 +46,51 @@
       border-width: 3px;
     }
   }
+
+  section#intro {
+    div.container {
+      div.content {
+        flex-direction: row;
+        padding: 1em 0;
+        div.text {
+          div.greeting {
+            h1 {
+              font-size: text.$text-6xl;
+            }
+          }
+          p.summary {
+            font-size: text.$text-m;
+          }
+          div.buttons {
+            align-self: flex-start;
+          }
+        }
+        div.socialIcons {
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }
 @media (min-width: 768px) {
+  section#intro {
+    div.container {
+      div.content {
+        div.text {
+          div.greeting {
+            h1 {
+              font-size: text.$text-9xl;
+            }
+            div.profession {
+              div.line {
+                height: 6px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media (min-width: 900px) {
 }

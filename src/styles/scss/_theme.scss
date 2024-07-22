@@ -80,4 +80,20 @@ header {
       }
     }
   }
+
+  section#intro {
+    div.container {
+      div.content {
+        div.text {
+          div.greeting {
+            div.profession {
+              div.line {
+                background: tools.$gradient-dark-270;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -10,7 +10,10 @@
 
 // Component styles
 @use './components/button';
-@use './components/header';
-@use './components/menu.scss';
 @use './components/socialicon';
+
+@use './components/header';
+@use './components/menu';
+@use './components/intro';
+
 @use './components/responsive';
