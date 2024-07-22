@@ -1,0 +1,28 @@
+@use '../colors';
+@use '../tools';
+
+a.socialIcon {
+  display: inline-flex;
+  width: 2em;
+  height: 2em;
+  padding: 0.4em;
+  &.stroke {
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed colors.$black;
+    border-radius: 50%;
+  }
+  &:hover {
+    svg {
+      scale: 1.2;
+    }
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+    transition: 0.25s;
+    path {
+      fill: colors.$black;
+    }
+  }
+}

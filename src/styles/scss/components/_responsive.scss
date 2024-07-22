@@ -36,6 +36,13 @@
     outline-width: 3px;
     outline-offset: -3px;
   }
+
+  a.socialIcon {
+    padding: 0.5em;
+    &.stroke {
+      border-width: 3px;
+    }
+  }
 }
 @media (min-width: 768px) {
 }

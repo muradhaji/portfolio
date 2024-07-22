@@ -69,4 +69,15 @@ header {
       }
     }
   }
+
+  a.socialIcon {
+    &.stroke {
+      border: 2px dashed colors.$white;
+    }
+    svg {
+      path {
+        fill: colors.$white;
+      }
+    }
+  }
 }
