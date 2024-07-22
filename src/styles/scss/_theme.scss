@@ -1,4 +1,5 @@
 @use './colors';
+@use './tools';
 
 @mixin whitesvg {
   path {
@@ -10,9 +11,18 @@
   }
 }
 
+body {
+  background: tools.$gradient-light-90;
+}
+
+header {
+  background-color: colors.$white;
+}
+
 .dark {
   body {
     color: #ffffff;
+    background: tools.$gradient-dark-90;
   }
 
   header {
@@ -33,6 +43,29 @@
     div.buttonContainer {
       svg.closeMenu {
         @include whitesvg;
+      }
+    }
+  }
+
+  a.button,
+  div.button {
+    outline-color: colors.$black;
+    color: colors.$white;
+    &:hover {
+      outline-color: colors.$white;
+    }
+  }
+  a.button.solid,
+  div.button.solid {
+    background: colors.$black;
+  }
+  a.button.hasIcon,
+  div.button.hasIcon {
+    span.icon {
+      svg {
+        path {
+          fill: colors.$white;
+        }
       }
     }
   }

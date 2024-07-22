@@ -28,6 +28,14 @@
       }
     }
   }
+
+  a.button,
+  div.button {
+    font-size: text.$text-m;
+    border-radius: sizes.$size-m;
+    outline-width: 3px;
+    outline-offset: -3px;
+  }
 }
 @media (min-width: 768px) {
 }

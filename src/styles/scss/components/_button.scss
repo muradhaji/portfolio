@@ -1,0 +1,50 @@
+@use '../tools';
+@use '../sizes';
+@use '../colors';
+@use '../text';
+
+a.button,
+div.button {
+  display: inline-block;
+  padding: sizes.$size-xs sizes.$size-m;
+  border-radius: sizes.$size-s;
+  outline: 2px solid colors.$white;
+  outline-offset: -2px;
+  color: colors.$black;
+  font-size: text.$text-s;
+  font-weight: sizes.$font-weight-9;
+  cursor: pointer;
+  transition: all 0.25s;
+  &:hover {
+    outline-color: colors.$black;
+  }
+}
+
+a.button.solid,
+div.button.solid {
+  background: colors.$white;
+}
+
+a.button.stroke,
+div.button.stroke {
+}
+
+a.button.hasIcon,
+div.button.hasIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  span.text {
+  }
+  span.icon {
+    display: flex;
+    align-items: center;
+    svg {
+      width: 1em;
+      height: 1em;
+      path {
+        fill: colors.$black;
+      }
+    }
+  }
+}

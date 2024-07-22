@@ -1,1 +1,43 @@
- 
+@use './colors';
+
+$gradient-light-90: linear-gradient(
+  90deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-270: linear-gradient(
+  270deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-button-light-90: linear-gradient(
+  90deg,
+  colors.$white 0%,
+  colors.$gray-light 100%
+);
+$gradient-button-light-270: linear-gradient(
+  270deg,
+  colors.$white 0%,
+  colors.$gray-light 100%
+);
+
+$gradient-dark-90: linear-gradient(
+  90deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-270: linear-gradient(
+  270deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-button-dark-90: linear-gradient(
+  90deg,
+  colors.$black 0%,
+  colors.$gray-dark 100%
+);
+$gradient-button-dark-270: linear-gradient(
+  270deg,
+  colors.$black 0%,
+  colors.$gray-dark 100%
+);
