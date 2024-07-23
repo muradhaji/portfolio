@@ -6,7 +6,6 @@
 @use 'colors';
 @use 'fonts';
 @use 'theme';
-@use 'tools';
 
 // Component styles
 @use './components/button';
@@ -15,5 +14,7 @@
 @use './components/header';
 @use './components/menu';
 @use './components/intro';
+@use './components/about';
+@use './components/background';
 
 @use './components/responsive';

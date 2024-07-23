@@ -1,0 +1,83 @@
+@use './colors';
+
+$gradient-light-0: linear-gradient(
+  0deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-45: linear-gradient(
+  45deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-90: linear-gradient(
+  90deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-135: linear-gradient(
+  135deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-180: linear-gradient(
+  180deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-225: linear-gradient(
+  225deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-270: linear-gradient(
+  270deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+$gradient-light-315: linear-gradient(
+  315deg,
+  colors.$white 0%,
+  colors.$gray-lighter 100%
+);
+
+$gradient-dark-0: linear-gradient(
+  0deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-45: linear-gradient(
+  45deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-90: linear-gradient(
+  90deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-135: linear-gradient(
+  135deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-180: linear-gradient(
+  180deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-225: linear-gradient(
+  225deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-270: linear-gradient(
+  270deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);
+$gradient-dark-315: linear-gradient(
+  315deg,
+  colors.$black 0%,
+  colors.$gray-darker 100%
+);

@@ -1,5 +1,5 @@
 @use '../text';
-@use '../tools';
+@use '../gradients';
 @use '../sizes';
 
 section#intro {
@@ -29,7 +29,7 @@ section#intro {
             align-items: center;
             div.line {
               height: 3px;
-              background: tools.$gradient-light-270;
+              background: gradients.$gradient-light-270;
               flex: 1;
             }
             div.name {

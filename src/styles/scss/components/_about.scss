@@ -1,0 +1,83 @@
+@use '../text';
+@use '../sizes';
+@use '../gradients';
+
+@import '../mixins';
+
+section#about {
+  padding: 1em sizes.$size-xs;
+  div.container {
+    div.content {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      h1.sectionHeader {
+        text-align: center;
+      }
+      div.glass {
+        @include light-glass;
+        padding: sizes.$size-s;
+        border-radius: sizes.$size-s;
+
+        font-size: text.$text-s;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        div.glassItem {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          svg {
+            width: 1.25em;
+            height: 1.25em;
+
+            @include svg-black;
+          }
+          p.text {
+            flex: 1;
+            text-align: justify;
+            font-weight: sizes.$font-weight-6;
+          }
+        }
+      }
+      div.counters {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        div.counterItem {
+          text-align: center;
+          h1.count {
+            font-size: text.$text-3xl;
+          }
+          p.label {
+            font-weight: sizes.$font-weight-6;
+          }
+        }
+        div.counterSplitter {
+          height: 2px;
+          border-radius: 2px;
+          width: 50%;
+          background: gradients.$gradient-light-135;
+        }
+      }
+      div.background {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        div.educations,
+        div.experiences {
+          display: flex;
+          flex-direction: column;
+          gap: 1em;
+        }
+
+        div.educations > h2.educationsHeader,
+        div.experiences > h2.experiencesHeader {
+          font-weight: sizes.$font-weight-9;
+          font-size: text.$text-2xl;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use '../text';
+@use '../colors';
+@use '../sizes';
+@use '../gradients';
+
+div.backgroundItem {
+  display: flex;
+  flex-direction: column;
+  gap: sizes.$size-xs;
+
+  h3.label {
+  }
+  div.backgroundDatas {
+    display: flex;
+    flex-direction: column;
+    gap: sizes.$size-xs;
+    div.backgroundDataItem {
+      display: flex;
+      justify-content: space-between;
+
+      color: colors.$gray-dark;
+      font-size: text.$text-s;
+      font-weight: sizes.$font-weight-6;
+      p.name {
+      }
+      div.times {
+        display: flex;
+        gap: 0.25em;
+        font-size: text.$text-xs;
+        p.start {
+        }
+        span {
+        }
+        p.end {
+        }
+      }
+    }
+  }
+  div.line {
+    height: 2px;
+    background: gradients.$gradient-light-270;
+  }
+}

@@ -360,6 +360,28 @@ header {
 .dark section#intro div.container div.content div.text div.greeting div.profession div.line {
   background: linear-gradient(270deg, #000000 0%, #212121 100%);
 }
+.dark section#about div.container div.content div.glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(255, 255, 255, 0.1);
+}
+.dark section#about div.container div.content div.glass div.glassItem svg path {
+  stroke: #ffffff;
+  fill: #ffffff;
+}
+.dark section#about div.container div.content div.glass div.glassItem svg circle {
+  stroke: #ffffff;
+}
+.dark section#about div.container div.content div.counters div.counterSplitter {
+  background: linear-gradient(315deg, #000000 0%, #212121 100%);
+}
+.dark div.backgroundItem div.backgroundDatas div.backgroundDataItem {
+  color: #a1a1a1;
+}
+.dark div.backgroundItem div.line {
+  background: linear-gradient(270deg, #000000 0%, #212121 100%);
+}
 
 a.button,
 div.button {
@@ -538,6 +560,115 @@ section#intro div.container div.content div.socialIcons {
   gap: 1em;
 }
 
+section#about {
+  padding: 1em 8px;
+}
+section#about div.container div.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+section#about div.container div.content h1.sectionHeader {
+  text-align: center;
+}
+section#about div.container div.content div.glass {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: var(--font-size-s, 12px);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+section#about div.container div.content div.glass div.glassItem {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+section#about div.container div.content div.glass div.glassItem svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+section#about div.container div.content div.glass div.glassItem svg path {
+  stroke: #000000;
+  fill: #000000;
+}
+section#about div.container div.content div.glass div.glassItem svg circle {
+  stroke: #000000;
+}
+section#about div.container div.content div.glass div.glassItem p.text {
+  flex: 1;
+  text-align: justify;
+  font-weight: 600;
+}
+section#about div.container div.content div.counters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+section#about div.container div.content div.counters div.counterItem {
+  text-align: center;
+}
+section#about div.container div.content div.counters div.counterItem h1.count {
+  font-size: var(--font-size-3xl, 32px);
+}
+section#about div.container div.content div.counters div.counterItem p.label {
+  font-weight: 600;
+}
+section#about div.container div.content div.counters div.counterSplitter {
+  height: 2px;
+  border-radius: 2px;
+  width: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%);
+}
+section#about div.container div.content div.background {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+section#about div.container div.content div.background div.educations,
+section#about div.container div.content div.background div.experiences {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+section#about div.container div.content div.background div.educations > h2.educationsHeader,
+section#about div.container div.content div.background div.experiences > h2.experiencesHeader {
+  font-weight: 900;
+  font-size: var(--font-size-2xl, 28px);
+}
+
+div.backgroundItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+div.backgroundItem div.backgroundDatas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+div.backgroundItem div.backgroundDatas div.backgroundDataItem {
+  display: flex;
+  justify-content: space-between;
+  color: #424242;
+  font-size: var(--font-size-s, 12px);
+  font-weight: 600;
+}
+div.backgroundItem div.backgroundDatas div.backgroundDataItem div.times {
+  display: flex;
+  gap: 0.25em;
+  font-size: var(--font-size-xs, 10px);
+}
+div.backgroundItem div.line {
+  height: 2px;
+  background: linear-gradient(270deg, #ffffff 0%, #d0d0d0 100%);
+}
+
 @media (min-width: 360px) {
   header {
     padding: 12px 0;
@@ -546,6 +677,9 @@ section#intro div.container div.content div.socialIcons {
     gap: 12px;
   }
   section#intro {
+    padding: 1em 0;
+  }
+  section#about {
     padding: 1em 0;
   }
 }
@@ -590,6 +724,28 @@ section#intro div.container div.content div.socialIcons {
   section#intro div.container div.content div.socialIcons {
     flex-direction: column;
   }
+  section#about div.container div.content div.glass {
+    padding: 24px;
+    border-radius: 24px;
+  }
+  section#about div.container div.content div.glass div.glassItem p.text {
+    font-weight: 600;
+  }
+  section#about div.container div.content div.counters {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+  section#about div.container div.content div.counters div.counterItem {
+    flex: 1;
+    text-align: center;
+  }
+  section#about div.container div.content div.counters div.counterSplitter {
+    width: 4px;
+    height: auto;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%);
+  }
 }
 @media (min-width: 768px) {
   section#intro div.container div.content div.text div.greeting h1 {
@@ -597,5 +753,15 @@ section#intro div.container div.content div.socialIcons {
   }
   section#intro div.container div.content div.text div.greeting div.profession div.line {
     height: 6px;
+  }
+}
+@media (min-width: 1024px) {
+  section#about div.container div.content div.background {
+    display: flex;
+    flex-direction: row;
+  }
+  section#about div.container div.content div.background div.educations,
+  section#about div.container div.content div.background div.experiences {
+    flex: 1;
   }
 }

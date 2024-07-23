@@ -1,18 +1,10 @@
 @use './colors';
-@use './tools';
+@use './gradients';
 
-@mixin whitesvg {
-  path {
-    stroke: colors.$white;
-    fill: colors.$white;
-  }
-  circle {
-    stroke: colors.$white;
-  }
-}
+@import 'mixins';
 
 body {
-  background: tools.$gradient-light-90;
+  background: gradients.$gradient-light-90;
 }
 
 header {
@@ -22,7 +14,7 @@ header {
 .dark {
   body {
     color: #ffffff;
-    background: tools.$gradient-dark-90;
+    background: gradients.$gradient-dark-90;
   }
 
   header {
@@ -32,7 +24,7 @@ header {
       div.rightContainer {
         svg.toggleTheme,
         svg.toggleMenu {
-          @include whitesvg;
+          @include svg-white;
         }
       }
     }
@@ -42,7 +34,7 @@ header {
     background-color: black;
     div.buttonContainer {
       svg.closeMenu {
-        @include whitesvg;
+        @include svg-white;
       }
     }
   }
@@ -88,12 +80,43 @@ header {
           div.greeting {
             div.profession {
               div.line {
-                background: tools.$gradient-dark-270;
+                background: gradients.$gradient-dark-270;
               }
             }
           }
         }
       }
+    }
+  }
+
+  section#about {
+    div.container {
+      div.content {
+        div.glass {
+          @include dark-glass;
+          div.glassItem {
+            svg {
+              @include svg-white;
+            }
+          }
+        }
+        div.counters {
+          div.counterSplitter {
+            background: gradients.$gradient-dark-315;
+          }
+        }
+      }
+    }
+  }
+
+  div.backgroundItem {
+    div.backgroundDatas {
+      div.backgroundDataItem {
+        color: colors.$gray-light;
+      }
+    }
+    div.line {
+      background: gradients.$gradient-dark-270;
     }
   }
 }
