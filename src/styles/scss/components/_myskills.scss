@@ -1,0 +1,120 @@
+@use '../colors';
+@use '../sizes';
+@use '../text';
+
+@import '../mixins';
+
+section#myskills {
+  padding: 2em sizes.$size-xs;
+  div.container {
+    div.content {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      h1.sectionHeader {
+        text-align: center;
+        font-size: text.$text-3xl;
+        font-weight: sizes.$font-weight-9;
+      }
+      div.slider {
+        div.customSwiper {
+          div.swiper-wrapper {
+            align-items: center;
+            div.customSlider {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.5em;
+              padding: 1em 0 !important;
+              div.skillComponent {
+                display: inline-block;
+                padding: 0.5em;
+                border-radius: sizes.$size-xs;
+                font-size: text.$text-s;
+                font-weight: sizes.$font-weight-6;
+                box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+        }
+        div.customPagination {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: sizes.$size-xs;
+          span.customBullet {
+            width: auto;
+            height: auto;
+            background: transparent;
+            opacity: 1;
+            cursor: pointer;
+          }
+          span.currentBullet {
+            font-size: text.$text-s;
+          }
+          span.prevBullet,
+          span.nextBullet,
+          span.prevPrevBullet,
+          span.nextNextBullet {
+            height: 4px;
+            border-radius: 4px;
+          }
+          span.prevBullet,
+          span.nextBullet {
+            background-color: rgba(0, 0, 0, 0.75);
+            width: sizes.$size-m;
+          }
+          span.prevPrevBullet,
+          span.nextNextBullet {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: sizes.$size-s;
+          }
+          span.hiddenBullet {
+            display: none;
+          }
+        }
+      }
+      div.contactInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        div.avatar {
+          overflow: hidden;
+          border-radius: 50%;
+          box-shadow: 6px 6px 12px -2px rgba(0, 0, 0, 0.2);
+          img {
+            width: 180px;
+            filter: grayscale(0.5);
+            display: block;
+            transition: scale 0.5s;
+          }
+          &:hover {
+            img {
+              scale: 1.1;
+            }
+          }
+        }
+        div.card {
+          @include light-glass;
+          padding: 1em 2em;
+          border-radius: 1em;
+          display: inline-flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1em;
+          p {
+            font-size: text.$text-m;
+            font-weight: sizes.$font-weight-6;
+          }
+          div.socialIcons {
+            display: flex;
+            align-self: stretch;
+            justify-content: space-between;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

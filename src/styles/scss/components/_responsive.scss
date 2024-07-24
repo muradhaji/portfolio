@@ -14,10 +14,13 @@
   }
 
   section#intro {
-    padding: 1em 0;
+    padding: 2em 0;
   }
   section#about {
-    padding: 1em 0;
+    padding: 2em 0;
+  }
+  section#myskills {
+    padding: 2em 0;
   }
 }
 @media (min-width: 600px) {
@@ -102,6 +105,18 @@
             border-radius: 4px;
             background: gradients.$gradient-light-135;
           }
+        }
+      }
+    }
+  }
+
+  section#myskills {
+    div.container {
+      div.content {
+        div.contactInfo {
+          flex-direction: row;
+          justify-content: space-evenly;
+          gap: 0;
         }
       }
     }

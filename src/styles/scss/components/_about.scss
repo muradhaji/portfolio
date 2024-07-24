@@ -5,7 +5,7 @@
 @import '../mixins';
 
 section#about {
-  padding: 1em sizes.$size-xs;
+  padding: 2em sizes.$size-xs;
   div.container {
     div.content {
       display: flex;
@@ -13,6 +13,8 @@ section#about {
       gap: 2em;
       h1.sectionHeader {
         text-align: center;
+        font-size: text.$text-3xl;
+        font-weight: sizes.$font-weight-9;
       }
       div.glass {
         @include light-glass;
@@ -75,7 +77,7 @@ section#about {
         div.educations > h2.educationsHeader,
         div.experiences > h2.experiencesHeader {
           font-weight: sizes.$font-weight-9;
-          font-size: text.$text-2xl;
+          font-size: text.$text-xl;
         }
       }
     }

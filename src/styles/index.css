@@ -382,6 +382,29 @@ header {
 .dark div.backgroundItem div.line {
   background: linear-gradient(270deg, #000000 0%, #212121 100%);
 }
+.dark section#myskills div.container div.content div.slider div.customSwiper div.swiper-wrapper div.customSlider div.skillComponent {
+  box-shadow: 2px 2px 8px -2px rgba(255, 255, 255, 0.1);
+}
+.dark section#myskills div.container div.content div.slider div.customPagination span.prevBullet,
+.dark section#myskills div.container div.content div.slider div.customPagination span.nextBullet {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.dark section#myskills div.container div.content div.slider div.customPagination span.prevPrevBullet,
+.dark section#myskills div.container div.content div.slider div.customPagination span.nextNextBullet {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.dark section#myskills div.container div.content div.contactInfo div.avatar {
+  box-shadow: 6px 6px 12px -2px rgba(255, 255, 255, 0.1);
+}
+.dark section#myskills div.container div.content div.contactInfo div.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(255, 255, 255, 0.1);
+}
+.dark section#myskills div.container div.content div.contactInfo div.card div.socialIcons {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 a.button,
 div.button {
@@ -511,7 +534,7 @@ div.popUpMenu div.linksContainer {
   gap: 24px;
 }
 section#intro {
-  padding: 1em 8px;
+  padding: 2em 8px;
 }
 section#intro div.container div.content {
   display: flex;
@@ -561,7 +584,7 @@ section#intro div.container div.content div.socialIcons {
 }
 
 section#about {
-  padding: 1em 8px;
+  padding: 2em 8px;
 }
 section#about div.container div.content {
   display: flex;
@@ -570,6 +593,8 @@ section#about div.container div.content {
 }
 section#about div.container div.content h1.sectionHeader {
   text-align: center;
+  font-size: var(--font-size-3xl, 32px);
+  font-weight: 900;
 }
 section#about div.container div.content div.glass {
   background-color: rgba(0, 0, 0, 0.1);
@@ -639,7 +664,7 @@ section#about div.container div.content div.background div.experiences {
 section#about div.container div.content div.background div.educations > h2.educationsHeader,
 section#about div.container div.content div.background div.experiences > h2.experiencesHeader {
   font-weight: 900;
-  font-size: var(--font-size-2xl, 28px);
+  font-size: var(--font-size-xl, 24px);
 }
 
 div.backgroundItem {
@@ -669,6 +694,116 @@ div.backgroundItem div.line {
   background: linear-gradient(270deg, #ffffff 0%, #d0d0d0 100%);
 }
 
+section#myskills {
+  padding: 2em 8px;
+}
+section#myskills div.container div.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+section#myskills div.container div.content h1.sectionHeader {
+  text-align: center;
+  font-size: var(--font-size-3xl, 32px);
+  font-weight: 900;
+}
+section#myskills div.container div.content div.slider div.customSwiper div.swiper-wrapper {
+  align-items: center;
+}
+section#myskills div.container div.content div.slider div.customSwiper div.swiper-wrapper div.customSlider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1em 0 !important;
+}
+section#myskills div.container div.content div.slider div.customSwiper div.swiper-wrapper div.customSlider div.skillComponent {
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 8px;
+  font-size: var(--font-size-s, 12px);
+  font-weight: 600;
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.2);
+}
+section#myskills div.container div.content div.slider div.customPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+section#myskills div.container div.content div.slider div.customPagination span.customBullet {
+  width: auto;
+  height: auto;
+  background: transparent;
+  opacity: 1;
+  cursor: pointer;
+}
+section#myskills div.container div.content div.slider div.customPagination span.currentBullet {
+  font-size: var(--font-size-s, 12px);
+}
+section#myskills div.container div.content div.slider div.customPagination span.prevBullet,
+section#myskills div.container div.content div.slider div.customPagination span.nextBullet,
+section#myskills div.container div.content div.slider div.customPagination span.prevPrevBullet,
+section#myskills div.container div.content div.slider div.customPagination span.nextNextBullet {
+  height: 4px;
+  border-radius: 4px;
+}
+section#myskills div.container div.content div.slider div.customPagination span.prevBullet,
+section#myskills div.container div.content div.slider div.customPagination span.nextBullet {
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 16px;
+}
+section#myskills div.container div.content div.slider div.customPagination span.prevPrevBullet,
+section#myskills div.container div.content div.slider div.customPagination span.nextNextBullet {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 12px;
+}
+section#myskills div.container div.content div.slider div.customPagination span.hiddenBullet {
+  display: none;
+}
+section#myskills div.container div.content div.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+section#myskills div.container div.content div.contactInfo div.avatar {
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 6px 6px 12px -2px rgba(0, 0, 0, 0.2);
+}
+section#myskills div.container div.content div.contactInfo div.avatar img {
+  width: 180px;
+  filter: grayscale(0.5);
+  display: block;
+  transition: scale 0.5s;
+}
+section#myskills div.container div.content div.contactInfo div.avatar:hover img {
+  scale: 1.1;
+}
+section#myskills div.container div.content div.contactInfo div.card {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+  padding: 1em 2em;
+  border-radius: 1em;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+section#myskills div.container div.content div.contactInfo div.card p {
+  font-size: var(--font-size-m, 16px);
+  font-weight: 600;
+}
+section#myskills div.container div.content div.contactInfo div.card div.socialIcons {
+  display: flex;
+  align-self: stretch;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 @media (min-width: 360px) {
   header {
     padding: 12px 0;
@@ -677,10 +812,13 @@ div.backgroundItem div.line {
     gap: 12px;
   }
   section#intro {
-    padding: 1em 0;
+    padding: 2em 0;
   }
   section#about {
-    padding: 1em 0;
+    padding: 2em 0;
+  }
+  section#myskills {
+    padding: 2em 0;
   }
 }
 @media (min-width: 600px) {
@@ -745,6 +883,11 @@ div.backgroundItem div.line {
     height: auto;
     border-radius: 4px;
     background: linear-gradient(135deg, #ffffff 0%, #d0d0d0 100%);
+  }
+  section#myskills div.container div.content div.contactInfo {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0;
   }
 }
 @media (min-width: 768px) {
