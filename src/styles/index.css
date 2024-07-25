@@ -352,10 +352,13 @@ header {
   fill: #ffffff;
 }
 .dark a.socialIcon.stroke {
-  border: 2px dashed #ffffff;
+  border-color: #ffffff;
+}
+.dark a.socialIcon svg {
+  fill: #ffffff;
 }
 .dark a.socialIcon svg path {
-  fill: #ffffff;
+  fill: inherit;
 }
 .dark section#intro div.container div.content div.text div.greeting div.profession div.line {
   background: linear-gradient(270deg, #000000 0%, #212121 100%);
@@ -404,6 +407,15 @@ header {
 }
 .dark section#myskills div.container div.content div.contactInfo div.card div.socialIcons {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.dark section#myservices {
+  background-color: #000000;
+}
+.dark section#myservices div.container div.content div.services div.service div.image div.screen {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(255, 255, 255, 0.1);
 }
 
 a.button,
@@ -469,9 +481,10 @@ a.socialIcon svg {
   width: 1em;
   height: 1em;
   transition: 0.25s;
+  fill: #000000;
 }
 a.socialIcon svg path {
-  fill: #000000;
+  fill: inherit;
 }
 
 header {
@@ -804,6 +817,116 @@ section#myskills div.container div.content div.contactInfo div.card div.socialIc
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+section#myservices {
+  background-color: #ffffff;
+  padding: 2em 8px;
+}
+section#myservices div.container div.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+section#myservices div.container div.content h1.sectionHeader {
+  text-align: center;
+  font-size: var(--font-size-3xl, 32px);
+  font-weight: 900;
+}
+section#myservices div.container div.content div.services {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+section#myservices div.container div.content div.services div.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+section#myservices div.container div.content div.services div.service div.image {
+  order: 1;
+}
+section#myservices div.container div.content div.services div.service div.image div.screen {
+  width: 200px;
+  aspect-ratio: 3/2;
+  border-radius: 0.5em;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
+}
+section#myservices div.container div.content div.services div.service div.image div.screen span.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  color: #727272;
+  font-size: var(--font-size-3xl, 32px);
+  font-weight: 900;
+}
+section#myservices div.container div.content div.services div.service div.image div.screen span.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+section#myservices div.container div.content div.services div.service div.image div.screen span.icon svg {
+  width: 2em;
+  height: 2em;
+  fill: #727272;
+}
+section#myservices div.container div.content div.services div.service div.image div.screen span.icon svg path {
+  fill: inherit;
+}
+section#myservices div.container div.content div.services div.service div.text {
+  order: 2;
+  flex: 1;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+section#myservices div.container div.content div.services div.service div.text h2 {
+  text-align: center;
+}
+section#myservices div.container div.content div.services div.service.service1 div.image {
+  padding: 1em;
+}
+section#myservices div.container div.content div.services div.service.service2 div.image {
+  position: relative;
+  padding: 1em;
+}
+section#myservices div.container div.content div.services div.service.service2 div.image div.screen.screen1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+section#myservices div.container div.content div.services div.service.service2 div.image div.screen.screen2 {
+  position: relative;
+  z-index: 3;
+}
+section#myservices div.container div.content div.services div.service.service2 div.image div.screen.screen3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+section#myservices div.container div.content div.services div.service.service3 div.image {
+  position: relative;
+  padding: 1em;
+}
+section#myservices div.container div.content div.services div.service.service3 div.image div.screen.screen2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+}
+section#myservices div.container div.content div.services div.service.service3 div.image div.screen.screen3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  aspect-ratio: 2/3;
+}
 @media (min-width: 360px) {
   header {
     padding: 12px 0;
@@ -818,6 +941,9 @@ section#myskills div.container div.content div.contactInfo div.card div.socialIc
     padding: 2em 0;
   }
   section#myskills {
+    padding: 2em 0;
+  }
+  section#myservices {
     padding: 2em 0;
   }
 }
@@ -842,9 +968,6 @@ section#myskills div.container div.content div.contactInfo div.card div.socialIc
   }
   a.socialIcon {
     padding: 0.5em;
-  }
-  a.socialIcon.stroke {
-    border-width: 3px;
   }
   section#intro div.container div.content {
     flex-direction: row;
@@ -896,6 +1019,27 @@ section#myskills div.container div.content div.contactInfo div.card div.socialIc
   }
   section#intro div.container div.content div.text div.greeting div.profession div.line {
     height: 6px;
+  }
+  section#myservices div.container div.content div.services div.service {
+    flex-direction: row;
+  }
+  section#myservices div.container div.content div.services div.service div.image {
+    order: unset;
+  }
+  section#myservices div.container div.content div.services div.service div.image div.screen {
+    width: 300px;
+  }
+  section#myservices div.container div.content div.services div.service div.text {
+    order: unset;
+  }
+  section#myservices div.container div.content div.services div.service div.text h2 {
+    text-align: start;
+  }
+  section#myservices div.container div.content div.services div.service.service3 div.image div.screen.screen2 {
+    width: 150px;
+  }
+  section#myservices div.container div.content div.services div.service.service3 div.image div.screen.screen3 {
+    width: 75px;
   }
 }
 @media (min-width: 1024px) {

@@ -1,5 +1,7 @@
 @use '../colors';
 
+@import '../mixins';
+
 a.socialIcon {
   display: inline-flex;
   width: 2em;
@@ -20,8 +22,6 @@ a.socialIcon {
     width: 1em;
     height: 1em;
     transition: 0.25s;
-    path {
-      fill: colors.$black;
-    }
+    @include svg-color(colors.$black);
   }
 }

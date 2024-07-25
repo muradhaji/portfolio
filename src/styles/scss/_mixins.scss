@@ -32,3 +32,10 @@
     stroke: colors.$black;
   }
 }
+
+@mixin svg-color($color) {
+  fill: $color;
+  path {
+    fill: inherit;
+  }
+}

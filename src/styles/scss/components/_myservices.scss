@@ -1,0 +1,134 @@
+@use '../colors';
+@use '../text';
+@use '../sizes';
+
+@import '../mixins';
+
+section#myservices {
+  background-color: colors.$white;
+  padding: 2em sizes.$size-xs;
+  div.container {
+    div.content {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      h1.sectionHeader {
+        text-align: center;
+        font-size: text.$text-3xl;
+        font-weight: sizes.$font-weight-9;
+      }
+      div.services {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        div.service {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1em;
+          div.image {
+            order: 1;
+            div.screen {
+              width: 200px;
+              aspect-ratio: 3 / 2;
+              border-radius: 0.5em;
+              position: relative;
+              @include light-glass;
+              span.text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                color: colors.$gray-medium;
+                font-size: text.$text-3xl;
+                font-weight: sizes.$font-weight-9;
+              }
+              span.icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                svg {
+                  width: 2em;
+                  height: 2em;
+                  @include svg-color(colors.$gray-medium);
+                }
+              }
+            }
+          }
+          div.text {
+            order: 2;
+            flex: 1;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            h2 {
+              text-align: center;
+            }
+            p {
+            }
+          }
+          &.service1 {
+            div.image {
+              padding: 1em;
+            }
+          }
+          &.service2 {
+            div.image {
+              position: relative;
+              padding: 1em;
+              div.screen {
+                &.screen1 {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                }
+                &.screen2 {
+                  position: relative;
+                  z-index: 3;
+                }
+                &.screen3 {
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                }
+              }
+            }
+          }
+          &.service3 {
+            div.image {
+              position: relative;
+              padding: 1em;
+              div.screen {
+                &.screen1 {
+                }
+                &.screen2 {
+                  position: absolute;
+                  left: 0;
+                  bottom: 0;
+                  width: 100px;
+                }
+                &.screen3 {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 50px;
+                  aspect-ratio: 2 / 3;
+                }
+              }
+            }
+          }
+          &.service4 {
+            div.image {
+            }
+          }
+          &.service5 {
+            div.image {
+            }
+          }
+        }
+      }
+    }
+  }
+}
