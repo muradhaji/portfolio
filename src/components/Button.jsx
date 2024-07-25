@@ -18,6 +18,7 @@ function Button({
   ) : type === 'hashlink' ? (
     <HashLink
       to={to}
+      smooth
       className={`button ${appearance} ${icon ? 'hasIcon' : ''}`}
     >
       <span className='text'>{text}</span>

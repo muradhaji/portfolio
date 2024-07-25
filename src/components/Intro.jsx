@@ -29,8 +29,8 @@ function Intro() {
                 icon={<DownArrow />}
               />
               <Button
-                type='link'
-                to='/projects'
+                type='hashlink'
+                to='/#projects'
                 appearance='stroke'
                 text='View projects'
               />
@@ -52,7 +52,7 @@ function Intro() {
             <SocialIcon
               media='email'
               type='stroke'
-              href='mailto:murad.hajiyev00@gmail.com'
+              href='mailto:muradhajiyev42@icloud.com'
             />
             <SocialIcon
               media='github'

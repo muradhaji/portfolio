@@ -2,6 +2,7 @@ import Header from './Header';
 import Home from './Home';
 import Projects from './Projects';
 import Menu from './Menu';
+import Footer from './Footer';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { THEME } from '../helpers/constants';
@@ -53,6 +54,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/projects' element={<Projects />} />
           </Routes>
+          <Footer></Footer>
         </>
       ) : (
         <Menu />

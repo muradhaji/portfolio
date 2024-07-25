@@ -1,0 +1,22 @@
+@use '../colors';
+@use '../sizes';
+@use '../text';
+
+footer {
+  background-color: colors.$white;
+  padding: 1em sizes.$size-xs;
+  div.container {
+    div.content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      p {
+        font-size: text.$text-s;
+      }
+      div.socialIcons {
+      }
+    }
+  }
+}

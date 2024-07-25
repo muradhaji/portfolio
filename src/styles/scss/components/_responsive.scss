@@ -22,6 +22,10 @@
   section.projects {
     padding: 2em 0;
   }
+
+  footer {
+    padding: 1em 0;
+  }
 }
 @media (min-width: 600px) {
   header {
@@ -115,6 +119,15 @@
           justify-content: space-evenly;
           gap: 0;
         }
+      }
+    }
+  }
+
+  footer {
+    div.container {
+      div.content {
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
   }

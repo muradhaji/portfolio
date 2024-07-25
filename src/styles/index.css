@@ -446,6 +446,9 @@ header {
 .dark div.projectContainer a div.overlay {
   background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%);
 }
+.dark footer {
+  background-color: #000000;
+}
 
 a.button,
 div.button {
@@ -995,6 +998,20 @@ div.projectContainer a div.overlay {
   transition: opacity 1s;
 }
 
+footer {
+  background-color: #ffffff;
+  padding: 1em 8px;
+}
+footer div.container div.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+footer div.container div.content p {
+  font-size: var(--font-size-s, 12px);
+}
 @media (min-width: 360px) {
   header {
     padding: 12px 0;
@@ -1010,6 +1027,9 @@ div.projectContainer a div.overlay {
   section#projects,
   section.projects {
     padding: 2em 0;
+  }
+  footer {
+    padding: 1em 0;
   }
 }
 @media (min-width: 600px) {
@@ -1076,6 +1096,10 @@ div.projectContainer a div.overlay {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 0;
+  }
+  footer div.container div.content {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 @media (min-width: 768px) {

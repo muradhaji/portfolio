@@ -120,7 +120,7 @@ function MySkills() {
                 />
                 <SocialIcon
                   media='email'
-                  href='mailto:murad.hajiyev00@gmail.com'
+                  href='mailto:muradhajiyev42@icloud.com'
                 />
               </div>
             </div>
