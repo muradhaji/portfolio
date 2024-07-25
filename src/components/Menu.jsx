@@ -59,16 +59,15 @@ function Menu() {
           >
             Services
           </HashLink>
-          <HashLink
-            smooth
-            to='/#projects'
+          <Link
+            to='/projects'
             className='link'
             onClick={() => {
               dispatch(hide());
             }}
           >
             Projects
-          </HashLink>
+          </Link>
         </div>
       </div>
     </div>
