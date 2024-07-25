@@ -118,7 +118,7 @@ header {
     }
   }
 
-  section#myskills {
+  section#skills {
     div.container {
       div.content {
         div.slider {
@@ -157,7 +157,7 @@ header {
     }
   }
 
-  section#myservices {
+  section#services {
     background-color: colors.$black;
     div.container {
       div.content {
@@ -170,6 +170,27 @@ header {
             }
           }
         }
+      }
+    }
+  }
+
+  div.projectContainer {
+    box-shadow: 8px 8px 8px 0px rgba($color: colors.$gray-dark, $alpha: 0.25);
+    a {
+      div.bottom {
+        span.name {
+          color: colors.$black;
+        }
+        svg {
+          @include svg-color(colors.$black);
+        }
+      }
+      div.overlay {
+        background: linear-gradient(
+          0deg,
+          rgba($color: colors.$white, $alpha: 1) 0%,
+          rgba($color: colors.$white, $alpha: 0) 100%
+        );
       }
     }
   }

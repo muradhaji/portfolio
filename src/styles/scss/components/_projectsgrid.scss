@@ -1,0 +1,26 @@
+@use '../text';
+
+div.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  div.grid {
+    display: flex;
+    gap: 1em;
+    div.column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+  div.moreProjects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    p {
+      font-size: text.$text-s;
+    }
+  }
+}

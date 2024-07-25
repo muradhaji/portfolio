@@ -13,16 +13,13 @@
     }
   }
 
-  section#intro {
-    padding: 2em 0;
-  }
-  section#about {
-    padding: 2em 0;
-  }
-  section#myskills {
-    padding: 2em 0;
-  }
-  section#myservices {
+  section#intro,
+  section#about,
+  section#skills,
+  section#services,
+  section#services,
+  section#projects,
+  section.projects {
     padding: 2em 0;
   }
 }
@@ -52,9 +49,6 @@
 
   a.socialIcon {
     padding: 0.5em;
-    // &.stroke {
-    //   border-width: 3px;
-    // }
   }
 
   section#intro {
@@ -113,7 +107,7 @@
     }
   }
 
-  section#myskills {
+  section#skills {
     div.container {
       div.content {
         div.contactInfo {
@@ -145,7 +139,7 @@
     }
   }
 
-  section#myservices {
+  section#services {
     div.container {
       div.content {
         div.services {

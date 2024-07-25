@@ -1,0 +1,25 @@
+@use './sizes';
+@use './text';
+
+section {
+  &#projects,
+  &#about,
+  &#intro,
+  &#services,
+  &#projects,
+  &#skills {
+    padding: 2em sizes.$size-xs;
+  }
+
+  div.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  h1.sectionHeader {
+    text-align: center;
+    font-size: text.$text-3xl;
+    font-weight: sizes.$font-weight-9;
+  }
+}

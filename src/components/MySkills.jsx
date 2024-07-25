@@ -30,10 +30,6 @@ function MySkills() {
   const renderCustomPagination = (swiper, current, total) => {
     let generatedBullets = ``;
 
-    console.log(swiper);
-    console.log(current);
-    console.log(total);
-
     for (let i = 1; i <= total; i++) {
       generatedBullets += `<span
           class="${`swiper-pagination-bullet customBullet ${getBulletClass(
@@ -58,7 +54,7 @@ function MySkills() {
   };
 
   return (
-    <section id='myskills'>
+    <section id='skills'>
       <div className='container'>
         <div className='content'>
           <h1 className='sectionHeader'>My Skills</h1>
@@ -66,7 +62,7 @@ function MySkills() {
             <Swiper
               modules={[Pagination, Autoplay]}
               className='customSwiper'
-              autoHeight={true}
+              // autoHeight={true}
               onSlideChange={(swiper) =>
                 renderCustomPagination(
                   swiper,

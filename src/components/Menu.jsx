@@ -41,6 +41,16 @@ function Menu() {
           </HashLink>
           <HashLink
             smooth
+            to='/#skills'
+            className='link'
+            onClick={() => {
+              dispatch(hide());
+            }}
+          >
+            Skills
+          </HashLink>
+          <HashLink
+            smooth
             to='/#services'
             className='link'
             onClick={() => {

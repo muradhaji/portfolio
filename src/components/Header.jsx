@@ -43,16 +43,19 @@ function Header() {
               Mh
             </Link>
             <div className='rightContainer'>
-              <HashLink smooth to='/#about' className='link'>
+              <HashLink to='/#about' className='link'>
                 About
+              </HashLink>
+              <HashLink smooth to='/#skills' className='link'>
+                Skills
               </HashLink>
               <HashLink smooth to='/#services' className='link'>
                 Services
               </HashLink>
-              <HashLink smooth to='/#projects' className='link'>
+              <Link to='/projects' className='link'>
                 Projects
-              </HashLink>
-              
+              </Link>
+
               {theme === THEME.LIGHT ? (
                 <MoonSvg
                   className='toggleTheme'

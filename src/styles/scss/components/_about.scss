@@ -5,16 +5,9 @@
 @import '../mixins';
 
 section#about {
-  padding: 2em sizes.$size-xs;
   div.container {
     div.content {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
       h1.sectionHeader {
-        text-align: center;
-        font-size: text.$text-3xl;
-        font-weight: sizes.$font-weight-9;
       }
       div.glass {
         @include light-glass;

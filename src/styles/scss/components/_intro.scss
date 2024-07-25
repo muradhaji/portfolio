@@ -3,13 +3,9 @@
 @use '../sizes';
 
 section#intro {
-  padding: 2em sizes.$size-xs;
   div.container {
     div.content {
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      gap: 1em;
       div.text {
         display: flex;
         flex-direction: column;

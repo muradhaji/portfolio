@@ -39,3 +39,67 @@ export const MY_SKILLS = [
     skills: ['Python', 'C', 'C++', 'C#'],
   },
 ];
+
+export const PROJECT_COLUMN_COUNTS = {
+  xs: 2,
+  s: 2,
+  m: 2,
+  l: 3,
+  xl: 3,
+  '2xl': 3,
+  '3xl': 4,
+  '4xl': 4,
+  '5xl': 4,
+  '6xl': 4,
+};
+
+export const MY_PROJECTS = [
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+  {
+    name: 'Project Name',
+    coverHorizontal: '/projects/projectHorizontal.svg',
+    coverVertical: '/projects/projectVertical.svg',
+    url: '/projects',
+  },
+];

@@ -4,18 +4,11 @@
 
 @import '../mixins';
 
-section#myservices {
+section#services {
   background-color: colors.$white;
-  padding: 2em sizes.$size-xs;
   div.container {
     div.content {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
       h1.sectionHeader {
-        text-align: center;
-        font-size: text.$text-3xl;
-        font-weight: sizes.$font-weight-9;
       }
       div.services {
         display: flex;

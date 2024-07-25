@@ -1,0 +1,67 @@
+@use '../text';
+@use '../colors';
+@use '../sizes';
+
+@import '../mixins';
+
+div.projectContainer {
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 8px 8px 8px 0px colors.$gray-lighter;
+  &:hover {
+    img {
+      scale: 1.1;
+    }
+    div.overlay,
+    div.bottom {
+      opacity: 1;
+    }
+  }
+  a {
+    display: block;
+    position: relative;
+    div.image {
+      img {
+        width: 100%;
+        display: block;
+        transition: scale 0.5s;
+      }
+    }
+    div.bottom {
+      position: absolute;
+      padding: 0.5em;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      font-size: text.$text-s;
+      font-weight: sizes.$font-weight-6;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s;
+      span.name {
+        flex: 1;
+        color: colors.$white;
+      }
+      svg {
+        height: 1em;
+        @include svg-color(colors.$white);
+      }
+    }
+    div.overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        0deg,
+        rgba($color: colors.$black, $alpha: 1) 0%,
+        rgba($color: colors.$black, $alpha: 0) 100%
+      );
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import { ReactComponent as RocketSvg } from '../images/icons/rocket.svg';
 
 function MyServices() {
   return (
-    <section id='myservices'>
+    <section id='services'>
       <div className='container'>
         <div className='content'>
           <h1 className='sectionHeader'>My Services</h1>
