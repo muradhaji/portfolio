@@ -401,6 +401,7 @@ header {
 }
 .dark section#skills div.container div.content div.slider div.customSwiper div.swiper-wrapper div.customSlider div.skillComponent {
   box-shadow: 2px 2px 8px -2px rgba(255, 255, 255, 0.1);
+  background-color: #212121;
 }
 .dark section#skills div.container div.content div.slider div.customPagination span.prevBullet,
 .dark section#skills div.container div.content div.slider div.customPagination span.nextBullet {
@@ -737,6 +738,7 @@ section#skills div.container div.content div.slider div.customSwiper div.swiper-
   font-size: var(--font-size-s, 12px);
   font-weight: 600;
   box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.2);
+  background-color: #d0d0d0;
 }
 section#skills div.container div.content div.slider div.customPagination {
   display: flex;

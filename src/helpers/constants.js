@@ -16,7 +16,7 @@ export const MY_SKILLS = [
   },
   {
     sliderLabel: 'JS FRAMEWORKS / LIBRARIES',
-    skills: ['React', 'React Query', 'Redux', 'jQuery', 'HighCharts'],
+    skills: ['React', 'React Query', 'Redux', 'jQuery', 'HighCharts', 'Lodash'],
   },
   {
     sliderLabel: 'BACK-END',
@@ -30,7 +30,7 @@ export const MY_SKILLS = [
       'BitBucket',
       'Jira',
       'Postman',
-      'REST API',
+      'Rest API',
       'JWT',
     ],
   },
