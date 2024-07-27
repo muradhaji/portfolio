@@ -10,7 +10,9 @@ function Intro() {
           <div className='text'>
             <div className='greeting'>
               <h1>Hi!</h1>
-              <h1>I'm Murad Hajiyev</h1>
+              <h1>
+                <span>I’m</span> <span>Murad</span> <span>Hajiyev</span>
+              </h1>
               <div className='profession'>
                 <div className='line'></div>
                 <div className='name'>Web developer</div>

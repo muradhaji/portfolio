@@ -10,14 +10,17 @@ section#intro {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 1em;
+        gap: 2em;
         div.greeting {
           display: flex;
           flex-direction: column;
           gap: 0.25em;
           h1 {
-            font-size: text.$text-3xl;
+            font-size: text.$text-9xl;
             display: inline-block;
+            span {
+              display: block;
+            }
           }
           div.profession {
             display: flex;

@@ -586,7 +586,7 @@ section#intro div.container div.content div.text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1em;
+  gap: 2em;
 }
 section#intro div.container div.content div.text div.greeting {
   display: flex;
@@ -594,8 +594,11 @@ section#intro div.container div.content div.text div.greeting {
   gap: 0.25em;
 }
 section#intro div.container div.content div.text div.greeting h1 {
-  font-size: var(--font-size-3xl, 32px);
+  font-size: var(--font-size-9xl, 56px);
   display: inline-block;
+}
+section#intro div.container div.content div.text div.greeting h1 span {
+  display: block;
 }
 section#intro div.container div.content div.text div.greeting div.profession {
   display: flex;
@@ -1057,20 +1060,16 @@ footer div.container div.content p {
     padding: 0.5em;
   }
   section#intro div.container div.content {
-    flex-direction: row;
     padding: 1em 0;
   }
-  section#intro div.container div.content div.text div.greeting h1 {
-    font-size: var(--font-size-6xl, 44px);
+  section#intro div.container div.content div.text div.greeting h1 span {
+    display: inline;
   }
   section#intro div.container div.content div.text p.summary {
     font-size: var(--font-size-m, 16px);
   }
   section#intro div.container div.content div.text div.buttons {
     align-self: flex-start;
-  }
-  section#intro div.container div.content div.socialIcons {
-    flex-direction: column;
   }
   section#about div.container div.content div.glass {
     padding: 24px;
@@ -1105,11 +1104,14 @@ footer div.container div.content p {
   }
 }
 @media (min-width: 768px) {
-  section#intro div.container div.content div.text div.greeting h1 {
-    font-size: var(--font-size-9xl, 56px);
+  section#intro div.container div.content {
+    flex-direction: row;
   }
   section#intro div.container div.content div.text div.greeting div.profession div.line {
     height: 6px;
+  }
+  section#intro div.container div.content div.socialIcons {
+    flex-direction: column;
   }
   section#services div.container div.content div.services div.service {
     flex-direction: row;

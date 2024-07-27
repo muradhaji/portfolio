@@ -58,12 +58,13 @@
   section#intro {
     div.container {
       div.content {
-        flex-direction: row;
         padding: 1em 0;
         div.text {
           div.greeting {
             h1 {
-              font-size: text.$text-6xl;
+              span {
+                display: inline;
+              }
             }
           }
           p.summary {
@@ -72,9 +73,6 @@
           div.buttons {
             align-self: flex-start;
           }
-        }
-        div.socialIcons {
-          flex-direction: column;
         }
       }
     }
@@ -136,17 +134,18 @@
   section#intro {
     div.container {
       div.content {
+        flex-direction: row;
         div.text {
           div.greeting {
-            h1 {
-              font-size: text.$text-9xl;
-            }
             div.profession {
               div.line {
                 height: 6px;
               }
             }
           }
+        }
+        div.socialIcons {
+          flex-direction: column;
         }
       }
     }
