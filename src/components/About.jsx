@@ -16,20 +16,18 @@ function About() {
             <div className='glassItem'>
               <UserSvg />
               <p className='text'>
-                A passionate front-end developer and educator at AlgoAcademy.
-                With two years of experience crafting immersive web experiences,
-                I specialize in HTML, CSS, JavaScript, and ReactJS for building
-                dynamic user interfaces.
+                A passionate front-end developer. With two years of experience
+                crafting immersive web experiences, I specialize in HTML, CSS,
+                JavaScript, and ReactJS for building dynamic user interfaces.
               </p>
             </div>
             <div className='glassItem'>
               <BulbSvg />
               <p className='text'>
-                I thrive on turning ideas into elegant, user-friendly interfaces
-                and enjoy tackling challenges head-on to deliver high-quality
-                solutions. Beyond front-end development, I excel in algorithmic
-                problem-solving, leveraging data structures and algorithms to
-                optimize performance and efficiency in my code.
+                I love turning ideas into user-friendly interfaces and solving
+                challenges to deliver quality solutions. Besides front-end
+                development, I excel at using data structures and algorithms to
+                make my code efficient and perform well.
               </p>
             </div>
             <div className='glassItem'>
@@ -44,10 +42,9 @@ function About() {
               <RocketSvg />
               <p className='text'>
                 Whether it's building responsive websites, developing
-                interactive web applications, guiding aspiring developers
-                through their learning journey at AlgoAcademy, or exploring new
-                technologies like Node.js, I'm dedicated to pushing the
-                boundaries of what's possible in web development.
+                interactive web applications, or exploring new technologies, I'm
+                dedicated to pushing the boundaries of what's possible in web
+                development.
               </p>
             </div>
             <div className='glassItem'>
@@ -72,12 +69,12 @@ function About() {
             </div>
             <div className='counterSplitter'></div>
             <div className='counterItem'>
-              <h1 className='count'>10+</h1>
+              <h1 className='count'>0</h1>
               <p className='label'>Completed Projects</p>
             </div>
             <div className='counterSplitter'></div>
             <div className='counterItem'>
-              <h1 className='count'>7+</h1>
+              <h1 className='count'>0</h1>
               <p className='label'>Customers</p>
             </div>
           </div>
@@ -89,8 +86,8 @@ function About() {
                 data={[
                   {
                     name: 'Software development',
-                    start: '2021/10',
-                    end: '2022/02',
+                    start: '10/2021',
+                    end: '02/2022',
                   },
                 ]}
               />
@@ -99,8 +96,8 @@ function About() {
                 data={[
                   {
                     name: 'İnformation technologies engineering',
-                    start: '2018/09',
-                    end: '2022/06',
+                    start: '09/2018',
+                    end: '06/2022',
                   },
                 ]}
               />
@@ -112,8 +109,8 @@ function About() {
                 data={[
                   {
                     name: 'Front-end educator',
-                    start: '2023/10',
-                    end: '2024/07',
+                    start: '10/2023',
+                    end: '07/2024',
                   },
                 ]}
               />
@@ -122,13 +119,13 @@ function About() {
                 data={[
                   {
                     name: 'Front-end developer',
-                    start: '2021/09',
-                    end: '2022/05',
+                    start: '09/2021',
+                    end: '05/2022',
                   },
                   {
                     name: 'Front-end developer (intern)',
-                    start: '2021/06',
-                    end: '2021/09',
+                    start: '06/2021',
+                    end: '09/2021',
                   },
                 ]}
               />

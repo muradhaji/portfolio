@@ -101,7 +101,7 @@ function MySkills() {
                 type='button'
                 onClick={handleDownload}
               />
-              <p>Fell free to contact me</p>
+              <p>Feel free to contact me</p>
               <div className='socialIcons'>
                 <SocialIcon
                   media='linkedin'

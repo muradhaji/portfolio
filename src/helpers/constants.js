@@ -16,27 +16,33 @@ export const MY_SKILLS = [
   },
   {
     sliderLabel: 'JS FRAMEWORKS / LIBRARIES',
-    skills: ['React', 'React Query', 'Redux', 'jQuery', 'HighCharts', 'Lodash'],
-  },
-  {
-    sliderLabel: 'BACK-END',
-    skills: ['Node.js', 'Express.js', 'Mongo Db', 'SQL', 'OOP'],
-  },
-  {
-    sliderLabel: 'TECHNOLOGIES',
     skills: [
-      'Git',
-      'GitHub',
-      'BitBucket',
-      'Jira',
-      'Postman',
-      'Rest API',
-      'JWT',
+      'React',
+      'React Query',
+      'Redux',
+      'jQuery',
+      'HighCharts',
+      'Lodash',
+      'Moment.js',
     ],
   },
   {
-    sliderLabel: 'LANGUAGES',
-    skills: ['Python', 'C', 'C++', 'C#'],
+    sliderLabel: 'BACK-END',
+    skills: ['Node.js', 'Express.js', 'Mongo Db', 'JWT'],
+  },
+  {
+    sliderLabel: 'CONCEPTS / PRINCIPLES',
+    skills: [
+      'OOP',
+      'Algorithm Design',
+      'Data Structures',
+      'SOLID Principles',
+      'Clean Code',
+    ],
+  },
+  {
+    sliderLabel: 'TECHNOLOGIES / TOOLS',
+    skills: ['Git', 'GitHub', 'BitBucket', 'Jira', 'Postman', 'Rest API'],
   },
 ];
 

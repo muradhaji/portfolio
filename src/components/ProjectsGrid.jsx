@@ -66,12 +66,18 @@ function ProjectsGrid({ compact = false }) {
       </div>
       {compact ? (
         <div className='moreProjects'>
-          <p>
-            {moreProjectsCount > 0
-              ? `There are ${moreProjectsCount} more projects.`
-              : 'There will be more projects.'}
-          </p>
-          <Button type='link' to='/projects' text='View All' />
+          {moreProjectsCount > 0 ? (
+            <>
+              {moreProjectsCount > 1 ? (
+                <p>There are {moreProjectsCount} more projects.</p>
+              ) : (
+                <p>There is 1 more project.</p>
+              )}
+              <Button type='link' to='/projects' text='View All' />
+            </>
+          ) : (
+            <p>Check back soon for new projects!</p>
+          )}
         </div>
       ) : (
         ''
