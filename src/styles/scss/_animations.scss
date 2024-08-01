@@ -1,0 +1,176 @@
+* {
+  transition: color 100ms;
+}
+
+div.popUpMenu {
+  animation: popUpMenu 1s cubic-bezier(0, 1, 1, 1) both;
+}
+
+section#intro {
+  .content {
+    opacity: 0;
+  }
+  .animated {
+    .content {
+      animation: fadeIn 2s linear both;
+    }
+  }
+}
+
+section#about {
+  div.glass,
+  div.counterItem,
+  h2,
+  div.backgroundItem {
+    opacity: 0;
+  }
+
+  .animated {
+    div.glass {
+      animation: aboutGlass 1s linear both;
+    }
+
+    div.counterItem {
+      animation: fadeIn 1s linear both;
+    }
+
+    h2 {
+      animation: slideLTR 1s linear both;
+    }
+
+    div.backgroundItem {
+      animation: slideLTR 1s 500ms linear both;
+    }
+  }
+}
+
+section#skills {
+  div.avatar,
+  div.card,
+  div.slider {
+    opacity: 0;
+  }
+  .animated {
+    div.slider {
+      animation: fadeIn 1s linear both;
+    }
+    div.avatar {
+      animation: fadeIn 1s linear both;
+    }
+    div.card {
+      animation: fadeIn 1s linear both;
+    }
+  }
+}
+
+section#services {
+  div.service {
+    opacity: 0;
+  }
+  .animated {
+    div.service {
+      animation: slideRTL 1s linear both;
+      &.service2,
+      &.service4 {
+        animation: slideLTR 1s linear both;
+      }
+    }
+  }
+}
+
+section#projects,
+section.projects {
+  div.projectContainer {
+    opacity: 0;
+  }
+  .animated {
+    div.projectContainer {
+      animation: fadeIn 1s linear both;
+      animation-delay: calc(var(--order) * 250ms);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  section#about {
+    div.experiences {
+      .animated {
+        h2 {
+          animation: slideRTL 1s linear both;
+        }
+        div.backgroundItem {
+          animation: slideRTL 1s 500ms linear both;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideLTR {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
+}
+@keyframes slideRTL {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes popUpMenu {
+  0% {
+    opacity: 0;
+    scale: 0;
+    transform: translateY(-100vh);
+    filter: blur(8px);
+  }
+  30% {
+    scale: 0.8;
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes aboutGlass {
+  0% {
+    opacity: 0;
+    scale: 0;
+    filter: blur(8px);
+  }
+  80% {
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0px);
+  }
+}

@@ -451,6 +451,149 @@ header {
   background-color: #000000;
 }
 
+* {
+  transition: color 100ms;
+}
+
+div.popUpMenu {
+  animation: popUpMenu 1s cubic-bezier(0, 1, 1, 1) both;
+}
+
+section#intro .content {
+  opacity: 0;
+}
+section#intro .animated .content {
+  animation: fadeIn 2s linear both;
+}
+
+section#about div.glass,
+section#about div.counterItem,
+section#about h2,
+section#about div.backgroundItem {
+  opacity: 0;
+}
+section#about .animated div.glass {
+  animation: aboutGlass 1s linear both;
+}
+section#about .animated div.counterItem {
+  animation: fadeIn 1s linear both;
+}
+section#about .animated h2 {
+  animation: slideLTR 1s linear both;
+}
+section#about .animated div.backgroundItem {
+  animation: slideLTR 1s 500ms linear both;
+}
+
+section#skills div.avatar,
+section#skills div.card,
+section#skills div.slider {
+  opacity: 0;
+}
+section#skills .animated div.slider {
+  animation: fadeIn 1s linear both;
+}
+section#skills .animated div.avatar {
+  animation: fadeIn 1s linear both;
+}
+section#skills .animated div.card {
+  animation: fadeIn 1s linear both;
+}
+
+section#services div.service {
+  opacity: 0;
+}
+section#services .animated div.service {
+  animation: slideRTL 1s linear both;
+}
+section#services .animated div.service.service2, section#services .animated div.service.service4 {
+  animation: slideLTR 1s linear both;
+}
+
+section#projects div.projectContainer,
+section.projects div.projectContainer {
+  opacity: 0;
+}
+section#projects .animated div.projectContainer,
+section.projects .animated div.projectContainer {
+  animation: fadeIn 1s linear both;
+  animation-delay: calc(var(--order) * 250ms);
+}
+
+@media (min-width: 1024px) {
+  section#about div.experiences .animated h2 {
+    animation: slideRTL 1s linear both;
+  }
+  section#about div.experiences .animated div.backgroundItem {
+    animation: slideRTL 1s 500ms linear both;
+  }
+}
+@keyframes slideLTR {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
+}
+@keyframes slideRTL {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes popUpMenu {
+  0% {
+    opacity: 0;
+    scale: 0;
+    transform: translateY(-100vh);
+    filter: blur(8px);
+  }
+  30% {
+    scale: 0.8;
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes aboutGlass {
+  0% {
+    opacity: 0;
+    scale: 0;
+    filter: blur(8px);
+  }
+  80% {
+    scale: 1.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    filter: blur(0px);
+  }
+}
 a.button,
 div.button {
   display: inline-block;
@@ -782,13 +925,14 @@ section#skills div.container div.content div.slider div.customPagination span.hi
 section#skills div.container div.content div.contactInfo {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 2em;
   align-items: center;
 }
 section#skills div.container div.content div.contactInfo div.avatar {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 6px 6px 12px -2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 section#skills div.container div.content div.contactInfo div.avatar img {
   width: 180px;
@@ -1095,8 +1239,8 @@ footer div.container div.content p {
   }
   section#skills div.container div.content div.contactInfo {
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 0;
+    justify-content: center;
+    gap: 3em;
   }
   footer div.container div.content {
     flex-direction: row;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-function AnimatedComponent({ type, children }) {
+function AnimatedComponent({ children }) {
   let [isInView, setIsInView] = useState(false);
   let ref = useRef(null);
 
@@ -11,7 +11,7 @@ function AnimatedComponent({ type, children }) {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0,
+    threshold: 0.2,
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ function AnimatedComponent({ type, children }) {
     // eslint-disable-next-line
   }, []);
 
-  return React.createElement(type, {
+  return React.createElement('div', {
     className: isInView ? 'animated' : '',
     children,
     ref,

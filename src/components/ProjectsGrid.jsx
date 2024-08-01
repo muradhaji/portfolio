@@ -4,6 +4,7 @@ import Button from './Button';
 import { MY_PROJECTS, PROJECT_COLUMN_COUNTS } from '../helpers/constants';
 import { useEffect, useState } from 'react';
 import useBreakpoint from './useBreakpoint';
+import CountUp from 'react-countup';
 
 function ProjectsGrid({ compact = false }) {
   const breakPoint = useBreakpoint();
@@ -69,7 +70,15 @@ function ProjectsGrid({ compact = false }) {
           {moreProjectsCount > 0 ? (
             <>
               {moreProjectsCount > 1 ? (
-                <p>There are {moreProjectsCount} more projects.</p>
+                <p>
+                  There are{' '}
+                  <CountUp
+                    end={moreProjectsCount}
+                    duration={3}
+                    enableScrollSpy
+                  />{' '}
+                  more projects.
+                </p>
               ) : (
                 <p>There is 1 more project.</p>
               )}

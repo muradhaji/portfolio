@@ -1,4 +1,5 @@
 import ProjectsGrid from './ProjectsGrid';
+import AnimatedComponent from './AnimatedComponent';
 
 function Projects() {
   return (
@@ -6,7 +7,9 @@ function Projects() {
       <div className='container'>
         <div className='content'>
           <h1 className='sectionHeader'>All Projects</h1>
-          <ProjectsGrid />
+          <AnimatedComponent>
+            <ProjectsGrid />
+          </AnimatedComponent>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import Button from './Button';
 import SocialIcon from './SocialIcon';
+import AnimatedComponent from './AnimatedComponent';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -58,72 +59,78 @@ function MySkills() {
       <div className='container'>
         <div className='content'>
           <h1 className='sectionHeader'>My Skills</h1>
-          <div className='slider'>
-            <Swiper
-              modules={[Pagination, Autoplay]}
-              className='customSwiper'
-              // autoHeight={true}
-              onSlideChange={(swiper) =>
-                renderCustomPagination(
-                  swiper,
-                  swiper.activeIndex + 1,
-                  swiper.slides.length
-                )
-              }
-              pagination={{
-                el: '.customPagination',
-                type: 'custom',
-                clickable: true,
-                renderCustom: (swiper, current, total) =>
-                  renderCustomPagination(swiper, current, total),
-              }}
-              autoplay={{ disableOnInteraction: true }}
-            >
-              {MY_SKILLS.map((group, i) => (
-                <SwiperSlide className='customSlider' key={i}>
-                  {group.skills.map((skillName, i) => (
-                    <div className='skillComponent' key={i}>
-                      {skillName}
-                    </div>
-                  ))}
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <div className='customPagination'></div>
-          </div>
+          <AnimatedComponent>
+            <div className='slider'>
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                className='customSwiper'
+                // autoHeight={true}
+                onSlideChange={(swiper) =>
+                  renderCustomPagination(
+                    swiper,
+                    swiper.activeIndex + 1,
+                    swiper.slides.length
+                  )
+                }
+                pagination={{
+                  el: '.customPagination',
+                  type: 'custom',
+                  clickable: true,
+                  renderCustom: (swiper, current, total) =>
+                    renderCustomPagination(swiper, current, total),
+                }}
+                autoplay={{ disableOnInteraction: true }}
+              >
+                {MY_SKILLS.map((group, i) => (
+                  <SwiperSlide className='customSlider' key={i}>
+                    {group.skills.map((skillName, i) => (
+                      <div className='skillComponent' key={i}>
+                        {skillName}
+                      </div>
+                    ))}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <div className='customPagination'></div>
+            </div>
+          </AnimatedComponent>
           <div className='contactInfo'>
-            <div className='avatar'>
-              <img src={Avatar} alt='Avatar' />
-            </div>
-            <div className='card'>
-              <Button
-                text='Download CV'
-                type='button'
-                onClick={handleDownload}
-              />
-              <p>Feel free to contact me</p>
-              <div className='socialIcons'>
-                <SocialIcon
-                  media='linkedin'
-                  href='https://www.linkedin.com/in/muradhajiev'
-                  target='_blank'
-                />
-                <SocialIcon
-                  media='whatsapp'
-                  href='https://wa.me/994557088909'
-                  target='_blank'
-                />
-                <SocialIcon
-                  media='telegram'
-                  href='https://t.me/muradhajiyev13'
-                  target='_blank'
-                />
-                <SocialIcon
-                  media='email'
-                  href='mailto:muradhajiyev42@icloud.com'
-                />
+            <AnimatedComponent>
+              <div className='avatar'>
+                <img src={Avatar} alt='Avatar' />
               </div>
-            </div>
+            </AnimatedComponent>
+            <AnimatedComponent>
+              <div className='card'>
+                <Button
+                  text='Download CV'
+                  type='button'
+                  onClick={handleDownload}
+                />
+                <p>Feel free to contact me</p>
+                <div className='socialIcons'>
+                  <SocialIcon
+                    media='linkedin'
+                    href='https://www.linkedin.com/in/muradhajiev'
+                    target='_blank'
+                  />
+                  <SocialIcon
+                    media='whatsapp'
+                    href='https://wa.me/994557088909'
+                    target='_blank'
+                  />
+                  <SocialIcon
+                    media='telegram'
+                    href='https://t.me/muradhajiyev13'
+                    target='_blank'
+                  />
+                  <SocialIcon
+                    media='email'
+                    href='mailto:muradhajiyev42@icloud.com'
+                  />
+                </div>
+              </div>
+            </AnimatedComponent>
           </div>
         </div>
       </div>

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { ReactComponent as EyeSvg } from '../images/icons/eye.svg';
 
 function Project({ appearance, project }) {
-  let { name, coverHorizontal, coverVertical, url } = project || {};
+  let { name, coverHorizontal, coverVertical, url, order } = project || {};
   return (
-    <div className='projectContainer'>
+    <div className='projectContainer' style={{ '--order': order }}>
       <Link to={url} target='_blank'>
         <div className='image'>
           {appearance === 'vertical' ? (
