@@ -61,10 +61,10 @@ export const PROJECT_COLUMN_COUNTS = {
 
 export const MY_PROJECTS = [
   {
-    name: 'Project Name',
-    coverHorizontal: '/projects/projectHorizontal.svg',
-    coverVertical: '/projects/projectVertical.svg',
-    url: '/projects',
+    name: 'PayFlow',
+    coverHorizontal: '/projects/payflowHorizontal.svg',
+    coverVertical: '/projects/payflowVertical.svg',
+    url: 'https://payflow-live.vercel.app/',
     order: 0,
   },
   {
