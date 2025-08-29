@@ -5,7 +5,7 @@ function Footer() {
     <footer>
       <div className='container'>
         <div className='content'>
-          <p>&copy; 2024 | Murad Hajiyev</p>
+          <p>&copy; 2024-2025 | Murad Hajiyev</p>
           <div className='socialIcons'>
             <SocialIcon
               media='linkedin'

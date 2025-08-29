@@ -79,7 +79,7 @@ function About() {
             <AnimatedComponent>
               <div className='counterItem'>
                 <h1 className='count'>
-                  <CountUp end={0} duration={3} enableScrollSpy />
+                  <CountUp end={1} duration={3} enableScrollSpy />
                 </h1>
                 <p className='label'>Completed Projects</p>
               </div>
@@ -118,7 +118,7 @@ function About() {
                     {
                       name: 'İnformation technologies engineering',
                       start: '09/2018',
-                      end: '06/2022',
+                      end: '07/2022',
                     },
                   ]}
                 />
@@ -127,6 +127,18 @@ function About() {
             <div className='experiences'>
               <AnimatedComponent>
                 <h2 className='experiencesHeader'>Work Experience</h2>
+              </AnimatedComponent>
+              <AnimatedComponent>
+                <Background
+                  label='Andersen Lab'
+                  data={[
+                    {
+                      name: 'Javascript developer (trainee)',
+                      start: '06/2025',
+                      end: 'present',
+                    },
+                  ]}
+                />
               </AnimatedComponent>
               <AnimatedComponent>
                 <Background
@@ -147,7 +159,7 @@ function About() {
                     {
                       name: 'Front-end developer',
                       start: '09/2021',
-                      end: '05/2022',
+                      end: '06/2022',
                     },
                     {
                       name: 'Front-end developer (intern)',
