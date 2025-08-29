@@ -254,7 +254,7 @@ a {
     --font-size-9xl: 72px;
   }
 }
-section#projects, section#about, section#intro, section#services, section#projects, section#skills {
+section#intro, section#about, section#skills, section#services, section.projects, section#projects, section#projectDetails {
   padding: 2em 8px;
 }
 section div.content {
@@ -314,6 +314,194 @@ section h1.sectionHeader {
   }
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 body {
   background: linear-gradient(90deg, #ffffff 0%, #d0d0d0 100%);
 }
@@ -373,6 +561,10 @@ header {
 }
 .dark a.socialIcon svg path {
   fill: inherit;
+}
+.dark div.skeleton div.line {
+  background: linear-gradient(90deg, #444444 25%, #222222 50%, #444444 75%);
+  background-size: 200% 100%;
 }
 .dark section#intro div.container div.content div.text div.greeting div.profession div.line {
   background: linear-gradient(270deg, #000000 0%, #212121 100%);
@@ -446,6 +638,19 @@ header {
 }
 .dark div.projectContainer a div.overlay {
   background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+.dark section#projectDetails div.container div.content div.projectDetails .projectDescription {
+  color: #a1a1a1;
+}
+.dark section#projectDetails div.container div.content div.projectDetails div.detailsRow div.detailsRowContent .detailsContainer {
+  color: #a1a1a1;
+}
+.dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.links .projectLink, .dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.contributors .contributorLink, .dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.techStack .techItem {
+  color: #ffffff;
+  background-color: #424242;
+}
+.dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.links .projectLink:hover, .dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.contributors .contributorLink:hover, .dark section#projectDetails div.container div.content div.projectDetails div.detailsRow.techStack .techItem:hover {
+  background-color: #a1a1a1;
 }
 .dark footer {
   background-color: #000000;
@@ -638,6 +843,194 @@ div.button.hasIcon span.icon svg path {
   fill: #000000;
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 a.socialIcon {
   display: inline-flex;
   width: 2em;
@@ -663,6 +1056,32 @@ a.socialIcon svg path {
   fill: inherit;
 }
 
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.skeleton .line {
+  width: 100%;
+  height: 16px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+.skeleton .line:last-child {
+  width: 80%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 header {
   padding: 8px;
 }
@@ -769,6 +1188,194 @@ section#intro div.container div.content div.socialIcons {
   gap: 1em;
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 section#about div.container div.content div.glass {
   background-color: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -867,6 +1474,194 @@ div.backgroundItem div.line {
   background: linear-gradient(270deg, #ffffff 0%, #d0d0d0 100%);
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 section#skills div.container div.content div.slider div.customSwiper div.swiper-wrapper {
   align-items: center;
 }
@@ -966,6 +1761,194 @@ section#skills div.container div.content div.contactInfo div.card div.socialIcon
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 section#services {
   background-color: #ffffff;
 }
@@ -1090,6 +2073,194 @@ div.projectsGrid div.moreProjects p {
   font-size: var(--font-size-s, 12px);
 }
 
+.text-xs {
+  font-size: var(--font-size-xs, 10px);
+}
+
+.text-s {
+  font-size: var(--font-size-s, 12px);
+}
+
+.text-m {
+  font-size: var(--font-size-m, 16px);
+}
+
+.text-l {
+  font-size: var(--font-size-l, 20px);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl, 24px);
+}
+
+.text-2xl {
+  font-size: var(--font-size-2xl, 28px);
+}
+
+.text-3xl {
+  font-size: var(--font-size-3xl, 32px);
+}
+
+.text-4xl {
+  font-size: var(--font-size-4xl, 36px);
+}
+
+.text-5xl {
+  font-size: var(--font-size-5xl, 40px);
+}
+
+.text-6xl {
+  font-size: var(--font-size-6xl, 44px);
+}
+
+.text-7xl {
+  font-size: var(--font-size-7xl, 48px);
+}
+
+.text-8xl {
+  font-size: var(--font-size-8xl, 52px);
+}
+
+.text-9xl {
+  font-size: var(--font-size-9xl, 56px);
+}
+
+@media (min-width: 360px) {
+  :root {
+    --font-size-xs: 11px;
+    --font-size-s: 13px;
+    --font-size-m: 17px;
+    --font-size-l: 21px;
+    --font-size-xl: 25px;
+    --font-size-2xl: 29px;
+    --font-size-3xl: 33px;
+    --font-size-4xl: 37px;
+    --font-size-5xl: 41px;
+    --font-size-6xl: 45px;
+    --font-size-7xl: 49px;
+    --font-size-8xl: 53px;
+    --font-size-9xl: 57px;
+  }
+}
+@media (min-width: 600px) {
+  :root {
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 18px;
+    --font-size-l: 24px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 36px;
+    --font-size-4xl: 40px;
+    --font-size-5xl: 44px;
+    --font-size-6xl: 48px;
+    --font-size-7xl: 52px;
+    --font-size-8xl: 56px;
+    --font-size-9xl: 60px;
+  }
+}
+@media (min-width: 768px) {
+  :root {
+    --font-size-xs: 13px;
+    --font-size-s: 15px;
+    --font-size-m: 19px;
+    --font-size-l: 25px;
+    --font-size-xl: 29px;
+    --font-size-2xl: 33px;
+    --font-size-3xl: 37px;
+    --font-size-4xl: 41px;
+    --font-size-5xl: 45px;
+    --font-size-6xl: 49px;
+    --font-size-7xl: 53px;
+    --font-size-8xl: 57px;
+    --font-size-9xl: 61px;
+  }
+}
+@media (min-width: 900px) {
+  :root {
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-m: 20px;
+    --font-size-l: 28px;
+    --font-size-xl: 32px;
+    --font-size-2xl: 36px;
+    --font-size-3xl: 40px;
+    --font-size-4xl: 44px;
+    --font-size-5xl: 48px;
+    --font-size-6xl: 52px;
+    --font-size-7xl: 56px;
+    --font-size-8xl: 60px;
+    --font-size-9xl: 64px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 21px;
+    --font-size-l: 30px;
+    --font-size-xl: 34px;
+    --font-size-2xl: 38px;
+    --font-size-3xl: 42px;
+    --font-size-4xl: 46px;
+    --font-size-5xl: 50px;
+    --font-size-6xl: 54px;
+    --font-size-7xl: 58px;
+    --font-size-8xl: 62px;
+    --font-size-9xl: 66px;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --font-size-xs: 16px;
+    --font-size-s: 18px;
+    --font-size-m: 24px;
+    --font-size-l: 32px;
+    --font-size-xl: 36px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 44px;
+    --font-size-4xl: 48px;
+    --font-size-5xl: 52px;
+    --font-size-6xl: 56px;
+    --font-size-7xl: 60px;
+    --font-size-8xl: 64px;
+    --font-size-9xl: 68px;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    --font-size-xs: 18px;
+    --font-size-s: 20px;
+    --font-size-m: 26px;
+    --font-size-l: 34px;
+    --font-size-xl: 38px;
+    --font-size-2xl: 42px;
+    --font-size-3xl: 46px;
+    --font-size-4xl: 50px;
+    --font-size-5xl: 54px;
+    --font-size-6xl: 58px;
+    --font-size-7xl: 62px;
+    --font-size-8xl: 66px;
+    --font-size-9xl: 70px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --font-size-xs: 20px;
+    --font-size-s: 22px;
+    --font-size-m: 28px;
+    --font-size-l: 36px;
+    --font-size-xl: 40px;
+    --font-size-2xl: 44px;
+    --font-size-3xl: 48px;
+    --font-size-4xl: 52px;
+    --font-size-5xl: 56px;
+    --font-size-6xl: 60px;
+    --font-size-7xl: 64px;
+    --font-size-8xl: 68px;
+    --font-size-9xl: 72px;
+  }
+}
 div.projectContainer {
   border-radius: 0.5em;
   overflow: hidden;
@@ -1147,6 +2318,107 @@ div.projectContainer a div.overlay {
   transition: opacity 1s;
 }
 
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.projectDetails .projectTitle {
+  font-size: var(--font-size-2xl, 28px);
+  font-weight: 900;
+}
+.projectDetails .projectDescription {
+  font-size: var(--font-size-m, 16px);
+  color: #424242;
+}
+.projectDetails .detailsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.projectDetails .detailsRow .detailsRowContent {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+.projectDetails .detailsRow .detailsRowContent .detailsLabel {
+  white-space: nowrap;
+}
+.projectDetails .detailsRow .detailsRowContent .detailsContainer {
+  justify-content: flex-end;
+}
+.projectDetails .detailsRow div.line {
+  height: 2px;
+  background: linear-gradient(270deg, #ffffff 0%, #d0d0d0 100%);
+}
+.projectDetails .detailsRow:last-child div.line {
+  display: none;
+}
+.projectDetails .detailsRow.timeline .detailsRowContent {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.projectDetails .detailsRow.timeline .detailsRowContent .detailsContainer {
+  font-size: var(--font-size-s, 12px);
+  color: #424242;
+}
+.projectDetails .detailsRow.links .detailsContainer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.projectDetails .detailsRow.links .projectLink {
+  font-size: var(--font-size-s, 12px);
+  font-weight: 400;
+  background-color: #d0d0d0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+.projectDetails .detailsRow.links .projectLink:hover {
+  background-color: #a1a1a1;
+}
+.projectDetails .detailsRow.contributors .detailsContainer {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.projectDetails .detailsRow.contributors .contributorLink {
+  font-size: var(--font-size-s, 12px);
+  font-weight: 400;
+  background-color: #d0d0d0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+.projectDetails .detailsRow.contributors .contributorLink:hover {
+  background-color: #a1a1a1;
+}
+.projectDetails .detailsRow.techStack .detailsContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.projectDetails .detailsRow.techStack .detailsContainer .techItem {
+  font-size: var(--font-size-s, 12px);
+  font-weight: 400;
+  background-color: #d0d0d0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+.projectDetails .detailsRow.techStack .detailsContainer .techItem:hover {
+  background-color: #a1a1a1;
+}
+
 footer {
   background-color: #ffffff;
   padding: 1em 8px;
@@ -1172,9 +2444,9 @@ footer div.container div.content p {
   section#about,
   section#skills,
   section#services,
-  section#services,
+  section.projects,
   section#projects,
-  section.projects {
+  section#projectDetails {
     padding: 2em 0;
   }
   footer {
@@ -1241,6 +2513,11 @@ footer div.container div.content p {
     flex-direction: row;
     justify-content: center;
     gap: 3em;
+  }
+  section#projectDetails div.container div.content .projectDetails .detailsRow .detailsRowContent {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
   }
   footer div.container div.content {
     flex-direction: row;

@@ -1,0 +1,31 @@
+@use '../sizes';
+@use '../gradients';
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: sizes.$size-m;
+  width: 100%;
+
+  .line {
+    width: 100%;
+    height: sizes.$size-m;
+    border-radius: sizes.$size-xs;
+    background: gradients.$gradient-light-shimmer;
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+
+    &:last-child {
+      width: 80%;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

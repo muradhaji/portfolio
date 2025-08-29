@@ -81,3 +81,16 @@ $gradient-dark-315: linear-gradient(
   colors.$black 0%,
   colors.$gray-darker 100%
 );
+
+$gradient-light-shimmer: linear-gradient(
+  90deg,
+  #e0e0e0 25%,
+  #f5f5f5 50%,
+  #e0e0e0 75%
+);
+$gradient-dark-shimmer: linear-gradient(
+  90deg,
+  #444444 25%,
+  #222222 50%,
+  #444444 75%
+);

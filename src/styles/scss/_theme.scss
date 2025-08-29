@@ -71,6 +71,13 @@ header {
     }
   }
 
+  div.skeleton {
+    div.line {
+      background: gradients.$gradient-dark-shimmer;
+      background-size: 200% 100%;
+    }
+  }
+
   section#intro {
     div.container {
       div.content {
@@ -192,6 +199,37 @@ header {
           rgba($color: colors.$white, $alpha: 1) 0%,
           rgba($color: colors.$white, $alpha: 0) 100%
         );
+      }
+    }
+  }
+
+  section#projectDetails {
+    div.container {
+      div.content {
+        div.projectDetails {
+          .projectDescription {
+            color: colors.$gray-light;
+          }
+
+          div.detailsRow {
+            div.detailsRowContent {
+              .detailsContainer {
+                color: colors.$gray-light;
+              }
+            }
+
+            &.links .projectLink,
+            &.contributors .contributorLink,
+            &.techStack .techItem {
+              color: colors.$white;
+              background-color: colors.$gray-dark;
+
+              &:hover {
+                background-color: colors.$gray-light;
+              }
+            }
+          }
+        }
       }
     }
   }

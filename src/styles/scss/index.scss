@@ -11,6 +11,7 @@
 // Component styles
 @use './components/button';
 @use './components/socialicon';
+@use './components/skeleton';
 
 @use './components/header';
 @use './components/menu';
@@ -23,6 +24,7 @@
 @use './components/projectsgrid';
 @use './components/project';
 @use './components/projects';
+@use './components/projectdetails';
 @use './components/footer';
 
 @use './components/responsive';

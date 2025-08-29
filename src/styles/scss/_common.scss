@@ -2,12 +2,13 @@
 @use './text';
 
 section {
-  &#projects,
-  &#about,
   &#intro,
+  &#about,
+  &#skills,
   &#services,
+  &.projects,
   &#projects,
-  &#skills {
+  &#projectDetails {
     padding: 2em sizes.$size-xs;
   }
 

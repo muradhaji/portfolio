@@ -1,19 +1,26 @@
-import Project from './Project';
-import PropTypes from 'prop-types';
-import Button from './Button';
-import { MY_PROJECTS, PROJECT_COLUMN_COUNTS } from '../helpers/constants';
 import { useEffect, useState } from 'react';
 import useBreakpoint from './useBreakpoint';
+
+import PropTypes from 'prop-types';
 import CountUp from 'react-countup';
+
+import Project from './Project';
+import Button from './Button';
+import Skeleton from './Skeleton';
+
+import { PROJECT_COLUMN_COUNTS } from '../helpers/constants';
+import { getProjects } from '../services/projectsSetvice';
 
 function ProjectsGrid({ compact = false }) {
   const breakPoint = useBreakpoint();
 
-  let [projectColumns, setProjectColumns] = useState(
-    PROJECT_COLUMN_COUNTS[breakPoint]
+  const [projectColumns, setProjectColumns] = useState(
+    PROJECT_COLUMN_COUNTS[breakPoint] || 2
   );
-
-  let [grouppedProjects, setGrouppedProjects] = useState([]);
+  const [grouppedProjects, setGrouppedProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [projectsLoading, setProjectsLoading] = useState(false);
+  const [projectsError, setProjectsError] = useState(null);
 
   useEffect(() => {
     let newProjectColumns = PROJECT_COLUMN_COUNTS[breakPoint];
@@ -24,72 +31,94 @@ function ProjectsGrid({ compact = false }) {
   }, [breakPoint]);
 
   useEffect(() => {
+    setProjectsLoading(true);
+    getProjects()
+      .then((data) => {
+        setProjects(data);
+      })
+      .catch((err) => {
+        setProjectsError('Could not load projects.');
+        console.error('Error fetching projects:', err);
+      })
+      .finally(() => setProjectsLoading(false));
+  }, []);
+
+  useEffect(() => {
     let newGrouppedProjects = Array(projectColumns)
       .fill()
       .map(() => Array(0));
 
-    for (let i = 0; i < MY_PROJECTS.length; i++) {
+    for (let i = 0; i < projects.length; i++) {
       if (compact && i === projectColumns * 2) {
         break;
       }
-      newGrouppedProjects[i % projectColumns].push(MY_PROJECTS[i]);
+      newGrouppedProjects[i % projectColumns].push(projects[i]);
     }
+
     setGrouppedProjects(newGrouppedProjects);
     //eslint-disable-next-line
-  }, [projectColumns]);
+  }, [projectColumns, projects]);
 
-  const moreProjectsCount = MY_PROJECTS.length - projectColumns * 2;
+  const moreProjectsCount = projects.length - projectColumns * 2;
 
   return (
     <div className='projectsGrid'>
-      <div className='grid'>
-        {grouppedProjects.map((projectGroup, i) => (
-          <div className='column' key={i}>
-            {projectGroup.map((project, j) => {
-              return (
-                <Project
-                  appearance={
-                    i % 2 === 0
-                      ? j % 2
-                        ? 'vertical'
-                        : 'horizontal'
-                      : j % 2
-                      ? 'horizontal'
-                      : 'vertical'
-                  }
-                  project={project}
-                  key={j}
-                />
-              );
-            })}
-          </div>
-        ))}
-      </div>
-      {compact ? (
-        <div className='moreProjects'>
-          {moreProjectsCount > 0 ? (
-            <>
-              {moreProjectsCount > 1 ? (
-                <p>
-                  There are{' '}
-                  <CountUp
-                    end={moreProjectsCount}
-                    duration={3}
-                    enableScrollSpy
-                  />{' '}
-                  more projects.
-                </p>
-              ) : (
-                <p>There is 1 more project.</p>
-              )}
-              <Button type='link' to='/projects' text='View All' />
-            </>
-          ) : (
-            <p>Check back soon for new projects!</p>
-          )}
-        </div>
+      {projectsLoading ? (
+        <Skeleton />
+      ) : projectsError ? (
+        <h3>{projectsError}</h3>
       ) : (
-        ''
+        <>
+          <div className='grid'>
+            {grouppedProjects.map((projectGroup, i) => (
+              <div className='column' key={i}>
+                {projectGroup.map((project, j) => {
+                  return (
+                    <Project
+                      appearance={
+                        i % 2 === 0
+                          ? j % 2
+                            ? 'vertical'
+                            : 'horizontal'
+                          : j % 2
+                          ? 'horizontal'
+                          : 'vertical'
+                      }
+                      project={project}
+                      key={project.id}
+                    />
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+          {compact ? (
+            <div className='moreProjects'>
+              {moreProjectsCount > 0 ? (
+                <>
+                  {moreProjectsCount > 1 ? (
+                    <p>
+                      There are{' '}
+                      <CountUp
+                        end={moreProjectsCount}
+                        duration={3}
+                        enableScrollSpy
+                      />{' '}
+                      more projects.
+                    </p>
+                  ) : (
+                    <p>There is 1 more project.</p>
+                  )}
+                  <Button type='link' to='/projects' text='View All' />
+                </>
+              ) : (
+                <p>Check back soon for new projects!</p>
+              )}
+            </div>
+          ) : (
+            ''
+          )}
+        </>
       )}
     </div>
   );

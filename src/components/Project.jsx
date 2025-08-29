@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 import { ReactComponent as EyeSvg } from '../images/icons/eye.svg';
 
 function Project({ appearance, project }) {
-  let { name, coverHorizontal, coverVertical, url, order } = project || {};
+  let { id, name, coverHorizontal, coverVertical, order, mockComponent } =
+    project || {};
+
   return (
     <div className='projectContainer' style={{ '--order': order }}>
-      <Link to={url} target='_blank'>
+      <Link
+        target={mockComponent ? '_self' : '_blank'}
+        to={mockComponent ? '#' : `/projects/details/${id}`}
+      >
         <div className='image'>
           {appearance === 'vertical' ? (
             <img src={coverVertical} alt='Cover' />
@@ -32,6 +37,5 @@ Project.propTypes = {
     name: PropTypes.string.isRequired,
     coverHorizontal: PropTypes.string.isRequired,
     coverVertical: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
   }),
 };

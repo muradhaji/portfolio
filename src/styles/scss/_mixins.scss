@@ -1,4 +1,6 @@
 @use 'colors';
+@use 'sizes';
+@use 'text';
 
 @mixin light-glass {
   background-color: rgba(0, 0, 0, 0.1);
@@ -37,5 +39,20 @@
   fill: $color;
   path {
     fill: inherit;
+  }
+}
+
+@mixin projectDetailsLink {
+  font-size: text.$text-s;
+  font-weight: sizes.$font-weight-4;
+  background-color: colors.$gray-lighter;
+  padding: sizes.$size-xs sizes.$size-s;
+  border-radius: sizes.$size-xs;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: colors.$gray-light;
   }
 }
