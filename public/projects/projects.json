@@ -19,6 +19,10 @@
       {
         "label": "BE Repo",
         "url": "https://github.com/muradhaji/payflow-backend"
+      },
+      {
+        "label": "Swagger UI",
+        "url": "https://payflow-backend-2aid.onrender.com/api-docs/"
       }
     ],
     "contributors": [
