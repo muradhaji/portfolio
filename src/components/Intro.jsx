@@ -17,12 +17,12 @@ function Intro() {
                 </h1>
                 <div className='profession'>
                   <div className='line'></div>
-                  <div className='name'>Web developer</div>
+                  <div className='name'>MERN Stack Developer</div>
                 </div>
               </div>
               <p className='summary'>
-                A passionate front-end developer with two years of experience
-                crafting immersive web experiences.
+                Focused on building responsive, scalable applications and
+                delivering clean, user-centered solutions in agile environments.
               </p>
               <div className='buttons'>
                 <Button

@@ -5,6 +5,8 @@ import { ReactComponent as TelegramSvg } from '../images/icons/telegram.svg';
 import { ReactComponent as EnvelopeSvg } from '../images/icons/envelope.svg';
 import { ReactComponent as GitHubSvg } from '../images/icons/github.svg';
 import { ReactComponent as LeetCodeSvg } from '../images/icons/leetcode.svg';
+import { ReactComponent as BentoSvg } from '../images/icons/bento.svg';
+import { ReactComponent as LinktreeSvg } from '../images/icons/linktree.svg';
 import { ReactComponent as XMarkSvg } from '../images/icons/xmark.svg';
 
 const mediaEnum = {
@@ -14,6 +16,8 @@ const mediaEnum = {
   email: <EnvelopeSvg />,
   github: <GitHubSvg />,
   leetcode: <LeetCodeSvg />,
+  bento: <BentoSvg />,
+  linktree: <LinktreeSvg />,
 };
 
 function SocialIcon({ media = null, type = null, ...props }) {
@@ -34,6 +38,8 @@ SocialIcon.propTypes = {
     'email',
     'github',
     'leetcode',
+    'bento',
+    'linktree',
   ]),
   type: PropTypes.oneOf(['transparent', 'stroke']),
 };

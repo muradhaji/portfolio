@@ -21,7 +21,7 @@
         "url": "https://github.com/muradhaji/payflow-backend"
       },
       {
-        "label": "Swagger UI",
+        "label": "Swagger",
         "url": "https://payflow-backend-2aid.onrender.com/api-docs/"
       }
     ],
@@ -29,7 +29,7 @@
       {
         "name": "Murad Hajiyev",
         "roles": ["FE", "BE"],
-        "url": "https://github.com/muradhaji"
+        "url": "https://bento.me/muradhajiyev"
       }
     ],
     "coverHorizontal": "/projects/payflowHorizontal.svg",

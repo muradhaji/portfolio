@@ -5,7 +5,15 @@ function Footer() {
     <footer>
       <div className='container'>
         <div className='content'>
-          <p>&copy; 2024-2025 | Murad Hajiyev</p>
+          <p>
+            <a
+              href='https://bento.me/muradhajiyev'
+              target='_blank'
+              rel='noreferrer'
+            >
+              &copy; 2024-2025 | Murad Hajiyev
+            </a>
+          </p>
           <div className='socialIcons'>
             <SocialIcon
               media='linkedin'
@@ -31,6 +39,16 @@ function Footer() {
             <SocialIcon
               media='leetcode'
               href='https://leetcode.com/u/muradhajiyev/'
+              target='_blank'
+            />
+            <SocialIcon
+              media='bento'
+              href='https://bento.me/muradhajiyev'
+              target='_blank'
+            />
+            <SocialIcon
+              media='linktree'
+              href='https://linktr.ee/muradhajiyev'
               target='_blank'
             />
           </div>

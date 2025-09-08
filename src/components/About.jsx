@@ -19,9 +19,10 @@ function About() {
               <div className='glassItem'>
                 <UserSvg />
                 <p className='text'>
-                  A passionate front-end developer. With two years of experience
-                  crafting immersive web experiences, I specialize in HTML, CSS,
-                  JavaScript, and ReactJS for building dynamic user interfaces.
+                  Front-End Developer with over two years of experience
+                  specializing in the MERN stack. Focused on building
+                  responsive, scalable applications and delivering clean,
+                  user-centered solutions in agile environments.
                 </p>
               </div>
               <div className='glassItem'>
@@ -79,7 +80,7 @@ function About() {
             <AnimatedComponent>
               <div className='counterItem'>
                 <h1 className='count'>
-                  <CountUp end={1} duration={3} enableScrollSpy />
+                  <CountUp end={2} duration={3} enableScrollSpy />
                 </h1>
                 <p className='label'>Completed Projects</p>
               </div>
@@ -104,7 +105,7 @@ function About() {
                   label='Code Academy'
                   data={[
                     {
-                      name: 'Software development',
+                      name: 'Software Development',
                       start: '10/2021',
                       end: '02/2022',
                     },
@@ -116,7 +117,7 @@ function About() {
                   label='Azerbaijan Technical University | Bachelor'
                   data={[
                     {
-                      name: 'İnformation technologies engineering',
+                      name: 'Information Technologies Engineering',
                       start: '09/2018',
                       end: '07/2022',
                     },
@@ -133,7 +134,7 @@ function About() {
                   label='Andersen Lab'
                   data={[
                     {
-                      name: 'Javascript developer (trainee)',
+                      name: 'Javascript Developer',
                       start: '06/2025',
                       end: 'present',
                     },
@@ -145,7 +146,7 @@ function About() {
                   label='Algo Academy'
                   data={[
                     {
-                      name: 'Front-end educator',
+                      name: 'Front-End Instructor',
                       start: '10/2023',
                       end: '07/2024',
                     },
@@ -157,15 +158,15 @@ function About() {
                   label='Qmeter'
                   data={[
                     {
-                      name: 'Front-end developer',
-                      start: '09/2021',
+                      name: 'Front-End Developer',
+                      start: '06/2021',
                       end: '06/2022',
                     },
-                    {
-                      name: 'Front-end developer (intern)',
-                      start: '06/2021',
-                      end: '09/2021',
-                    },
+                    // {
+                    //   name: 'Front-end developer (intern)',
+                    //   start: '06/2021',
+                    //   end: '09/2021',
+                    // },
                   ]}
                 />
               </AnimatedComponent>

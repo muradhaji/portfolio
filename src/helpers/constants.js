@@ -7,26 +7,31 @@ export const THEME = {
 
 export const MY_SKILLS = [
   {
-    sliderLabel: 'FRONT-END',
-    skills: ['HTML 5', 'CSS 3', 'JavaScript', 'TypeScript', 'Sass'],
+    sliderLabel: 'FRONT END',
+    skills: [
+      'JavaScript',
+      'TypeScript',
+      'HTML 5',
+      'React',
+      'React Router',
+      'Context API',
+    ],
   },
   {
-    sliderLabel: 'CSS FRAMEWORKS / TOOLS',
-    skills: ['Bootstrap', 'Ant Design', 'Mantine UI', 'Font Awesome'],
+    sliderLabel: 'DESIGN & TOOLS',
+    skills: [
+      'CSS 3',
+      'Sass',
+      'Bootstrap',
+      'Ant Design',
+      'Mantine UI',
+      'Font Awesome',
+      'Figma',
+    ],
   },
   {
     sliderLabel: 'JS FRAMEWORKS / LIBRARIES',
-    skills: [
-      'React',
-      'React Router',
-      'Redux',
-      'Context API',
-      'React Query',
-      'jQuery',
-      'HighCharts',
-      'Lodash',
-      'Moment.js',
-    ],
+    skills: ['Redux', 'React Query', 'HighCharts', 'Lodash', 'Moment.js'],
   },
   {
     sliderLabel: 'BACK-END',
@@ -34,17 +39,20 @@ export const MY_SKILLS = [
   },
   {
     sliderLabel: 'CONCEPTS / PRINCIPLES',
-    skills: [
-      'Algorithm Design',
-      'Data Structures',
-      'SOLID Principles',
-      'Clean Code',
-      'OOP',
-    ],
+    skills: ['Algorithm Design', 'Data Structures', 'SOLID Principles', 'OOP'],
   },
   {
     sliderLabel: 'TECHNOLOGIES / TOOLS',
-    skills: ['Git', 'GitHub', 'BitBucket', 'Jira', 'Postman', 'Rest API'],
+    skills: [
+      'Git',
+      'GitHub',
+      'BitBucket',
+      'Jira',
+      'Postman',
+      'Rest API',
+      'Webpack',
+      'Vite',
+    ],
   },
   {
     sliderLabel: 'SOFT SKILLS',
