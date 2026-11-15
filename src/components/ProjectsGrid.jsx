@@ -9,7 +9,7 @@ import Button from './Button';
 import Skeleton from './Skeleton';
 
 import { PROJECT_COLUMN_COUNTS } from '../helpers/constants';
-import { getProjects } from '../services/projectsSetvice';
+import { getProjects } from '../services/projectsService';
 
 function ProjectsGrid({ compact = false }) {
   const breakPoint = useBreakpoint();

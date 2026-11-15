@@ -24,7 +24,6 @@ const getBreakpoint = (width) => {
   if (width >= 1024) return '3xl';
   if (width >= 900) return '2xl';
   if (width >= 768) return 'xl';
-  if (width >= 768) return 'l';
   if (width >= 600) return 'm';
   if (width >= 360) return 's';
   return 'xs';

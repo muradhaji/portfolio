@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { setSelectedProject } from '../redux/actions/projects';
 import { useNavigate } from 'react-router-dom';
 import Skeleton from './Skeleton';
-import { getProjects } from '../services/projectsSetvice';
+import { getProjects } from '../services/projectsService';
 
 function ProjectDetails() {
   const dispatch = useDispatch();
@@ -29,6 +29,7 @@ function ProjectDetails() {
         .then((projectData) => {
           if (!projectData || projectData?.mockComponent) {
             navigate('/projects', { replace: true });
+            return;
           }
           dispatch(setSelectedProject(projectData));
         })
