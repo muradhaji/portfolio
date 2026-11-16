@@ -44,7 +44,8 @@ function ProjectsGrid({ compact = false }) {
     return groups;
   }, [projectColumns, visibleProjects]);
 
-  const countRealProjects = (list) => list.filter((p) => !p.mockComponent).length;
+  const countRealProjects = (list) =>
+    list.filter((p) => !p.mockComponent).length;
   const moreProjectsCount =
     countRealProjects(projects) - countRealProjects(visibleProjects);
 
@@ -68,8 +69,8 @@ function ProjectsGrid({ compact = false }) {
                             ? 'vertical'
                             : 'horizontal'
                           : j % 2
-                          ? 'horizontal'
-                          : 'vertical'
+                            ? 'horizontal'
+                            : 'vertical'
                       }
                       project={project}
                       key={project.id}

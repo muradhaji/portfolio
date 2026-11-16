@@ -99,7 +99,6 @@ export const PROJECT_COLUMN_COUNTS = {
   xs: 2,
   s: 2,
   m: 2,
-  l: 3,
   xl: 3,
   '2xl': 3,
   '3xl': 4,

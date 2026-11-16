@@ -1,25 +1,34 @@
 // jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import { resetSystemTheme } from './testing/systemTheme';
+
+// CRA's Jest cannot resolve Swiper's package exports, so stub it virtually.
+jest.mock(
+  'swiper/react',
+  () => ({
+    Swiper: ({ children }) => <div>{children}</div>,
+    SwiperSlide: ({ children }) => <div>{children}</div>,
+  }),
+  { virtual: true }
+);
+jest.mock('swiper/modules', () => ({}), { virtual: true });
+jest.mock('swiper/css', () => ({}), { virtual: true });
+jest.mock('swiper/css/pagination', () => ({}), { virtual: true });
 
 // jsdom does not implement these browser APIs used by the app.
-window.matchMedia =
-  window.matchMedia ||
-  ((query) => ({
-    matches: false,
-    media: query,
-    addEventListener: () => {},
-    removeEventListener: () => {},
-  }));
+window.IntersectionObserver = class {
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+};
+window.scrollTo = jest.fn();
+Element.prototype.scrollIntoView = jest.fn();
 
-window.IntersectionObserver =
-  window.IntersectionObserver ||
-  class {
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  };
-
-window.scrollTo = () => {};
+beforeEach(() => {
+  resetSystemTheme();
+  localStorage.clear();
+  document.documentElement.removeAttribute('class');
+  document.documentElement.style.colorScheme = '';
+  window.innerWidth = 1024;
+});

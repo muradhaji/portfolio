@@ -47,7 +47,11 @@ function About() {
                 <AnimatedComponent>
                   <div className='counterItem'>
                     <p className='count'>
-                      <CountUp end={counter.value} duration={3} enableScrollSpy />
+                      <CountUp
+                        end={counter.value}
+                        duration={3}
+                        enableScrollSpy
+                      />
                       {counter.suffix}
                     </p>
                     <p className='label'>{counter.label}</p>

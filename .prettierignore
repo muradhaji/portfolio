@@ -1,0 +1,5 @@
+build
+coverage
+package-lock.json
+public/*.svg
+public/projects/*.svg

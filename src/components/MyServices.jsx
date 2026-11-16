@@ -31,7 +31,9 @@ function MyServices() {
                         <span className='text'>{screen.text}</span>
                       )}
                       {screen.icon && (
-                        <span className='icon'>{serviceIcons[screen.icon]}</span>
+                        <span className='icon'>
+                          {serviceIcons[screen.icon]}
+                        </span>
                       )}
                     </div>
                   ))}
