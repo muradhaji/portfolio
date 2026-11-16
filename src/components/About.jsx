@@ -4,166 +4,78 @@ import { ReactComponent as SeedSvg } from '../images/icons/seed.svg';
 import { ReactComponent as RocketSvg } from '../images/icons/rocket.svg';
 import { ReactComponent as MugSvg } from '../images/icons/mug.svg';
 import { ReactComponent as UserPlusSvg } from '../images/icons/userPlus.svg';
+import { Fragment } from 'react';
 import Background from './Background';
 import AnimatedComponent from './AnimatedComponent';
 import CountUp from 'react-countup';
+import {
+  ABOUT_ITEMS,
+  COUNTERS,
+  EDUCATION,
+  EXPERIENCE,
+} from '../helpers/constants';
+
+const aboutIcons = {
+  user: <UserSvg />,
+  bulb: <BulbSvg />,
+  seed: <SeedSvg />,
+  rocket: <RocketSvg />,
+  mug: <MugSvg />,
+  userPlus: <UserPlusSvg />,
+};
 
 function About() {
   return (
     <section id='about'>
       <div className='container'>
         <div className='content'>
-          <h2 className='sectionHeader'>About me</h2>
+          <h2 className='sectionHeader'>About Me</h2>
           <AnimatedComponent>
             <div className='glass'>
-              <div className='glassItem'>
-                <UserSvg />
-                <p className='text'>
-                  Front-End Developer with over three years of experience
-                  specializing in the MERN stack. Focused on building
-                  responsive, scalable applications and delivering clean,
-                  user-centered solutions in agile environments.
-                </p>
-              </div>
-              <div className='glassItem'>
-                <BulbSvg />
-                <p className='text'>
-                  I love turning ideas into user-friendly interfaces and solving
-                  challenges to deliver quality solutions. Besides front-end
-                  development, I excel at using data structures and algorithms
-                  to make my code efficient and perform well.
-                </p>
-              </div>
-              <div className='glassItem'>
-                <SeedSvg />
-                <p className='text'>
-                  Currently, I'm deepening my knowledge of TypeScript, testing
-                  and web performance to build faster, more reliable products.
-                </p>
-              </div>
-              <div className='glassItem'>
-                <RocketSvg />
-                <p className='text'>
-                  Whether it's building responsive websites, developing
-                  interactive web applications, or exploring new technologies,
-                  I'm dedicated to pushing the boundaries of what's possible in
-                  web development.
-                </p>
-              </div>
-              <div className='glassItem'>
-                <MugSvg />
-                <p className='text'>
-                  When I'm not coding, you can find me exploring the latest
-                  trends in web design, working on personal projects, or
-                  contributing to open-source initiatives.
-                </p>
-              </div>
-              <div className='glassItem'>
-                <UserPlusSvg />
-                <p className='text'>
-                  Let's connect and collaborate on exciting projects together!
-                </p>
-              </div>
+              {ABOUT_ITEMS.map((item) => (
+                <div className='glassItem' key={item.icon}>
+                  {aboutIcons[item.icon]}
+                  <p className='text'>{item.text}</p>
+                </div>
+              ))}
             </div>
           </AnimatedComponent>
           <div className='counters'>
-            <AnimatedComponent>
-              <div className='counterItem'>
-                <p className='count'>
-                  <CountUp end={3} duration={3} enableScrollSpy />+
-                </p>
-                <p className='label'>Years of experience</p>
-              </div>
-            </AnimatedComponent>
-            <div className='counterSplitter'></div>
-            <AnimatedComponent>
-              <div className='counterItem'>
-                <p className='count'>
-                  <CountUp end={2} duration={3} enableScrollSpy />
-                </p>
-                <p className='label'>Completed projects</p>
-              </div>
-            </AnimatedComponent>
-            <div className='counterSplitter'></div>
-            <AnimatedComponent>
-              <div className='counterItem'>
-                <p className='count'>
-                  <CountUp end={0} duration={3} enableScrollSpy />
-                </p>
-                <p className='label'>Customers</p>
-              </div>
-            </AnimatedComponent>
+            {COUNTERS.map((counter, i) => (
+              <Fragment key={counter.label}>
+                {i > 0 && <div className='counterSplitter'></div>}
+                <AnimatedComponent>
+                  <div className='counterItem'>
+                    <p className='count'>
+                      <CountUp end={counter.value} duration={3} enableScrollSpy />
+                      {counter.suffix}
+                    </p>
+                    <p className='label'>{counter.label}</p>
+                  </div>
+                </AnimatedComponent>
+              </Fragment>
+            ))}
           </div>
           <div className='background'>
             <div className='educations'>
               <AnimatedComponent>
                 <h3 className='educationsHeader'>Education</h3>
               </AnimatedComponent>
-              <AnimatedComponent>
-                <Background
-                  label='Code Academy'
-                  data={[
-                    {
-                      name: 'Software Development',
-                      start: '10/2021',
-                      end: '02/2022',
-                    },
-                  ]}
-                />
-              </AnimatedComponent>
-              <AnimatedComponent>
-                <Background
-                  label='Azerbaijan Technical University | Bachelor'
-                  data={[
-                    {
-                      name: 'Information Technologies Engineering',
-                      start: '09/2018',
-                      end: '07/2022',
-                    },
-                  ]}
-                />
-              </AnimatedComponent>
+              {EDUCATION.map((item) => (
+                <AnimatedComponent key={item.label}>
+                  <Background label={item.label} data={item.data} />
+                </AnimatedComponent>
+              ))}
             </div>
             <div className='experiences'>
               <AnimatedComponent>
                 <h3 className='experiencesHeader'>Work Experience</h3>
               </AnimatedComponent>
-              <AnimatedComponent>
-                <Background
-                  label='Andersen Lab'
-                  data={[
-                    {
-                      name: 'JavaScript Developer',
-                      start: '06/2025',
-                      end: 'Present',
-                    },
-                  ]}
-                />
-              </AnimatedComponent>
-              <AnimatedComponent>
-                <Background
-                  label='Algo Academy'
-                  data={[
-                    {
-                      name: 'Front-End Instructor',
-                      start: '10/2023',
-                      end: '07/2024',
-                    },
-                  ]}
-                />
-              </AnimatedComponent>
-              <AnimatedComponent>
-                <Background
-                  label='Qmeter'
-                  data={[
-                    {
-                      name: 'Front-End Developer',
-                      start: '06/2021',
-                      end: '06/2022',
-                    },
-                  ]}
-                />
-              </AnimatedComponent>
+              {EXPERIENCE.map((item) => (
+                <AnimatedComponent key={item.label}>
+                  <Background label={item.label} data={item.data} />
+                </AnimatedComponent>
+              ))}
             </div>
           </div>
         </div>

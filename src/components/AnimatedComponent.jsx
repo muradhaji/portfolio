@@ -1,24 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2,
+};
+
 function AnimatedComponent({ children }) {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef(null);
 
-  const observerCallback = ([entry]) => {
-    setIsInView(entry.isIntersecting);
-  };
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.2,
-  };
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsInView(entry.isIntersecting);
+    }, observerOptions);
 
     const { current } = ref;
 
@@ -27,7 +22,6 @@ function AnimatedComponent({ children }) {
     }
 
     return () => observer.disconnect();
-    // eslint-disable-next-line
   }, []);
 
   return React.createElement('div', {

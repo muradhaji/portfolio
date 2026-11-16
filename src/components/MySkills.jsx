@@ -31,15 +31,20 @@ function MySkills() {
   const renderCustomPagination = (current, total) => {
     let generatedBullets = '';
 
+    // Swiper needs an HTML string here; buttons keep the dots keyboard usable.
     for (let i = 1; i <= total; i++) {
-      generatedBullets += `<span
-          class="${`swiper-pagination-bullet customBullet ${getBulletClass(
+      const { sliderLabel } = MY_SKILLS[i - 1];
+      generatedBullets += `<button
+          type="button"
+          class="swiper-pagination-bullet customBullet ${getBulletClass(
             i,
             current
-          )}`}"
+          )}"
+          aria-label="Show ${sliderLabel.toLowerCase()} slide"
+          ${i === current ? 'aria-current="true"' : ''}
         >
-          ${i === current ? MY_SKILLS[current - 1].sliderLabel : ''}
-        </span>`;
+          ${i === current ? sliderLabel : ''}
+        </button>`;
     }
 
     return generatedBullets;

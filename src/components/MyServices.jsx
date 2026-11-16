@@ -1,6 +1,12 @@
 import { ReactComponent as MagnifierSvg } from '../images/icons/magnifier.svg';
 import { ReactComponent as RocketSvg } from '../images/icons/rocket.svg';
 import AnimatedComponent from './AnimatedComponent';
+import { SERVICES } from '../helpers/constants';
+
+const serviceIcons = {
+  magnifier: <MagnifierSvg />,
+  rocket: <RocketSvg />,
+};
 
 function MyServices() {
   return (
@@ -9,102 +15,46 @@ function MyServices() {
         <div className='content'>
           <h2 className='sectionHeader'>My Services</h2>
           <div className='services'>
-            <AnimatedComponent>
-              <div className='service service1'>
+            {SERVICES.map((service, i) => {
+              const image = (
                 <div className='image'>
-                  <div className='screen'>
-                    <span className='text'>1</span>
+                  {service.screens.map((screen, j) => (
+                    <div
+                      key={j}
+                      className={
+                        service.screens.length > 1
+                          ? `screen screen${j + 1}`
+                          : 'screen'
+                      }
+                    >
+                      {screen.text && (
+                        <span className='text'>{screen.text}</span>
+                      )}
+                      {screen.icon && (
+                        <span className='icon'>{serviceIcons[screen.icon]}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              );
+              const text = (
+                <div className='text'>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              );
+              // Pictures alternate between the left and right side.
+              const imageFirst = i % 2 === 0;
+
+              return (
+                <AnimatedComponent key={service.title}>
+                  <div className={`service service${i + 1}`}>
+                    {imageFirst ? image : text}
+                    {imageFirst ? text : image}
                   </div>
-                </div>
-                <div className='text'>
-                  <h3>Single Page Applications</h3>
-                  <p>
-                    A single-page application (SPA) is a website or web
-                    application that dynamically rewrites the current web page
-                    with new data from the web server, instead of loading entire
-                    new pages.
-                  </p>
-                </div>
-              </div>
-            </AnimatedComponent>
-            <AnimatedComponent>
-              <div className='service service2'>
-                <div className='text'>
-                  <h3>Multi Page Applications</h3>
-                  <p>
-                    A multi-page application (MPA) is a website made up of many
-                    different sub-websites, or pages. When you interact with the
-                    site, new pages are downloaded from the server.
-                  </p>
-                </div>
-                <div className='image'>
-                  <div className='screen screen1'></div>
-                  <div className='screen screen2'>
-                    <span className='text'>3</span>
-                  </div>
-                  <div className='screen screen3'></div>
-                </div>
-              </div>
-            </AnimatedComponent>
-            <AnimatedComponent>
-              <div className='service service3'>
-                <div className='image'>
-                  <div className='screen screen1'></div>
-                  <div className='screen screen2'></div>
-                  <div className='screen screen3'></div>
-                </div>
-                <div className='text'>
-                  <h3>Responsive Design</h3>
-                  <p>
-                    Responsive web design (RWD) is a web design approach to make
-                    web pages render well on all screen sizes and resolutions
-                    while ensuring good usability. It is the way to design for a
-                    multi-device web.
-                  </p>
-                </div>
-              </div>
-            </AnimatedComponent>
-            <AnimatedComponent>
-              <div className='service service4'>
-                <div className='text'>
-                  <h3>Search Engine Optimization</h3>
-                  <p>
-                    Search engine optimization (SEO) is the art and science of
-                    getting pages to rank higher in search engines such as
-                    Google. It matters because search is one of the main ways
-                    people discover content online.
-                  </p>
-                </div>
-                <div className='image'>
-                  <div className='screen'>
-                    <span className='icon'>
-                      <MagnifierSvg />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </AnimatedComponent>
-            <AnimatedComponent>
-              <div className='service service5'>
-                <div className='image'>
-                  <div className='screen'>
-                    <span className='icon'>
-                      <RocketSvg />
-                    </span>
-                  </div>
-                </div>
-                <div className='text'>
-                  <h3>Performance Optimization</h3>
-                  <p>
-                    Performance optimization is the process of refining the
-                    efficiency of systems and applications to improve their
-                    output, speed, or scalability. It plays a key role in
-                    ensuring that the available resources are put to the best
-                    use.
-                  </p>
-                </div>
-              </div>
-            </AnimatedComponent>
+                </AnimatedComponent>
+              );
+            })}
           </div>
         </div>
       </div>

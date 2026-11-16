@@ -9,15 +9,15 @@
     },
     "links": [
       {
-        "label": "Live Demo",
+        "label": "Live demo",
         "url": "https://payflow-live.vercel.app/"
       },
       {
-        "label": "FE Repo",
+        "label": "FE repo",
         "url": "https://github.com/muradhaji/payflow-frontend"
       },
       {
-        "label": "BE Repo",
+        "label": "BE repo",
         "url": "https://github.com/muradhaji/payflow-backend"
       },
       {

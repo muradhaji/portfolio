@@ -96,7 +96,7 @@ function ProjectsGrid({ compact = false }) {
                   ) : (
                     <p>There is 1 more project.</p>
                   )}
-                  <Button type='link' to='/projects' text='View All' />
+                  <Button type='link' to='/projects' text='View all' />
                 </>
               ) : (
                 <p>Check back soon for new projects!</p>

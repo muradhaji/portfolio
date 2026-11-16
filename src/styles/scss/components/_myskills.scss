@@ -23,7 +23,7 @@ section#skills {
                 border-radius: sizes.$size-xs;
                 font-size: text.$text-s;
                 font-weight: sizes.$font-weight-6;
-                box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.2);
+                box-shadow: 2px 2px 8px -2px rgba(colors.$black, 0.2);
                 background-color: colors.$gray-lighter;
               }
             }
@@ -34,34 +34,38 @@ section#skills {
           justify-content: center;
           align-items: center;
           gap: sizes.$size-xs;
-          span.customBullet {
+          button.customBullet {
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            border: none;
             width: auto;
             height: auto;
             background: transparent;
             opacity: 1;
             cursor: pointer;
           }
-          span.currentBullet {
+          button.currentBullet {
             font-size: text.$text-s;
           }
-          span.prevBullet,
-          span.nextBullet,
-          span.prevPrevBullet,
-          span.nextNextBullet {
+          button.prevBullet,
+          button.nextBullet,
+          button.prevPrevBullet,
+          button.nextNextBullet {
             height: 4px;
             border-radius: 4px;
           }
-          span.prevBullet,
-          span.nextBullet {
-            background-color: rgba(0, 0, 0, 0.75);
+          button.prevBullet,
+          button.nextBullet {
+            background-color: rgba(colors.$black, 0.75);
             width: sizes.$size-m;
           }
-          span.prevPrevBullet,
-          span.nextNextBullet {
-            background-color: rgba(0, 0, 0, 0.5);
+          button.prevPrevBullet,
+          button.nextNextBullet {
+            background-color: rgba(colors.$black, 0.5);
             width: sizes.$size-s;
           }
-          span.hiddenBullet {
+          button.hiddenBullet {
             display: none;
           }
         }
@@ -74,7 +78,7 @@ section#skills {
         div.avatar {
           overflow: hidden;
           border-radius: 50%;
-          box-shadow: 6px 6px 12px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 12px -2px rgba(colors.$black, 0.2);
           cursor: pointer;
           img {
             width: 180px;
@@ -104,7 +108,7 @@ section#skills {
             display: flex;
             align-self: stretch;
             justify-content: space-between;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(colors.$black, 0.1);
           }
         }
       }
