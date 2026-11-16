@@ -5,11 +5,26 @@ Welcome to my personal web profile repository. This project showcases my skills,
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Development](#development)
 - [Contact](#contact)
 
 ## Introduction
 
 This is the repository for my personal portfolio website. The goal of this project is to provide a comprehensive overview of my work, including my background, skills, and projects. It serves as an online resume and a showcase of my front-end development capabilities.
+
+## Development
+
+Built with React, Redux Toolkit, React Router and Sass. Requires Node 20 (see `.nvmrc`).
+
+```bash
+npm install
+npm start
+```
+
+- `npm test`: run the tests in watch mode.
+- `npm run check`: format check, lint, tests and production build (the same checks CI runs).
+
+The project follows spec-driven development: [`specs/`](specs/README.md) describes what the site does, and every behavior is covered by a test or a browser check. See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the full workflow, the automation (pre-commit hook, CI, Dependabot) and how to make changes.
 
 ## Contact
 

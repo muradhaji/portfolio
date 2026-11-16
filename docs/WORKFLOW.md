@@ -1,0 +1,130 @@
+# Workflow Guide
+
+How this portfolio is built, tested and changed: the spec-driven workflow, the automation around it, and how to work day to day.
+
+## What changed, in short
+
+The project moved from "write code, check by hand" to **spec-driven development (SDD) with automated checks**:
+
+1. **Specs** in `specs/` describe what the site does, behavior by behavior.
+2. **Tests** in `src/__tests__/` prove those behaviors automatically (66 tests).
+3. **Automation** checks every change: formatting and lint on commit, the full check on every push (GitHub CI), and weekly dependency updates (Dependabot).
+4. **Claude commands** (`/spec`, `/implement`, `/data-change`, `/check`) run the workflow for you, following the rules in `CLAUDE.md`.
+
+Commits on `main` that introduced this:
+
+| Commit    | What                                                                              |
+| --------- | --------------------------------------------------------------------------------- |
+| `ee488a9` | `CLAUDE.md` rules and code aligned with them                                      |
+| `9e5dff4` | Specs, tests, Prettier, pre-commit hook, CI, Dependabot, Claude commands and hook |
+
+## How to work from now on
+
+Every change is one of two kinds. Decide which one first.
+
+### 1. Data change: just ask
+
+Examples: add a project, a job, a skill, a link; change a sentence or a counter.
+
+- Where the data lives:
+  - `public/projects/projects.json`: projects (cards and details pages).
+  - `src/helpers/constants.js`: about text, counters, education, work history, services, skills, social links, nav links.
+- How: run `/data-change <what to change>` in Claude, or edit the file yourself.
+- No spec is needed. If the change needs new code (a new field, a new section), Claude stops and tells you; then it becomes a feature change.
+- Placeholder ("upcoming") projects are entries with `"mockComponent": true`. Projects are shown sorted by `order`.
+
+### 2. Feature or behavior change: spec first
+
+Examples: a 404 page, filtering projects, a contact form, changing how the menu works.
+
+1. **`/spec <what you want>`**: Claude updates the relevant spec in `specs/`, marks new behaviors `(proposed)` and lists open questions. No code yet.
+2. **You review**: approve, edit or answer questions. This is the step that prevents misunderstandings (like the hover overlay mix-up).
+3. **`/implement <spec or behavior IDs>`**: Claude writes the code and tests, runs `npm run check`, and checks `[manual]` behaviors in the browser.
+4. **You check and ask to commit.** Claude never commits unless you ask.
+
+### Quick checks
+
+- `/check` in Claude, or `npm run check` in a terminal: format check, lint, tests, build.
+
+## The specs
+
+| File                         | Covers                                               | ID prefixes                                        |
+| ---------------------------- | ---------------------------------------------------- | -------------------------------------------------- |
+| `specs/README.md`            | The workflow, ID rules, template                     |                                                    |
+| `specs/layout-navigation.md` | Layout, header, mobile menu, section links, footer   | LAYOUT, NAV, MENU, SCROLL, FOOTER                  |
+| `specs/theme.md`             | Light and dark theme                                 | THEME                                              |
+| `specs/home.md`              | Intro, About Me, My Skills, My Services, My Projects | HOME, INTRO, ABOUT, SKILLS, SERVICES, HOMEPROJECTS |
+| `specs/projects.md`          | Project data, grid, cards, projects page             | PDATA, GRID, COMPACT, CARD, PPAGE                  |
+| `specs/project-details.md`   | Project details page                                 | DETAILS                                            |
+
+How to read a behavior line:
+
+```md
+- **THEME-3** Clicking the theme button switches theme and saves the choice. [test]
+```
+
+- `THEME-3` is a permanent ID. The matching test is named `THEME-3 …`, so a failing test tells you exactly which promise broke.
+- `[test]`: checked automatically. `[manual]`: visual (hover, animation, layout), checked in the browser.
+- `(proposed)`: approved for building but not built yet.
+
+Open question waiting for you (in `specs/layout-navigation.md`): unknown URLs like `/foo` show only header and footer. Should they show "Page not found" or redirect home?
+
+## The tests
+
+- Location: `src/__tests__/`, one file per spec (`theme.test.js`, `layoutNavigation.test.js`, `home.test.js`, `projects.test.js`, `projectDetails.test.js`) plus `projectsService.test.js` for data loading.
+- Helpers: `src/testing/renderApp.js` renders the whole app at a URL and provides `setSystemTheme('light' | 'dark')`, `realProject(id)` and `placeholderProject(id)`. `src/setupTests.js` stubs browser APIs jsdom lacks (Swiper, IntersectionObserver, scrolling).
+- Tests read text from `constants.js`, so normal data changes don't break them.
+- Run: `npm test` (watch mode while coding) or `npm run test:ci` (once).
+
+## The automation
+
+| What               | Where                                                 | When it runs                      | What it does                                                        |
+| ------------------ | ----------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------- |
+| Prettier           | `.prettierrc.json`, `.prettierignore`                 | Pre-commit, CI, Claude edits      | One code style (single quotes, 2 spaces, trailing commas)           |
+| Pre-commit hook    | `.husky/pre-commit` + `lint-staged` in `package.json` | Every `git commit`                | Formats and lints only the files you commit; blocks lint errors     |
+| GitHub CI          | `.github/workflows/ci.yml`                            | Every push to `main` and every PR | Format check, lint, tests, build; red ✗ on GitHub if anything fails |
+| Dependabot         | `.github/dependabot.yml`                              | Weekly (npm), monthly (actions)   | Opens PRs for outdated packages; CI tests them before you merge     |
+| Claude format hook | `.claude/settings.json`                               | Every file Claude edits           | Runs Prettier on that file                                          |
+| Claude commands    | `.claude/commands/*.md`                               | When you type `/spec` etc.        | Runs the workflow steps described above                             |
+| Vercel             | Vercel dashboard                                      | Every push                        | Deploys as before (not blocked by CI; check the CI badge yourself)  |
+
+### npm scripts
+
+| Script                 | What                                         |
+| ---------------------- | -------------------------------------------- |
+| `npm start`            | Dev server                                   |
+| `npm test`             | Tests in watch mode                          |
+| `npm run test:ci`      | Tests once                                   |
+| `npm run lint`         | ESLint, zero warnings allowed                |
+| `npm run format`       | Format every file with Prettier              |
+| `npm run format:check` | Check formatting without changing files      |
+| `npm run check`        | Everything: format check, lint, tests, build |
+| `npm run build`        | Production build                             |
+
+The old `watchscss` script is gone: SCSS is imported directly by the app, so there is no compiled CSS to keep in sync.
+
+## Rules Claude follows (`CLAUDE.md`)
+
+`CLAUDE.md` is loaded automatically in every Claude session in this repo. It holds:
+
+- **Code style**: `const`, `propTypes` before `export`, stable list keys, shared data in `constants.js`, no repeated markup, Redux via `createSlice`, no dead code.
+- **Styles**: SCSS `@use` only, color variables only, no `!important`.
+- **Accessibility**: real buttons and links with labels, one `<h1>` per page, descriptive `alt` text.
+- **Text**: straight apostrophes, en dash for ranges, Title Case headings, sentence-case buttons and labels.
+- **Workflow**: the two kinds of change, spec first for features, check every style rule a changed selector touches, refactors keep behavior identical, `npm run check` plus browser check before "done", short commit messages.
+
+Edit it whenever a preference changes; Claude picks it up in the next session.
+
+## Typical day
+
+- "Add my new job at X from 01/2026": `/data-change add job ...` → review the diff → "commit, push".
+- "I want a 404 page": `/spec add a not-found page` → answer questions, approve → `/implement specs/layout-navigation.md` → look at it → "commit, push".
+- Dependabot opened a PR: if CI is green and it's minor/patch, merge it on GitHub. For a major update, ask Claude to check it first.
+- CI is red: open the failed run on GitHub, or run `/check` locally; the failing test name tells you which spec behavior broke.
+
+## Good to know
+
+- Commit before big experiments; `git` is your undo button.
+- If the pre-commit hook blocks a commit, it printed the lint error; fix it (or ask Claude) and commit again.
+- `.claude/launch.json` lets Claude start the dev server to check pages in its browser.
+- Create React App (`react-scripts`) is no longer maintained. Moving to Vite is a reasonable future feature change; do it via `/spec` so the tests guard the migration.
