@@ -1,74 +1,53 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import { hide } from '../redux/actions/menu';
 import { useDispatch } from 'react-redux';
+import { hide } from '../redux/slices/menu';
+import { NAV_LINKS } from '../helpers/constants';
 
 import { ReactComponent as XmarkSVG } from '../images/icons/xmark.svg';
 
 function Menu() {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  const hideMenu = () => dispatch(hide());
 
   return (
     <div className='popUpMenu'>
       <div className='container'>
         <div className='buttonContainer'>
-          <XmarkSVG
-            className='closeMenu'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          />
+          <button
+            type='button'
+            className='iconButton closeMenu'
+            aria-label='Close menu'
+            onClick={hideMenu}
+          >
+            <XmarkSVG />
+          </button>
         </div>
-        <div className='linksContainer'>
-          <Link
-            to='/'
-            className='link'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          >
-            Home
-          </Link>
-          <HashLink
-            smooth
-            to='/#about'
-            className='link'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          >
-            About
-          </HashLink>
-          <HashLink
-            smooth
-            to='/#skills'
-            className='link'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          >
-            Skills
-          </HashLink>
-          <HashLink
-            smooth
-            to='/#services'
-            className='link'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          >
-            Services
-          </HashLink>
-          <Link
-            to='/projects'
-            className='link'
-            onClick={() => {
-              dispatch(hide());
-            }}
-          >
-            Projects
-          </Link>
-        </div>
+        <nav className='linksContainer'>
+          {NAV_LINKS.map((link) =>
+            link.hash ? (
+              <HashLink
+                key={link.to}
+                smooth
+                to={link.to}
+                className='link'
+                onClick={hideMenu}
+              >
+                {link.label}
+              </HashLink>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className='link'
+                onClick={hideMenu}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+        </nav>
       </div>
     </div>
   );

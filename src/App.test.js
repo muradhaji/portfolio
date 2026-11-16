@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './redux/reducers';
+import { reducer } from './redux/store';
 import App from './components/App';
 
 // CRA's Jest cannot resolve Swiper's package exports, so stub it virtually.
@@ -38,7 +38,7 @@ const projects = [
 
 const renderAt = (path) =>
   render(
-    <Provider store={configureStore({ reducer: rootReducer })}>
+    <Provider store={configureStore({ reducer })}>
       <MemoryRouter initialEntries={[path]}>
         <App />
       </MemoryRouter>

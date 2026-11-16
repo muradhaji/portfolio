@@ -11,13 +11,13 @@ function Intro() {
           <div className='content'>
             <div className='text'>
               <div className='greeting'>
-                <h1>Hi!</h1>
+                <p className='hi'>Hi!</p>
                 <h1>
-                  <span>I’m</span> <span>Murad</span> <span>Hajiyev</span>
+                  <span>I'm</span> <span>Murad</span> <span>Hajiyev</span>
                 </h1>
                 <div className='profession'>
                   <div className='line'></div>
-                  <div className='name'>MERN Stack Developer</div>
+                  <div className='name'>Front-End Developer</div>
                 </div>
               </div>
               <p className='summary'>
@@ -41,35 +41,11 @@ function Intro() {
               </div>
             </div>
             <div className='socialIcons'>
-              <SocialIcon
-                media='linkedin'
-                type='stroke'
-                href='https://www.linkedin.com/in/muradhajiev'
-                target='_blank'
-              />
-              <SocialIcon
-                media='telegram'
-                type='stroke'
-                href='https://t.me/muradhajiyev13'
-                target='_blank'
-              />
-              <SocialIcon
-                media='email'
-                type='stroke'
-                href='mailto:muradhajiyev42@icloud.com'
-              />
-              <SocialIcon
-                media='github'
-                type='stroke'
-                href='https://github.com/muradhaji'
-                target='_blank'
-              />
-              <SocialIcon
-                media='leetcode'
-                type='stroke'
-                href='https://leetcode.com/u/muradhajiyev/'
-                target='_blank'
-              />
+              {['linkedin', 'telegram', 'email', 'github', 'leetcode'].map(
+                (media) => (
+                  <SocialIcon key={media} media={media} type='stroke' />
+                )
+              )}
             </div>
           </div>
         </AnimatedComponent>

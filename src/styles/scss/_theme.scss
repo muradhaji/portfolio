@@ -1,7 +1,7 @@
 @use './colors';
 @use './gradients';
 
-@import 'mixins';
+@use 'mixins' as *;
 
 body {
   background: gradients.$gradient-light-90;
@@ -13,7 +13,7 @@ header {
 
 .dark {
   body {
-    color: #ffffff;
+    color: colors.$white;
     background: gradients.$gradient-dark-90;
   }
 
@@ -22,8 +22,8 @@ header {
 
     nav.menu {
       div.rightContainer {
-        svg.toggleTheme,
-        svg.toggleMenu {
+        button.toggleTheme svg,
+        button.toggleMenu svg {
           @include svg-white;
         }
       }
@@ -31,16 +31,16 @@ header {
   }
 
   div.popUpMenu {
-    background-color: black;
+    background-color: colors.$black;
     div.buttonContainer {
-      svg.closeMenu {
+      button.closeMenu svg {
         @include svg-white;
       }
     }
   }
 
   a.button,
-  div.button {
+  button.button {
     outline-color: colors.$black;
     color: colors.$white;
     &:hover {
@@ -48,11 +48,11 @@ header {
     }
   }
   a.button.solid,
-  div.button.solid {
+  button.button.solid {
     background: colors.$black;
   }
   a.button.hasIcon,
-  div.button.hasIcon {
+  button.button.hasIcon {
     span.icon {
       svg {
         path {
@@ -184,7 +184,7 @@ header {
 
   div.projectContainer {
     box-shadow: 8px 8px 8px 0px rgba($color: colors.$gray-dark, $alpha: 0.25);
-    a {
+    .projectLink {
       div.bottom {
         span.name {
           color: colors.$black;

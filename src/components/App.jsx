@@ -6,30 +6,41 @@ import Footer from './Footer';
 import ProjectDetails from './ProjectDetails';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { THEME } from '../helpers/constants';
 import { useDispatch, useSelector } from 'react-redux';
-import { hide as hideMenu } from '../redux/actions/menu';
+import { hide as hideMenu } from '../redux/slices/menu';
+import { applyTheme } from '../helpers/theme';
 import { useEffect } from 'react';
 
 function App() {
-  let dispatch = useDispatch();
-  const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const { pathname, hash } = useLocation();
 
-  let { collapsed: menuCollapsed } = useSelector((state) => state.menu);
-  let { theme } = useSelector((state) => state.theme);
+  const { collapsed: menuCollapsed } = useSelector((state) => state.menu);
+  const { theme } = useSelector((state) => state.theme);
 
   useEffect(() => {
-    if (['/', '/projects'].includes(pathname)) {
+    applyTheme(theme);
+  }, [theme]);
+
+  // On first load, jump to the section in the URL once it has rendered.
+  useEffect(() => {
+    if (hash) {
+      document.getElementById(hash.slice(1))?.scrollIntoView();
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    if (!hash && ['/', '/projects'].includes(pathname)) {
       window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
     }
-  }, [pathname]);
+  }, [pathname, hash]);
 
   useEffect(() => {
     if (!menuCollapsed) {
       const handleResize = () => {
         if (window.innerWidth > 600) {
           dispatch(hideMenu());
-          window.removeEventListener('resize', handleResize);
         }
       };
       window.addEventListener('resize', handleResize);
@@ -37,31 +48,22 @@ function App() {
         window.removeEventListener('resize', handleResize);
       };
     }
-    // eslint-disable-next-line
-  }, [menuCollapsed]);
+  }, [menuCollapsed, dispatch]);
 
-  return (
+  return menuCollapsed ? (
     <>
-      {theme === THEME.LIGHT ? (
-        <meta name='theme-color' content='#ffffff' />
-      ) : (
-        <meta name='theme-color' content='#000000' />
-      )}
-
-      {menuCollapsed ? (
-        <>
-          <Header></Header>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/projects' element={<Projects />} />
-            <Route path='/projects/details/:id' element={<ProjectDetails />} />
-          </Routes>
-          <Footer></Footer>
-        </>
-      ) : (
-        <Menu />
-      )}
+      <Header />
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/projects/details/:id' element={<ProjectDetails />} />
+        </Routes>
+      </main>
+      <Footer />
     </>
+  ) : (
+    <Menu />
   );
 }
 

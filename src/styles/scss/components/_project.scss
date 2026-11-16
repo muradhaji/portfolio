@@ -2,22 +2,23 @@
 @use '../colors';
 @use '../sizes';
 
-@import '../mixins';
+@use '../mixins' as *;
 
 div.projectContainer {
   border-radius: 0.5em;
   overflow: hidden;
   box-shadow: 8px 8px 8px 0px colors.$gray-lighter;
-  &:hover {
-    img {
-      scale: 1.1;
-    }
+  &:hover .projectLink img {
+    scale: 1.1;
+  }
+  // Placeholder projects render a div instead of a link and get no overlay.
+  &:hover a.projectLink {
     div.overlay,
     div.bottom {
       opacity: 1;
     }
   }
-  a {
+  .projectLink {
     display: block;
     position: relative;
     div.image {

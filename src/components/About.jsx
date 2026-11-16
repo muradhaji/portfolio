@@ -13,13 +13,13 @@ function About() {
     <section id='about'>
       <div className='container'>
         <div className='content'>
-          <h1 className='sectionHeader'>About me</h1>
+          <h2 className='sectionHeader'>About me</h2>
           <AnimatedComponent>
             <div className='glass'>
               <div className='glassItem'>
                 <UserSvg />
                 <p className='text'>
-                  Front-End Developer with over two years of experience
+                  Front-End Developer with over three years of experience
                   specializing in the MERN stack. Focused on building
                   responsive, scalable applications and delivering clean,
                   user-centered solutions in agile environments.
@@ -37,9 +37,8 @@ function About() {
               <div className='glassItem'>
                 <SeedSvg />
                 <p className='text'>
-                  Currently, I'm expanding my skill set by diving deeper into
-                  Node.js and honing my JavaScript skills to become a
-                  well-rounded full-stack developer.
+                  Currently, I'm deepening my knowledge of TypeScript, testing
+                  and web performance to build faster, more reliable products.
                 </p>
               </div>
               <div className='glassItem'>
@@ -54,8 +53,8 @@ function About() {
               <div className='glassItem'>
                 <MugSvg />
                 <p className='text'>
-                  When I'm not coding or teaching, you can find me exploring the
-                  latest trends in web design, working on personal projects, or
+                  When I'm not coding, you can find me exploring the latest
+                  trends in web design, working on personal projects, or
                   contributing to open-source initiatives.
                 </p>
               </div>
@@ -70,27 +69,27 @@ function About() {
           <div className='counters'>
             <AnimatedComponent>
               <div className='counterItem'>
-                <h1 className='count'>
-                  <CountUp end={2} duration={3} enableScrollSpy />+
-                </h1>
+                <p className='count'>
+                  <CountUp end={3} duration={3} enableScrollSpy />+
+                </p>
                 <p className='label'>Years of experience</p>
               </div>
             </AnimatedComponent>
             <div className='counterSplitter'></div>
             <AnimatedComponent>
               <div className='counterItem'>
-                <h1 className='count'>
+                <p className='count'>
                   <CountUp end={2} duration={3} enableScrollSpy />
-                </h1>
-                <p className='label'>Completed Projects</p>
+                </p>
+                <p className='label'>Completed projects</p>
               </div>
             </AnimatedComponent>
             <div className='counterSplitter'></div>
             <AnimatedComponent>
               <div className='counterItem'>
-                <h1 className='count'>
+                <p className='count'>
                   <CountUp end={0} duration={3} enableScrollSpy />
-                </h1>
+                </p>
                 <p className='label'>Customers</p>
               </div>
             </AnimatedComponent>
@@ -98,7 +97,7 @@ function About() {
           <div className='background'>
             <div className='educations'>
               <AnimatedComponent>
-                <h2 className='educationsHeader'>Education</h2>
+                <h3 className='educationsHeader'>Education</h3>
               </AnimatedComponent>
               <AnimatedComponent>
                 <Background
@@ -127,16 +126,16 @@ function About() {
             </div>
             <div className='experiences'>
               <AnimatedComponent>
-                <h2 className='experiencesHeader'>Work Experience</h2>
+                <h3 className='experiencesHeader'>Work Experience</h3>
               </AnimatedComponent>
               <AnimatedComponent>
                 <Background
                   label='Andersen Lab'
                   data={[
                     {
-                      name: 'Javascript Developer',
+                      name: 'JavaScript Developer',
                       start: '06/2025',
-                      end: 'present',
+                      end: 'Present',
                     },
                   ]}
                 />
@@ -162,11 +161,6 @@ function About() {
                       start: '06/2021',
                       end: '06/2022',
                     },
-                    // {
-                    //   name: 'Front-end developer (intern)',
-                    //   start: '06/2021',
-                    //   end: '09/2021',
-                    // },
                   ]}
                 />
               </AnimatedComponent>

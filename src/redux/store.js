@@ -1,6 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers';
+import themeReducer from './slices/theme';
+import menuReducer from './slices/menu';
 
-export default configureStore({
-  reducer: rootReducer,
-});
+export const reducer = {
+  theme: themeReducer,
+  menu: menuReducer,
+};
+
+export default configureStore({ reducer });

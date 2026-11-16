@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import useBreakpoint from './useBreakpoint';
 
 import PropTypes from 'prop-types';
@@ -13,22 +13,11 @@ import { getProjects } from '../services/projectsService';
 
 function ProjectsGrid({ compact = false }) {
   const breakPoint = useBreakpoint();
+  const projectColumns = PROJECT_COLUMN_COUNTS[breakPoint] || 2;
 
-  const [projectColumns, setProjectColumns] = useState(
-    PROJECT_COLUMN_COUNTS[breakPoint] || 2
-  );
-  const [grouppedProjects, setGrouppedProjects] = useState([]);
   const [projects, setProjects] = useState([]);
   const [projectsLoading, setProjectsLoading] = useState(false);
   const [projectsError, setProjectsError] = useState(null);
-
-  useEffect(() => {
-    let newProjectColumns = PROJECT_COLUMN_COUNTS[breakPoint];
-    if (newProjectColumns !== projectColumns) {
-      setProjectColumns(newProjectColumns);
-    }
-    //eslint-disable-next-line
-  }, [breakPoint]);
 
   useEffect(() => {
     setProjectsLoading(true);
@@ -43,23 +32,21 @@ function ProjectsGrid({ compact = false }) {
       .finally(() => setProjectsLoading(false));
   }, []);
 
-  useEffect(() => {
-    let newGrouppedProjects = Array(projectColumns)
-      .fill()
-      .map(() => Array(0));
+  const visibleProjects = compact
+    ? projects.slice(0, projectColumns * 2)
+    : projects;
 
-    for (let i = 0; i < projects.length; i++) {
-      if (compact && i === projectColumns * 2) {
-        break;
-      }
-      newGrouppedProjects[i % projectColumns].push(projects[i]);
-    }
+  const groupedProjects = useMemo(() => {
+    const groups = Array.from({ length: projectColumns }, () => []);
+    visibleProjects.forEach((project, i) => {
+      groups[i % projectColumns].push(project);
+    });
+    return groups;
+  }, [projectColumns, visibleProjects]);
 
-    setGrouppedProjects(newGrouppedProjects);
-    //eslint-disable-next-line
-  }, [projectColumns, projects]);
-
-  const moreProjectsCount = projects.length - projectColumns * 2;
+  const countRealProjects = (list) => list.filter((p) => !p.mockComponent).length;
+  const moreProjectsCount =
+    countRealProjects(projects) - countRealProjects(visibleProjects);
 
   return (
     <div className='projectsGrid'>
@@ -70,7 +57,7 @@ function ProjectsGrid({ compact = false }) {
       ) : (
         <>
           <div className='grid'>
-            {grouppedProjects.map((projectGroup, i) => (
+            {groupedProjects.map((projectGroup, i) => (
               <div className='column' key={i}>
                 {projectGroup.map((project, j) => {
                   return (
@@ -92,7 +79,7 @@ function ProjectsGrid({ compact = false }) {
               </div>
             ))}
           </div>
-          {compact ? (
+          {compact && (
             <div className='moreProjects'>
               {moreProjectsCount > 0 ? (
                 <>
@@ -115,8 +102,6 @@ function ProjectsGrid({ compact = false }) {
                 <p>Check back soon for new projects!</p>
               )}
             </div>
-          ) : (
-            ''
           )}
         </>
       )}
@@ -124,8 +109,8 @@ function ProjectsGrid({ compact = false }) {
   );
 }
 
-export default ProjectsGrid;
-
 ProjectsGrid.propTypes = {
   compact: PropTypes.bool,
 };
+
+export default ProjectsGrid;

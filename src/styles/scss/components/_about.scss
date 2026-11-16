@@ -2,13 +2,11 @@
 @use '../sizes';
 @use '../gradients';
 
-@import '../mixins';
+@use '../mixins' as *;
 
 section#about {
   div.container {
     div.content {
-      h1.sectionHeader {
-      }
       div.glass {
         @include light-glass;
         padding: sizes.$size-s;
@@ -42,7 +40,8 @@ section#about {
         gap: 1em;
         div.counterItem {
           text-align: center;
-          h1.count {
+          p.count {
+            font-weight: sizes.$font-weight-7;
             font-size: text.$text-3xl;
           }
           p.label {
@@ -67,8 +66,8 @@ section#about {
           gap: 1em;
         }
 
-        div.educations > h2.educationsHeader,
-        div.experiences > h2.experiencesHeader {
+        div.educations > h3.educationsHeader,
+        div.experiences > h3.experiencesHeader {
           font-weight: sizes.$font-weight-9;
           font-size: text.$text-xl;
         }

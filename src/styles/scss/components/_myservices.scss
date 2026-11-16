@@ -2,14 +2,12 @@
 @use '../text';
 @use '../sizes';
 
-@import '../mixins';
+@use '../mixins' as *;
 
 section#services {
   background-color: colors.$white;
   div.container {
     div.content {
-      h1.sectionHeader {
-      }
       div.services {
         display: flex;
         flex-direction: column;
@@ -56,7 +54,7 @@ section#services {
             display: flex;
             flex-direction: column;
             gap: 0.5em;
-            h2 {
+            h3 {
               text-align: center;
             }
             p {

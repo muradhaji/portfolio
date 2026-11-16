@@ -1,6 +1,6 @@
 @use '../colors';
 
-@import '../mixins';
+@use '../mixins' as *;
 
 a.socialIcon {
   display: inline-flex;

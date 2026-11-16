@@ -1,58 +1,47 @@
-import { useEffect, useState, useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { setSelectedProject } from '../redux/actions/projects';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Skeleton from './Skeleton';
-import { getProjects } from '../services/projectsService';
+import { getProjectById } from '../services/projectsService';
 
 function ProjectDetails() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const project = useSelector((state) => state.projects.selectedProject);
-
-  const [projectsLoading, setProjectsLoading] = useState(false);
-
   const { id } = useParams();
 
-  const getProjectById = useCallback(async (id) => {
-    const projects = await getProjects();
-    return projects.find((p) => String(p.id) === String(id)) || null;
-  }, []);
+  const [project, setProject] = useState(null);
+  const [projectLoading, setProjectLoading] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      setProjectsLoading(true);
-      getProjectById(id)
-        .then((projectData) => {
-          if (!projectData || projectData?.mockComponent) {
-            navigate('/projects', { replace: true });
-            return;
-          }
-          dispatch(setSelectedProject(projectData));
-        })
-        .catch((err) => {
-          console.error('Error fetching project:', err);
+    let ignore = false;
+
+    setProjectLoading(true);
+    getProjectById(id)
+      .then((projectData) => {
+        if (ignore) return;
+        if (!projectData || projectData.mockComponent) {
           navigate('/projects', { replace: true });
-        })
-        .finally(() => setProjectsLoading(false));
-    } else {
-      navigate('/projects', { replace: true });
-    }
+          return;
+        }
+        setProject(projectData);
+      })
+      .catch((err) => {
+        console.error('Error fetching project:', err);
+        navigate('/projects', { replace: true });
+      })
+      .finally(() => {
+        if (!ignore) setProjectLoading(false);
+      });
 
     return () => {
-      dispatch(setSelectedProject(null));
+      ignore = true;
     };
-  }, [id, dispatch, getProjectById, navigate]);
+  }, [id, navigate]);
 
   return (
     <section id='projectDetails'>
       <div className='container'>
         <div className='content'>
           <h1 className='sectionHeader'>Project Details</h1>
-          {projectsLoading ? (
+          {projectLoading ? (
             <Skeleton />
           ) : (
             <div className='projectDetails'>
@@ -81,9 +70,9 @@ function ProjectDetails() {
                   <div className='detailsRowContent'>
                     <h3 className='detailsLabel'>Links</h3>
                     <div className='detailsContainer'>
-                      {project?.links.map((link, i) => (
+                      {project?.links.map((link) => (
                         <a
-                          key={i}
+                          key={link.url}
                           href={link.url}
                           target='_blank'
                           rel='noopener noreferrer'
@@ -103,9 +92,9 @@ function ProjectDetails() {
                   <div className='detailsRowContent'>
                     <h3 className='detailsLabel'>Contributors</h3>
                     <div className='detailsContainer'>
-                      {project?.contributors.map((contributor, i) => (
+                      {project?.contributors.map((contributor) => (
                         <a
-                          key={i}
+                          key={contributor.name}
                           href={contributor.url}
                           target='_blank'
                           rel='noopener noreferrer'
@@ -126,8 +115,8 @@ function ProjectDetails() {
                   <div className='detailsRowContent'>
                     <h3 className='detailsLabel'>Tech Stack</h3>
                     <div className='detailsContainer'>
-                      {project?.techStack.map((tech, i) => (
-                        <span key={i} className='techItem'>
+                      {project?.techStack.map((tech) => (
+                        <span key={tech} className='techItem'>
                           {tech}
                         </span>
                       ))}

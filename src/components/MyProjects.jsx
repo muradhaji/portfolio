@@ -6,7 +6,7 @@ function MyProjects() {
     <section id='projects'>
       <div className='container'>
         <div className='content'>
-          <h1 className='sectionHeader'>My Projects</h1>
+          <h2 className='sectionHeader'>My Projects</h2>
           <AnimatedComponent>
             <ProjectsGrid compact />
           </AnimatedComponent>

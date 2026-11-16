@@ -1,37 +1,37 @@
 import PropTypes from 'prop-types';
 
-function Background({ label = 'No label', data }) {
+function Background({ label, data = [] }) {
   return (
     <div className='backgroundItem'>
-      <h3 className='label'>{label}</h3>
+      <h4 className='label'>{label}</h4>
       <div className='backgroundDatas'>
-        {data
-          ? data.map((obj, i) => (
-              <div className='backgroundDataItem' key={i}>
-                <p className='name'>{obj.name ? obj.name : 'No name'}</p>
-                <div className='times'>
-                  <p className='start'>{obj.start ? obj.start : 'No start'}</p>
-                  <span>-</span>
-                  <p className='end'>{obj.end ? obj.end : 'No end'}</p>
-                </div>
+        {data.map((item) => (
+          <div className='backgroundDataItem' key={item.name}>
+            <p className='name'>{item.name}</p>
+            {(item.start || item.end) && (
+              <div className='times'>
+                {item.start && <p className='start'>{item.start}</p>}
+                {item.start && item.end && <span>–</span>}
+                {item.end && <p className='end'>{item.end}</p>}
               </div>
-            ))
-          : 'No background data'}
+            )}
+          </div>
+        ))}
       </div>
       <div className='line'></div>
     </div>
   );
 }
 
-export default Background;
-
 Background.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      name: PropTypes.string,
+      name: PropTypes.string.isRequired,
       start: PropTypes.string,
       end: PropTypes.string,
     })
   ),
 };
+
+export default Background;

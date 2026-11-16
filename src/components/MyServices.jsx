@@ -7,7 +7,7 @@ function MyServices() {
     <section id='services'>
       <div className='container'>
         <div className='content'>
-          <h1 className='sectionHeader'>My Services</h1>
+          <h2 className='sectionHeader'>My Services</h2>
           <div className='services'>
             <AnimatedComponent>
               <div className='service service1'>
@@ -17,12 +17,12 @@ function MyServices() {
                   </div>
                 </div>
                 <div className='text'>
-                  <h2>Single Page Applications</h2>
+                  <h3>Single Page Applications</h3>
                   <p>
-                    A single-page application (SPA) is a website or web
-                    application that dynamically rewrites a current web page
+                    A single-page application (SPA) is a website or web
+                    application that dynamically rewrites the current web page
                     with new data from the web server, instead of loading entire
-                    new pages. Multi Page Applications
+                    new pages.
                   </p>
                 </div>
               </div>
@@ -30,11 +30,11 @@ function MyServices() {
             <AnimatedComponent>
               <div className='service service2'>
                 <div className='text'>
-                  <h2>Multi Page Applications</h2>
+                  <h3>Multi Page Applications</h3>
                   <p>
                     A multi-page application (MPA) is a website made up of many
                     different sub-websites, or pages. When you interact with the
-                    site, new pages are downloaded from the server. 
+                    site, new pages are downloaded from the server.
                   </p>
                 </div>
                 <div className='image'>
@@ -54,9 +54,9 @@ function MyServices() {
                   <div className='screen screen3'></div>
                 </div>
                 <div className='text'>
-                  <h2>Responsive Design</h2>
+                  <h3>Responsive Design</h3>
                   <p>
-                    Responsive web design (RWD) is a web design approach to make
+                    Responsive web design (RWD) is a web design approach to make
                     web pages render well on all screen sizes and resolutions
                     while ensuring good usability. It is the way to design for a
                     multi-device web.
@@ -67,11 +67,11 @@ function MyServices() {
             <AnimatedComponent>
               <div className='service service4'>
                 <div className='text'>
-                  <h2>Search Engine Optimization</h2>
+                  <h3>Search Engine Optimization</h3>
                   <p>
-                    Search engine optimization (SEO) is the art and science of
+                    Search engine optimization (SEO) is the art and science of
                     getting pages to rank higher in search engines such as
-                    Google. Because search is one of the main ways in which
+                    Google. It matters because search is one of the main ways
                     people discover content online.
                   </p>
                 </div>
@@ -94,9 +94,9 @@ function MyServices() {
                   </div>
                 </div>
                 <div className='text'>
-                  <h2>Performance Optimization</h2>
+                  <h3>Performance Optimization</h3>
                   <p>
-                    Performance Optimization is the process of refining the
+                    Performance optimization is the process of refining the
                     efficiency of systems and applications to improve their
                     output, speed, or scalability. It plays a key role in
                     ensuring that the available resources are put to the best

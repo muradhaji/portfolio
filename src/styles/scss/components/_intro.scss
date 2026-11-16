@@ -15,8 +15,10 @@ section#intro {
           display: flex;
           flex-direction: column;
           gap: 0.25em;
-          h1 {
+          h1,
+          p.hi {
             font-size: text.$text-9xl;
+            font-weight: sizes.$font-weight-7;
             display: inline-block;
             span {
               display: block;

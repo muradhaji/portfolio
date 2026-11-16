@@ -10,28 +10,34 @@ function Button({
   onClick = () => {},
   icon = null,
 }) {
-  return type === 'link' ? (
-    <Link to={to} className={`button ${appearance} ${icon ? 'hasIcon' : ''}`}>
+  const className = `button ${appearance} ${icon ? 'hasIcon' : ''}`;
+  const content = (
+    <>
       <span className='text'>{text}</span>
       {icon && <span className='icon'>{icon}</span>}
-    </Link>
-  ) : type === 'hashlink' ? (
-    <HashLink
-      to={to}
-      smooth
-      className={`button ${appearance} ${icon ? 'hasIcon' : ''}`}
-    >
-      <span className='text'>{text}</span>
-      {icon && <span className='icon'>{icon}</span>}
-    </HashLink>
-  ) : (
-    <div
-      onClick={onClick}
-      className={`button ${appearance} ${icon ? 'hasIcon' : ''}`}
-    >
-      <span className='text'>{text}</span>
-      {icon && <span className='icon'>{icon}</span>}
-    </div>
+    </>
+  );
+
+  if (type === 'link') {
+    return (
+      <Link to={to} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  if (type === 'hashlink') {
+    return (
+      <HashLink to={to} smooth className={className}>
+        {content}
+      </HashLink>
+    );
+  }
+
+  return (
+    <button type='button' onClick={onClick} className={className}>
+      {content}
+    </button>
   );
 }
 

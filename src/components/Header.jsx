@@ -1,88 +1,86 @@
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
-import { THEME } from '../helpers/constants';
+import { NAV_LINKS, THEME } from '../helpers/constants';
+import {
+  getStoredTheme,
+  storeTheme,
+  SYSTEM_LIGHT_QUERY,
+} from '../helpers/theme';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { set as setTheme } from '../redux/actions/theme';
-import { toggle as toggleMenu } from '../redux/actions/menu';
+import { set as setTheme } from '../redux/slices/theme';
+import { toggle as toggleMenu } from '../redux/slices/menu';
 
 import { ReactComponent as SunSvg } from '../images/icons/sun.svg';
 import { ReactComponent as MoonSvg } from '../images/icons/moon.svg';
 import { ReactComponent as BarsSvg } from '../images/icons/bars.svg';
 
 function Header() {
-  let dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  let { theme } = useSelector((state) => state.theme);
+  const { theme } = useSelector((state) => state.theme);
 
+  // Follow the system setting until the user picks a theme themselves.
   useEffect(() => {
-    let lsTheme = localStorage.getItem(THEME.LS_NAME) || THEME.SYSTEM;
-    if (lsTheme === THEME.SYSTEM) {
-      let themeQuery = window.matchMedia('(prefers-color-scheme: light)');
-      changeTheme(themeQuery.matches ? THEME.LIGHT : THEME.DARK);
-    } else {
-      changeTheme(lsTheme);
-    }
-    // eslint-disable-next-line
-  }, []);
+    const query = window.matchMedia(SYSTEM_LIGHT_QUERY);
+    const handleChange = (event) => {
+      if (!getStoredTheme()) {
+        dispatch(setTheme(event.matches ? THEME.LIGHT : THEME.DARK));
+      }
+    };
+    query.addEventListener('change', handleChange);
+    return () => query.removeEventListener('change', handleChange);
+  }, [dispatch]);
 
-  function changeTheme(themeValue) {
+  const changeTheme = (themeValue) => {
+    storeTheme(themeValue);
     dispatch(setTheme(themeValue));
-    document.documentElement.setAttribute('class', themeValue);
-    document.documentElement.style.colorScheme = themeValue;
-    localStorage.setItem(THEME.LS_NAME, themeValue);
-  }
+  };
+
+  const nextTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
 
   return (
-    <>
-      <header>
-        <div className='container'>
-          <nav className='menu'>
-            <Link to='/' className='link logo'>
-              Mh
-            </Link>
-            <div className='rightContainer'>
-              <HashLink to='/#about' className='link'>
-                About
-              </HashLink>
-              <HashLink smooth to='/#skills' className='link'>
-                Skills
-              </HashLink>
-              <HashLink smooth to='/#services' className='link'>
-                Services
-              </HashLink>
-              <Link to='/projects' className='link'>
-                Projects
-              </Link>
-
-              {theme === THEME.LIGHT ? (
-                <MoonSvg
-                  className='toggleTheme'
-                  onClick={() => {
-                    changeTheme(THEME.DARK);
-                  }}
-                />
+    <header>
+      <div className='container'>
+        <nav className='menu'>
+          <Link to='/' className='link logo'>
+            Mh
+          </Link>
+          <div className='rightContainer'>
+            {NAV_LINKS.filter((link) => !link.menuOnly).map((link) =>
+              link.hash ? (
+                <HashLink key={link.to} smooth to={link.to} className='link'>
+                  {link.label}
+                </HashLink>
               ) : (
-                <SunSvg
-                  className='toggleTheme'
-                  onClick={() => {
-                    changeTheme(THEME.LIGHT);
-                  }}
-                />
-              )}
+                <Link key={link.to} to={link.to} className='link'>
+                  {link.label}
+                </Link>
+              )
+            )}
 
-              <BarsSvg
-                className='toggleMenu'
-                onClick={() => {
-                  dispatch(toggleMenu());
-                }}
-              />
-            </div>
-          </nav>
-        </div>
-      </header>
-    </>
+            <button
+              type='button'
+              className='iconButton toggleTheme'
+              aria-label={`Switch to ${nextTheme} theme`}
+              onClick={() => changeTheme(nextTheme)}
+            >
+              {theme === THEME.LIGHT ? <MoonSvg /> : <SunSvg />}
+            </button>
+
+            <button
+              type='button'
+              className='iconButton toggleMenu'
+              aria-label='Open menu'
+              onClick={() => dispatch(toggleMenu())}
+            >
+              <BarsSvg />
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
   );
 }
 

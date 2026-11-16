@@ -23,17 +23,12 @@ header {
       align-items: center;
       gap: sizes.$size-xs;
 
-      svg.toggleTheme {
-        width: sizes.$size-l;
-        height: sizes.$size-l;
-      }
-      svg.toggleMenu {
-        width: sizes.$size-l;
-        height: sizes.$size-l;
-      }
-      svg.toggleTheme,
-      svg.toggleMenu {
-        cursor: pointer;
+      button.toggleTheme,
+      button.toggleMenu {
+        svg {
+          width: sizes.$size-l;
+          height: sizes.$size-l;
+        }
       }
     }
   }

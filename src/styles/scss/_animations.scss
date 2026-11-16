@@ -20,7 +20,8 @@ section#intro {
 section#about {
   div.glass,
   div.counterItem,
-  h2,
+  h3.educationsHeader,
+  h3.experiencesHeader,
   div.backgroundItem {
     opacity: 0;
   }
@@ -34,7 +35,8 @@ section#about {
       animation: fadeIn 1s linear both;
     }
 
-    h2 {
+    h3.educationsHeader,
+    h3.experiencesHeader {
       animation: slideLTR 1s linear both;
     }
 
@@ -95,7 +97,7 @@ section.projects {
   section#about {
     div.experiences {
       .animated {
-        h2 {
+        h3.experiencesHeader {
           animation: slideRTL 1s linear both;
         }
         div.backgroundItem {

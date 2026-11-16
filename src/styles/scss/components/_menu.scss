@@ -15,19 +15,17 @@ div.popUpMenu {
     justify-content: end;
     margin-bottom: sizes.$size-l;
 
-    svg.closeMenu {
-      width: sizes.$size-l;
-      height: sizes.$size-l;
-      cursor: pointer;
+    button.closeMenu {
+      svg {
+        width: sizes.$size-l;
+        height: sizes.$size-l;
+      }
     }
   }
 
-  div.linksContainer {
+  nav.linksContainer {
     display: flex;
     flex-direction: column;
     gap: sizes.$size-l;
-
-    a.link {
-    }
   }
 }

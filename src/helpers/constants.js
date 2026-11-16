@@ -1,8 +1,35 @@
 export const THEME = {
   LIGHT: 'light',
   DARK: 'dark',
-  SYSTEM: 'THEME_SYSTEM',
   LS_NAME: 'APP_THEME',
+  THEME_COLORS: {
+    light: '#ffffff',
+    dark: '#000000',
+  },
+};
+
+export const NAV_LINKS = [
+  { label: 'Home', to: '/', menuOnly: true },
+  { label: 'About', to: '/#about', hash: true },
+  { label: 'Skills', to: '/#skills', hash: true },
+  { label: 'Services', to: '/#services', hash: true },
+  { label: 'Projects', to: '/projects' },
+];
+
+export const SOCIAL_LINKS = {
+  linkedin: {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/muradhajiev',
+  },
+  whatsapp: { label: 'WhatsApp', href: 'https://wa.me/994557088909' },
+  telegram: { label: 'Telegram', href: 'https://t.me/muradhajiyev13' },
+  email: { label: 'Email', href: 'mailto:muradhajiyev42@icloud.com' },
+  github: { label: 'GitHub', href: 'https://github.com/muradhaji' },
+  leetcode: {
+    label: 'LeetCode',
+    href: 'https://leetcode.com/u/muradhajiyev/',
+  },
+  linktree: { label: 'Linktree', href: 'https://linktr.ee/muradhajiyev' },
 };
 
 export const MY_SKILLS = [

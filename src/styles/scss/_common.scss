@@ -18,9 +18,27 @@ section {
     gap: 2em;
   }
 
-  h1.sectionHeader {
+  .sectionHeader {
     text-align: center;
     font-size: text.$text-3xl;
     font-weight: sizes.$font-weight-9;
   }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 1;
+  }
+}
+
+button.iconButton {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }

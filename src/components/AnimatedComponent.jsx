@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 function AnimatedComponent({ children }) {
-  let [isInView, setIsInView] = useState(false);
-  let ref = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef(null);
 
   const observerCallback = ([entry]) => {
     setIsInView(entry.isIntersecting);
@@ -20,17 +20,13 @@ function AnimatedComponent({ children }) {
       observerOptions
     );
 
-    let { current } = ref;
+    const { current } = ref;
 
     if (current) {
       observer.observe(current);
     }
 
-    return () => {
-      if (current) {
-        observer.unobserve(current);
-      }
-    };
+    return () => observer.disconnect();
     // eslint-disable-next-line
   }, []);
 
