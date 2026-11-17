@@ -3,7 +3,7 @@ import { renderApp } from '../testing/renderApp';
 import { getProjects, getProjectById } from '../services/projectsService';
 import { NOT_FOUND, SOCIAL_LINKS } from '../helpers/constants';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 beforeEach(() => {
   getProjects.mockResolvedValue([]);

@@ -5,7 +5,6 @@
       "name": "portfolio",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["start"],
-      "env": { "BROWSER": "none" },
       "port": 3000
     }
   ]

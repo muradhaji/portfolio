@@ -6,7 +6,7 @@ import {
 } from '../testing/renderApp';
 import { getProjects } from '../services/projectsService';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 const homeProjects = () => within(document.getElementById('projects'));
 const cards = (root = document) => root.querySelectorAll('.projectContainer');
@@ -18,7 +18,7 @@ test('GRID-1 shows a skeleton while loading', async () => {
 });
 
 test('PDATA-4 shows an error when projects cannot be loaded', async () => {
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  vi.spyOn(console, 'error').mockImplementation(() => {});
   getProjects.mockRejectedValue(new Error('offline'));
   await renderApp('/projects');
   expect(screen.getByText('Could not load projects.')).toBeInTheDocument();

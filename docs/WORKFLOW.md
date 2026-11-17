@@ -86,36 +86,38 @@ How to read a behavior line:
 
 ## The tests
 
-- Location: `src/__tests__/`, one file per spec (`theme.test.js`, `layoutNavigation.test.js`, `home.test.js`, `projects.test.js`, `projectDetails.test.js`) plus `projectsService.test.js` for data loading.
-- Helpers: `src/testing/renderApp.js` renders the whole app at a URL and provides `setSystemTheme('light' | 'dark')`, `realProject(id)` and `placeholderProject(id)`. `src/setupTests.js` stubs browser APIs jsdom lacks (Swiper, IntersectionObserver, scrolling).
+- Location: `src/__tests__/`, one file per spec (`theme.test.js`, `layoutNavigation.test.js`, `home.test.jsx`, `projects.test.js`, `projectDetails.test.js`) plus `projectsService.test.js` for data loading.
+- Runner: Vitest with jsdom, configured in `vite.config.mjs`. `test`, `expect` and `vi` are globals; files that contain JSX end in `.jsx`.
+- Helpers: `src/testing/renderApp.jsx` renders the whole app at a URL and provides `setSystemTheme('light' | 'dark')`, `realProject(id)` and `placeholderProject(id)`. `src/setupTests.jsx` stubs browser APIs jsdom lacks (IntersectionObserver, scrolling). In tests each SVG icon renders as its file name (for example `moon.svg`), so tests can tell icons apart.
 - Tests read text from `constants.js`, so normal data changes don't break them.
 - Run: `npm test` (watch mode while coding) or `npm run test:ci` (once).
 
 ## The automation
 
-| What               | Where                                                           | When it runs                       | What it does                                                                       |
-| ------------------ | --------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------- |
-| Prettier           | `.prettierrc.json`, `.prettierignore`                           | Pre-commit, CI, Claude edits       | One code style (single quotes, 2 spaces, trailing commas)                          |
-| Pre-commit hook    | `.husky/pre-commit` + `lint-staged` in `package.json`           | Every `git commit`                 | Formats and lints only the files you commit; blocks lint errors                    |
-| GitHub CI          | `.github/workflows/ci.yml`                                      | Every PR and every merge to `main` | Format check, lint, tests, build; red ✗ on GitHub if anything fails                |
-| Branch protection  | GitHub → Settings → Rules ("Protect main")                      | Every change to `main`             | PR plus passing CI and Vercel required, squash only, no force push or bypass       |
-| Dependabot         | `.github/dependabot.yml`                                        | Weekly (npm), monthly (actions)    | Opens PRs for outdated packages; CI tests them before you merge                    |
-| Claude format hook | `.claude/settings.json`                                         | Every file Claude edits            | Runs Prettier on that file                                                         |
-| Claude commands    | `.claude/commands/*.md`                                         | When you type `/spec` etc.         | Runs the workflow steps described above                                            |
-| Vercel             | Vercel dashboard; Node version from `engines` in `package.json` | Every push                         | Preview for each PR branch; production from `main`, so only checked code goes live |
+| What               | Where                                                        | When it runs                       | What it does                                                                       |
+| ------------------ | ------------------------------------------------------------ | ---------------------------------- | ---------------------------------------------------------------------------------- |
+| Prettier           | `.prettierrc.json`, `.prettierignore`                        | Pre-commit, CI, Claude edits       | One code style (single quotes, 2 spaces, trailing commas)                          |
+| Build and dev      | `vite.config.mjs`, `index.html`, `eslint.config.mjs`         | `npm start`, `npm run build`, lint | Vite builds and serves the site; ESLint flat config ports Create React App's rules |
+| Pre-commit hook    | `.husky/pre-commit` + `lint-staged` in `package.json`        | Every `git commit`                 | Formats and lints only the files you commit; blocks lint errors                    |
+| GitHub CI          | `.github/workflows/ci.yml`                                   | Every PR and every merge to `main` | Format check, lint, tests, build; red ✗ on GitHub if anything fails                |
+| Branch protection  | GitHub → Settings → Rules ("Protect main")                   | Every change to `main`             | PR plus passing CI and Vercel required, squash only, no force push or bypass       |
+| Dependabot         | `.github/dependabot.yml`                                     | Weekly (npm), monthly (actions)    | Opens PRs for outdated packages; CI tests them before you merge                    |
+| Claude format hook | `.claude/settings.json`                                      | Every file Claude edits            | Runs Prettier on that file                                                         |
+| Claude commands    | `.claude/commands/*.md`                                      | When you type `/spec` etc.         | Runs the workflow steps described above                                            |
+| Vercel             | `vercel.json`; Node version from `engines` in `package.json` | Every push                         | Preview for each PR branch; production from `main`, so only checked code goes live |
 
 ### npm scripts
 
 | Script                 | What                                         |
 | ---------------------- | -------------------------------------------- |
-| `npm start`            | Dev server                                   |
+| `npm start`            | Dev server at http://localhost:3000          |
 | `npm test`             | Tests in watch mode                          |
 | `npm run test:ci`      | Tests once                                   |
 | `npm run lint`         | ESLint, zero warnings allowed                |
 | `npm run format`       | Format every file with Prettier              |
 | `npm run format:check` | Check formatting without changing files      |
 | `npm run check`        | Everything: format check, lint, tests, build |
-| `npm run build`        | Production build                             |
+| `npm run build`        | Production build into `build/`               |
 
 The old `watchscss` script is gone: SCSS is imported directly by the app, so there is no compiled CSS to keep in sync.
 
@@ -135,7 +137,7 @@ Edit it whenever a preference changes; Claude picks it up in the next session.
 
 - "Add my new job at X from 01/2026": `/data-change add job ...` → review the diff → `/pr` → check the Vercel preview → merge.
 - "I want a 404 page": `/spec add a not-found page` → answer questions, approve → `/implement specs/layout-navigation.md` → look at it → `/pr` → check the preview → merge.
-- Dependabot opened a PR: if the checks are green and it's minor/patch, merge it on GitHub. For a major update, ask Claude to check it first. **Swiper updates always need a browser check** of the My Skills slider (autoplay, dots, keyboard): tests replace Swiper with a stub, so green checks don't prove the slider works.
+- Dependabot opened a PR: if the checks are green and it's minor/patch, merge it on GitHub. For a major update, ask Claude to check it first. **Swiper updates always need a browser check** of the My Skills slider (autoplay, dots, keyboard): tests run the real Swiper in jsdom, which can't show autoplay or layout.
 - CI is red: open the failed run on GitHub, or run `/check` locally; the failing test name tells you which spec behavior broke.
 
 ## Good to know
@@ -144,4 +146,4 @@ Edit it whenever a preference changes; Claude picks it up in the next session.
 - Personal repos under `~/projects/personal/` commit with your personal email through an `includeIf` rule in `~/.gitconfig` (`~/.gitconfig-personal`); work repos keep their own identity.
 - If the pre-commit hook blocks a commit, it printed the lint error; fix it (or ask Claude) and commit again.
 - `.claude/launch.json` lets Claude start the dev server to check pages in its browser.
-- Create React App (`react-scripts`) is no longer maintained. Moving to Vite is a reasonable future feature change; do it via `/spec` so the tests guard the migration.
+- The site is built with Vite. `vercel.json` sets the framework, the `build/` output folder and a rewrite so every page URL loads the app; the theme script lives in the root `index.html`.

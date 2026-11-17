@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { hide } from '../redux/slices/menu';
 import { NAV_LINKS } from '../helpers/constants';
 
-import { ReactComponent as XmarkSVG } from '../images/icons/xmark.svg';
+import XmarkSVG from '../images/icons/xmark.svg?react';
 
 function Menu() {
   const dispatch = useDispatch();

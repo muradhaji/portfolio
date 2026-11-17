@@ -1,5 +1,5 @@
-import { ReactComponent as MagnifierSvg } from '../images/icons/magnifier.svg';
-import { ReactComponent as RocketSvg } from '../images/icons/rocket.svg';
+import MagnifierSvg from '../images/icons/magnifier.svg?react';
+import RocketSvg from '../images/icons/rocket.svg?react';
 import AnimatedComponent from './AnimatedComponent';
 import { SERVICES } from '../helpers/constants';
 

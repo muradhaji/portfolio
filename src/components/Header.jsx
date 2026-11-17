@@ -12,9 +12,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { set as setTheme } from '../redux/slices/theme';
 import { toggle as toggleMenu } from '../redux/slices/menu';
 
-import { ReactComponent as SunSvg } from '../images/icons/sun.svg';
-import { ReactComponent as MoonSvg } from '../images/icons/moon.svg';
-import { ReactComponent as BarsSvg } from '../images/icons/bars.svg';
+import SunSvg from '../images/icons/sun.svg?react';
+import MoonSvg from '../images/icons/moon.svg?react';
+import BarsSvg from '../images/icons/bars.svg?react';
 
 function Header() {
   const dispatch = useDispatch();

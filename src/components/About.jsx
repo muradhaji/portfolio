@@ -1,9 +1,9 @@
-import { ReactComponent as UserSvg } from '../images/icons/user.svg';
-import { ReactComponent as BulbSvg } from '../images/icons/bulb.svg';
-import { ReactComponent as SeedSvg } from '../images/icons/seed.svg';
-import { ReactComponent as RocketSvg } from '../images/icons/rocket.svg';
-import { ReactComponent as MugSvg } from '../images/icons/mug.svg';
-import { ReactComponent as UserPlusSvg } from '../images/icons/userPlus.svg';
+import UserSvg from '../images/icons/user.svg?react';
+import BulbSvg from '../images/icons/bulb.svg?react';
+import SeedSvg from '../images/icons/seed.svg?react';
+import RocketSvg from '../images/icons/rocket.svg?react';
+import MugSvg from '../images/icons/mug.svg?react';
+import UserPlusSvg from '../images/icons/userPlus.svg?react';
 import { Fragment } from 'react';
 import Background from './Background';
 import AnimatedComponent from './AnimatedComponent';

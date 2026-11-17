@@ -13,7 +13,7 @@ The site follows the visitor's system light/dark setting until they choose a the
 - **THEME-5** With no saved choice, the site follows system setting changes live. After a saved choice, system changes are ignored. [test]
 - **THEME-6** The theme is applied as a class on `<html>` (`light` / `dark`) together with `color-scheme`. [test]
 - **THEME-7** The `theme-color` meta tag is `#ffffff` in light theme and `#000000` in dark theme. [test]
-- **THEME-8** The theme is applied before first paint by a script in `public/index.html`, so there is no flash of the wrong theme. That script must stay in sync with `src/helpers/theme.js`. [manual]
+- **THEME-8** The theme is applied before first paint by a script in `index.html` at the repo root (moved from `public/index.html`, see BUILD-6), so there is no flash of the wrong theme. That script must stay in sync with `src/helpers/theme.js`. [manual]
 - **THEME-9** If `localStorage` is unavailable, the theme still works; it is just not remembered. [test]
 
 ## Out of scope

@@ -3,7 +3,7 @@ import { renderApp } from '../testing/renderApp';
 import { getProjectById, getProjects } from '../services/projectsService';
 import { NOT_FOUND } from '../helpers/constants';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 const payflow = {
   id: 1,
@@ -66,7 +66,7 @@ test('DETAILS-6 shows the not-found page for a placeholder project', async () =>
 });
 
 test('DETAILS-7 redirects to /projects when loading fails', async () => {
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  vi.spyOn(console, 'error').mockImplementation(() => {});
   getProjectById.mockRejectedValue(new Error('offline'));
   const { currentPath } = await renderApp('/projects/details/1');
   await expectRedirectToProjects();

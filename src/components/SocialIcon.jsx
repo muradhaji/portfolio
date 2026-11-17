@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { SOCIAL_LINKS } from '../helpers/constants';
-import { ReactComponent as LinkedInSvg } from '../images/icons/linkedin.svg';
-import { ReactComponent as WhatsAppSvg } from '../images/icons/whatsapp.svg';
-import { ReactComponent as TelegramSvg } from '../images/icons/telegram.svg';
-import { ReactComponent as EnvelopeSvg } from '../images/icons/envelope.svg';
-import { ReactComponent as GitHubSvg } from '../images/icons/github.svg';
-import { ReactComponent as LeetCodeSvg } from '../images/icons/leetcode.svg';
-import { ReactComponent as LinktreeSvg } from '../images/icons/linktree.svg';
+import LinkedInSvg from '../images/icons/linkedin.svg?react';
+import WhatsAppSvg from '../images/icons/whatsapp.svg?react';
+import TelegramSvg from '../images/icons/telegram.svg?react';
+import EnvelopeSvg from '../images/icons/envelope.svg?react';
+import GitHubSvg from '../images/icons/github.svg?react';
+import LeetCodeSvg from '../images/icons/leetcode.svg?react';
+import LinktreeSvg from '../images/icons/linktree.svg?react';
 
 const mediaIcons = {
   linkedin: <LinkedInSvg />,

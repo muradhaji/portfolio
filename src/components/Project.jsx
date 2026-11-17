@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { ReactComponent as EyeSvg } from '../images/icons/eye.svg';
+import EyeSvg from '../images/icons/eye.svg?react';
 
 function Project({ appearance, project }) {
   const { id, name, coverHorizontal, coverVertical, order, mockComponent } =
