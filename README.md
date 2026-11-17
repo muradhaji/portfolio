@@ -14,7 +14,7 @@ This is the repository for my personal portfolio website. The goal of this proje
 
 ## Development
 
-Built with React, Redux Toolkit, React Router and Sass. Requires Node 20 (see `.nvmrc`).
+Built with React, Redux Toolkit, React Router and Sass. Requires Node 26 (see `.nvmrc`).
 
 ```bash
 npm install
