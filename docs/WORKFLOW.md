@@ -8,8 +8,9 @@ The project moved from "write code, check by hand" to **spec-driven development 
 
 1. **Specs** in `specs/` describe what the site does, behavior by behavior.
 2. **Tests** in `src/__tests__/` prove those behaviors automatically (66 tests).
-3. **Automation** checks every change: formatting and lint on commit, the full check on every push (GitHub CI), and weekly dependency updates (Dependabot).
-4. **Claude commands** (`/spec`, `/implement`, `/data-change`, `/check`) run the workflow for you, following the rules in `CLAUDE.md`.
+3. **Automation** checks every change: formatting and lint on commit, the full check on every pull request (GitHub CI), and weekly dependency updates (Dependabot).
+4. **Pull requests only**: every change goes through a PR. `main` accepts a merge only after CI passes, and Vercel deploys `main` to production.
+5. **Claude commands** (`/spec`, `/implement`, `/data-change`, `/pr`, `/check`) run the workflow for you, following the rules in `CLAUDE.md`.
 
 Commits on `main` that introduced this:
 
@@ -20,7 +21,7 @@ Commits on `main` that introduced this:
 
 ## How to work from now on
 
-Every change is one of two kinds. Decide which one first.
+Every change is one of two kinds. Decide which one first. Both end the same way: a pull request (see [Branches and pull requests](#branches-and-pull-requests)).
 
 ### 1. Data change: just ask
 
@@ -29,7 +30,7 @@ Examples: add a project, a job, a skill, a link; change a sentence or a counter.
 - Where the data lives:
   - `public/projects/projects.json`: projects (cards and details pages).
   - `src/helpers/constants.js`: about text, counters, education, work history, services, skills, social links, nav links.
-- How: run `/data-change <what to change>` in Claude, or edit the file yourself.
+- How: run `/data-change <what to change>` in Claude (it starts a `data/…` branch), or edit the file yourself on a branch. Then `/pr` to open the pull request.
 - No spec is needed. If the change needs new code (a new field, a new section), Claude stops and tells you; then it becomes a feature change.
 - Placeholder ("upcoming") projects are entries with `"mockComponent": true`. Projects are shown sorted by `order`.
 
@@ -37,10 +38,22 @@ Examples: add a project, a job, a skill, a link; change a sentence or a counter.
 
 Examples: a 404 page, filtering projects, a contact form, changing how the menu works.
 
-1. **`/spec <what you want>`**: Claude updates the relevant spec in `specs/`, marks new behaviors `(proposed)` and lists open questions. No code yet.
+1. **`/spec <what you want>`**: Claude starts a `feat/…` branch, updates the relevant spec in `specs/`, marks new behaviors `(proposed)` and lists open questions. No code yet.
 2. **You review**: approve, edit or answer questions. This is the step that prevents misunderstandings (like the hover overlay mix-up).
-3. **`/implement <spec or behavior IDs>`**: Claude writes the code and tests, runs `npm run check`, and checks `[manual]` behaviors in the browser.
-4. **You check and ask to commit.** Claude never commits unless you ask.
+3. **`/implement <spec or behavior IDs>`**: Claude writes the code and tests on the same branch, runs `npm run check`, and checks `[manual]` behaviors in the browser.
+4. **You check and ask for a PR** (`/pr`). Spec and code go in one PR. Claude never commits unless you ask.
+
+## Branches and pull requests
+
+`main` is protected on GitHub (ruleset "Protect main"): changes reach it only through a pull request, the CI check "Format, lint, test, build" must pass, force pushes and deleting `main` are blocked, and nobody can bypass this. Merges are squash only, so each PR becomes one commit on `main`, and merged branches are deleted automatically.
+
+1. **Branch** from up-to-date `main`, named by kind: `data/…`, `feat/…`, `fix/…`, `chore/…` (tooling, dependencies) or `docs/…`.
+2. **Commit and push** the branch. The pre-commit hook formats and lints the files you commit.
+3. **Open a PR** (`/pr` in Claude, or `gh pr create`). CI runs, and Vercel builds a preview URL for the branch.
+4. **Check the preview**, then **merge** on GitHub (Squash and merge). The button stays disabled until CI passes. With "Enable auto-merge", the PR merges itself once CI passes.
+5. **Vercel deploys `main`** to production after the merge.
+
+Claude opens PRs but merges only when you ask.
 
 ### Quick checks
 
@@ -78,15 +91,16 @@ Open question waiting for you (in `specs/layout-navigation.md`): unknown URLs li
 
 ## The automation
 
-| What               | Where                                                 | When it runs                      | What it does                                                        |
-| ------------------ | ----------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------- |
-| Prettier           | `.prettierrc.json`, `.prettierignore`                 | Pre-commit, CI, Claude edits      | One code style (single quotes, 2 spaces, trailing commas)           |
-| Pre-commit hook    | `.husky/pre-commit` + `lint-staged` in `package.json` | Every `git commit`                | Formats and lints only the files you commit; blocks lint errors     |
-| GitHub CI          | `.github/workflows/ci.yml`                            | Every push to `main` and every PR | Format check, lint, tests, build; red ✗ on GitHub if anything fails |
-| Dependabot         | `.github/dependabot.yml`                              | Weekly (npm), monthly (actions)   | Opens PRs for outdated packages; CI tests them before you merge     |
-| Claude format hook | `.claude/settings.json`                               | Every file Claude edits           | Runs Prettier on that file                                          |
-| Claude commands    | `.claude/commands/*.md`                               | When you type `/spec` etc.        | Runs the workflow steps described above                             |
-| Vercel             | Vercel dashboard                                      | Every push                        | Deploys as before (not blocked by CI; check the CI badge yourself)  |
+| What               | Where                                                           | When it runs                       | What it does                                                                       |
+| ------------------ | --------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------- |
+| Prettier           | `.prettierrc.json`, `.prettierignore`                           | Pre-commit, CI, Claude edits       | One code style (single quotes, 2 spaces, trailing commas)                          |
+| Pre-commit hook    | `.husky/pre-commit` + `lint-staged` in `package.json`           | Every `git commit`                 | Formats and lints only the files you commit; blocks lint errors                    |
+| GitHub CI          | `.github/workflows/ci.yml`                                      | Every PR and every merge to `main` | Format check, lint, tests, build; red ✗ on GitHub if anything fails                |
+| Branch protection  | GitHub → Settings → Rules ("Protect main")                      | Every change to `main`             | PR plus passing CI required, squash only, no force push or bypass                  |
+| Dependabot         | `.github/dependabot.yml`                                        | Weekly (npm), monthly (actions)    | Opens PRs for outdated packages; CI tests them before you merge                    |
+| Claude format hook | `.claude/settings.json`                                         | Every file Claude edits            | Runs Prettier on that file                                                         |
+| Claude commands    | `.claude/commands/*.md`                                         | When you type `/spec` etc.         | Runs the workflow steps described above                                            |
+| Vercel             | Vercel dashboard; Node version from `engines` in `package.json` | Every push                         | Preview for each PR branch; production from `main`, so only checked code goes live |
 
 ### npm scripts
 
@@ -111,20 +125,21 @@ The old `watchscss` script is gone: SCSS is imported directly by the app, so the
 - **Styles**: SCSS `@use` only, color variables only, no `!important`.
 - **Accessibility**: real buttons and links with labels, one `<h1>` per page, descriptive `alt` text.
 - **Text**: straight apostrophes, en dash for ranges, Title Case headings, sentence-case buttons and labels.
-- **Workflow**: the two kinds of change, spec first for features, check every style rule a changed selector touches, refactors keep behavior identical, `npm run check` plus browser check before "done", short commit messages.
+- **Workflow**: the two kinds of change, spec first for features, check every style rule a changed selector touches, refactors keep behavior identical, `npm run check` plus browser check before "done", a branch and pull request for every change (never commit to `main`), short commit messages.
 
 Edit it whenever a preference changes; Claude picks it up in the next session.
 
 ## Typical day
 
-- "Add my new job at X from 01/2026": `/data-change add job ...` → review the diff → "commit, push".
-- "I want a 404 page": `/spec add a not-found page` → answer questions, approve → `/implement specs/layout-navigation.md` → look at it → "commit, push".
+- "Add my new job at X from 01/2026": `/data-change add job ...` → review the diff → `/pr` → check the Vercel preview → merge.
+- "I want a 404 page": `/spec add a not-found page` → answer questions, approve → `/implement specs/layout-navigation.md` → look at it → `/pr` → check the preview → merge.
 - Dependabot opened a PR: if CI is green and it's minor/patch, merge it on GitHub. For a major update, ask Claude to check it first.
 - CI is red: open the failed run on GitHub, or run `/check` locally; the failing test name tells you which spec behavior broke.
 
 ## Good to know
 
-- Commit before big experiments; `git` is your undo button.
+- Commit before big experiments; `git` is your undo button. To undo a merged change, revert its squash commit in a new PR (GitHub has a "Revert" button on merged PRs).
+- Personal repos under `~/projects/personal/` commit with your personal email through an `includeIf` rule in `~/.gitconfig` (`~/.gitconfig-personal`); work repos keep their own identity.
 - If the pre-commit hook blocks a commit, it printed the lint error; fix it (or ask Claude) and commit again.
 - `.claude/launch.json` lets Claude start the dev server to check pages in its browser.
 - Create React App (`react-scripts`) is no longer maintained. Moving to Vite is a reasonable future feature change; do it via `/spec` so the tests guard the migration.

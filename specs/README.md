@@ -14,6 +14,7 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 3. Implement against the spec. Remove `(proposed)` once a behavior is implemented.
 4. Verify: every behavior has an automated test or is checked in the browser, as its tag says.
 5. Run `npm run check` (format, lint, tests, build) before committing.
+6. Open a pull request. It merges into `main` only after CI passes.
 
 ## Writing behaviors
 
