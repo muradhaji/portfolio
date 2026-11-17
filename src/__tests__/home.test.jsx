@@ -11,7 +11,7 @@ import {
   SERVICES,
 } from '../helpers/constants';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 beforeEach(() => {
   getProjects.mockResolvedValue([]);
@@ -139,7 +139,7 @@ test('SKILLS-4 shows the avatar, CV button and contact links', async () => {
 });
 
 test('SKILLS-5 Download CV downloads the resume with a clear file name', async () => {
-  const click = jest
+  const click = vi
     .spyOn(HTMLAnchorElement.prototype, 'click')
     .mockImplementation(function () {
       click.downloaded = {

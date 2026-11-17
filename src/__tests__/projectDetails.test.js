@@ -2,7 +2,7 @@ import { screen, within } from '@testing-library/react';
 import { renderApp } from '../testing/renderApp';
 import { getProjectById, getProjects } from '../services/projectsService';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 const payflow = {
   id: 1,
@@ -59,7 +59,7 @@ test('DETAILS-3 redirects to /projects for a placeholder project', async () => {
 });
 
 test('DETAILS-3 redirects to /projects when loading fails', async () => {
-  jest.spyOn(console, 'error').mockImplementation(() => {});
+  vi.spyOn(console, 'error').mockImplementation(() => {});
   getProjectById.mockRejectedValue(new Error('offline'));
   await renderApp('/projects/details/1');
   await expectRedirectToProjects();

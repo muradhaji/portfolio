@@ -2,7 +2,7 @@ import { act, screen } from '@testing-library/react';
 import { renderApp, setSystemTheme } from '../testing/renderApp';
 import { getProjects } from '../services/projectsService';
 
-jest.mock('../services/projectsService');
+vi.mock('../services/projectsService');
 
 const html = document.documentElement;
 
@@ -94,8 +94,8 @@ test('THEME-9 works when localStorage is unavailable', async () => {
   const fail = () => {
     throw new Error('blocked');
   };
-  jest.spyOn(Storage.prototype, 'getItem').mockImplementation(fail);
-  jest.spyOn(Storage.prototype, 'setItem').mockImplementation(fail);
+  vi.spyOn(Storage.prototype, 'getItem').mockImplementation(fail);
+  vi.spyOn(Storage.prototype, 'setItem').mockImplementation(fail);
   setSystemTheme('light');
 
   const { user } = await renderApp();
@@ -104,5 +104,5 @@ test('THEME-9 works when localStorage is unavailable', async () => {
   );
 
   expect(html).toHaveClass('dark');
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });

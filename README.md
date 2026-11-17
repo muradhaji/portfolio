@@ -14,12 +14,14 @@ This is the repository for my personal portfolio website. The goal of this proje
 
 ## Development
 
-Built with React, Redux Toolkit, React Router and Sass. Requires Node 26 (see `.nvmrc`; with nvm, run `nvm use`).
+Built with React, Redux Toolkit, React Router and Sass, using Vite, Vitest and ESLint. Requires Node 26 (see `.nvmrc`; with nvm, run `nvm use`).
 
 ```bash
 npm install
 npm start
 ```
+
+The dev server runs at http://localhost:3000.
 
 - `npm test`: run the tests in watch mode.
 - `npm run check`: format check, lint, tests and production build (the same checks CI runs).

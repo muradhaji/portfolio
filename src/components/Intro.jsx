@@ -1,5 +1,5 @@
 import Button from './Button';
-import { ReactComponent as DownArrow } from '../images/icons/downArrow.svg';
+import DownArrow from '../images/icons/downArrow.svg?react';
 import SocialIcon from './SocialIcon';
 import AnimatedComponent from './AnimatedComponent';
 
