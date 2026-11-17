@@ -250,3 +250,9 @@ export const SERVICES = [
     screens: [{ icon: 'rocket' }],
   },
 ];
+
+export const NOT_FOUND = {
+  title: 'Page Not Found',
+  text: "This page doesn't exist.",
+  linkText: 'Go to home page',
+};

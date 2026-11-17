@@ -32,5 +32,5 @@ Build, serve, test and lint the site with maintained tools (Vite, Vitest, ESLint
 
 ## Out of scope
 
-- Upgrading React to 19, React Router to 7, Swiper or lint-staged to new majors (separate PRs).
+- Upgrading React to 19, React Router to 7 or lint-staged to a new major (separate PRs).
 - TypeScript, new lint rules beyond Create React App's, or any visual or content change.
