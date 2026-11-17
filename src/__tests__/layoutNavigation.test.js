@@ -1,7 +1,7 @@
 import { fireEvent, screen, within } from '@testing-library/react';
 import { renderApp } from '../testing/renderApp';
 import { getProjects, getProjectById } from '../services/projectsService';
-import { SOCIAL_LINKS } from '../helpers/constants';
+import { NOT_FOUND, SOCIAL_LINKS } from '../helpers/constants';
 
 jest.mock('../services/projectsService');
 
@@ -166,4 +166,32 @@ test('FOOTER-3 the email link opens in the same tab', async () => {
     .forEach(({ link }) => {
       expect(link).not.toHaveAttribute('target');
     });
+});
+
+test('NOTFOUND-1 an unknown URL shows the not-found page inside the layout', async () => {
+  await renderApp('/foo');
+  expect(screen.getByRole('banner')).toBeInTheDocument();
+  expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+  expect(
+    within(screen.getByRole('main')).getByRole('heading', {
+      level: 1,
+      name: NOT_FOUND.title,
+    })
+  ).toBeInTheDocument();
+});
+
+test('NOTFOUND-2 the not-found page has one heading, the message and a home link', async () => {
+  await renderApp('/foo');
+  expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
+  expect(screen.getByText(NOT_FOUND.text)).toBeInTheDocument();
+  expect(
+    within(screen.getByRole('main')).getByRole('link', {
+      name: NOT_FOUND.linkText,
+    })
+  ).toHaveAttribute('href', '/');
+});
+
+test('NOTFOUND-3 the URL stays as typed', async () => {
+  const { currentPath } = await renderApp('/foo/bar');
+  expect(currentPath()).toBe('/foo/bar');
 });

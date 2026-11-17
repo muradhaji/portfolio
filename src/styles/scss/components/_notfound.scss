@@ -1,0 +1,16 @@
+@use '../colors';
+@use '../text';
+
+section#notFound {
+  div.container {
+    div.content {
+      align-items: center;
+      text-align: center;
+
+      .notFoundText {
+        font-size: text.$text-m;
+        color: colors.$gray-dark;
+      }
+    }
+  }
+}

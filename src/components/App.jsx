@@ -4,6 +4,7 @@ import Projects from './Projects';
 import Menu from './Menu';
 import Footer from './Footer';
 import ProjectDetails from './ProjectDetails';
+import NotFound from './NotFound';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -58,6 +59,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/projects' element={<Projects />} />
           <Route path='/projects/details/:id' element={<ProjectDetails />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
