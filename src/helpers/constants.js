@@ -34,22 +34,38 @@ export const SOCIAL_LINKS = {
 
 export const MY_SKILLS = [
   {
-    sliderLabel: 'FRONT END',
+    sliderLabel: 'LANGUAGES',
+    skills: ['JavaScript', 'TypeScript', 'HTML 5', 'CSS 3', 'Sass'],
+  },
+  {
+    sliderLabel: 'REACT',
     skills: [
-      'JavaScript',
-      'TypeScript',
-      'HTML 5',
       'React',
       'React Router',
       'Context API',
+      'Redux',
+      'Redux Toolkit',
+      'React Query',
+      'React Hook Form',
     ],
   },
   {
-    sliderLabel: 'DESIGN & TOOLS',
+    sliderLabel: 'ANGULAR',
     skills: [
-      'CSS 3',
-      'Sass',
+      'Angular',
+      'Angular Signals',
+      'RxJS',
+      'NgRx',
+      'Reactive Forms',
+      'Angular Material',
+    ],
+  },
+  {
+    sliderLabel: 'UI & DESIGN',
+    skills: [
+      'Tailwind CSS',
       'Bootstrap',
+      'Material UI',
       'Ant Design',
       'Mantine UI',
       'Font Awesome',
@@ -57,29 +73,56 @@ export const MY_SKILLS = [
     ],
   },
   {
-    sliderLabel: 'JS FRAMEWORKS / LIBRARIES',
-    skills: ['Redux', 'React Query', 'HighCharts', 'Lodash', 'Moment.js'],
+    sliderLabel: 'LIBRARIES & BUILD',
+    skills: ['Lodash', 'Moment.js', 'HighCharts', 'Webpack', 'Vite', 'Nx'],
   },
   {
-    sliderLabel: 'BACK-END',
-    skills: ['Node.js', 'Express.js', 'Mongo DB', 'ORM', 'JWT'],
-  },
-  {
-    sliderLabel: 'CONCEPTS / PRINCIPLES',
-    skills: ['Algorithm Design', 'Data Structures', 'SOLID Principles', 'OOP'],
-  },
-  {
-    sliderLabel: 'TECHNOLOGIES / TOOLS',
+    sliderLabel: 'BACK-END & APIS',
     skills: [
-      'Git',
-      'GitHub',
-      'BitBucket',
-      'Jira',
-      'Postman',
+      'Node.js',
+      'Express.js',
       'Rest API',
-      'Webpack',
-      'Vite',
+      'Mongo DB',
+      'Mongoose',
+      'ORM',
+      'JWT',
+      'Postman',
     ],
+  },
+  {
+    sliderLabel: 'TESTING & QUALITY',
+    skills: [
+      'Jest',
+      'Jasmine & Karma',
+      'Playwright',
+      'ESLint & Prettier',
+      'Code Review',
+    ],
+  },
+  {
+    sliderLabel: 'WEB PRACTICES',
+    skills: [
+      'Responsive Design',
+      'Accessibility (a11y)',
+      'Web Performance',
+      'SEO',
+      'i18n',
+      'Micro-frontends',
+    ],
+  },
+  {
+    sliderLabel: 'FUNDAMENTALS',
+    skills: [
+      'Algorithm Design',
+      'Data Structures',
+      'OOP',
+      'SOLID Principles',
+      'Clean Code',
+    ],
+  },
+  {
+    sliderLabel: 'WORKFLOW',
+    skills: ['Git', 'GitHub', 'BitBucket', 'CI/CD', 'Jira', 'Agile / Scrum'],
   },
   {
     sliderLabel: 'SOFT SKILLS',
@@ -91,6 +134,8 @@ export const MY_SKILLS = [
       'Creativity',
       'Research',
       'Self Study',
+      'Time Management',
+      'Mentoring',
     ],
   },
 ];
