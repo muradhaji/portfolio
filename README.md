@@ -24,7 +24,7 @@ npm start
 - `npm test`: run the tests in watch mode.
 - `npm run check`: format check, lint, tests and production build (the same checks CI runs).
 
-The project follows spec-driven development: [`specs/`](specs/README.md) describes what the site does, and every behavior is covered by a test or a browser check. See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the full workflow, the automation (pre-commit hook, CI, Dependabot) and how to make changes.
+The project follows spec-driven development: [`specs/`](specs/README.md) describes what the site does, and every behavior is covered by a test or a browser check. Every change goes through a pull request; `main` accepts a merge only after CI passes, and Vercel deploys `main` to production. See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the full workflow, the automation (pre-commit hook, CI, branch protection, Dependabot) and how to make changes.
 
 ## Contact
 

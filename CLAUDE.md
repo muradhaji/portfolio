@@ -37,4 +37,7 @@
 - When changing a selector, class name or element type, check every style rule that targets it (hover, theme, responsive, animations).
 - Refactors keep behavior identical; name any intended visual change explicitly.
 - Before reporting a change done, run `npm run check` (format, lint, tests, build) and check affected interactions in the browser (hover, click, keyboard, light and dark theme, phone width).
-- Keep commit messages short. The pre-commit hook formats and lints staged files; CI runs the full check on every push and pull request.
+- Every change goes through a pull request. `main` is protected (pull request and passing CI required, squash merge only): never commit or push to `main`.
+- Start each change on a branch from up-to-date `main`, named by kind: `data/…`, `feat/…`, `fix/…`, `chore/…` or `docs/…`.
+- When I ask to commit or open a PR, commit on the branch, push it and open a PR (`/pr`). I merge it after CI passes and I've checked the Vercel preview; merging deploys production. Don't merge unless I ask.
+- Keep commit messages short. The pre-commit hook formats and lints staged files; CI runs the full check on every pull request and on `main`.
