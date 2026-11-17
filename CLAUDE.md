@@ -31,13 +31,13 @@
 ## Workflow
 
 - Specs in `specs/` describe what the site does; read `specs/README.md` before changing behavior.
-- Data change (projects, jobs, text, links, counters): edit only `src/helpers/constants.js` and `public/projects/projects.json`, no spec needed. If it needs a code change, say so first. Command: `/data-change`.
+- Data change (projects, jobs, text, links, counters, CV): edit only the data files `src/helpers/constants.js` and `public/projects/projects.json`, plus data assets (project images in `public/projects/`, the CV `public/resume.pdf`); no spec needed. If it needs a code change, say so first. Command: `/data-change`.
 - Feature or behavior change: update the spec first (`/spec`), wait for approval, then implement (`/implement`). Code that changes behavior without a matching spec change is not done.
 - Every `[test]` behavior has a test in `src/__tests__/` named after its ID; every `[manual]` behavior is checked in the browser.
 - When changing a selector, class name or element type, check every style rule that targets it (hover, theme, responsive, animations).
 - Refactors keep behavior identical; name any intended visual change explicitly.
 - Before reporting a change done, run `npm run check` (format, lint, tests, build) and check affected interactions in the browser (hover, click, keyboard, light and dark theme, phone width).
-- Every change goes through a pull request. `main` is protected (pull request and passing CI required, squash merge only): never commit or push to `main`.
+- Every change goes through a pull request. `main` is protected (pull request plus passing CI and Vercel checks required, squash merge only): never commit or push to `main`.
 - Start each change on a branch from up-to-date `main`, named by kind: `data/…`, `feat/…`, `fix/…`, `chore/…` or `docs/…`.
-- When I ask to commit or open a PR, commit on the branch, push it and open a PR (`/pr`). I merge it after CI passes and I've checked the Vercel preview; merging deploys production. Don't merge unless I ask.
+- When I ask to commit or open a PR, commit on the branch, push it and open a PR (`/pr`). I merge it after the checks pass and I've checked the Vercel preview; merging deploys production. Don't merge unless I ask.
 - Keep commit messages short. The pre-commit hook formats and lints staged files; CI runs the full check on every pull request and on `main`.

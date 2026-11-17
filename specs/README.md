@@ -4,7 +4,7 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 
 ## Two kinds of change
 
-- **Data change** (new project, job, text, link, counter): no spec. Edit only the data files (`src/helpers/constants.js`, `public/projects/projects.json`). If the request needs a code change, say so first.
+- **Data change** (new project, job, text, link, counter, CV): no spec. Edit only the data files (`src/helpers/constants.js`, `public/projects/projects.json`) and data assets (project images in `public/projects/`, `public/resume.pdf`). If the request needs a code change, say so first.
 - **Feature or behavior change**: write or update the spec first, get it approved, then implement, then verify every behavior in it.
 
 ## Workflow for a feature or behavior change
@@ -13,8 +13,7 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 2. Review: the owner approves or edits the spec. Open questions must be answered before coding.
 3. Implement against the spec. Remove `(proposed)` once a behavior is implemented.
 4. Verify: every behavior has an automated test or is checked in the browser, as its tag says.
-5. Run `npm run check` (format, lint, tests, build) before committing.
-6. Open a pull request. It merges into `main` only after CI passes.
+5. Ship it through a pull request, as described in [docs/WORKFLOW.md](../docs/WORKFLOW.md#branches-and-pull-requests).
 
 ## Writing behaviors
 
