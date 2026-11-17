@@ -5,7 +5,7 @@ argument-hint: <optional PR title>
 
 Open a pull request for the current change: $ARGUMENTS
 
-1. If on `main`, stop: create a branch for the change first (`data/…`, `feat/…`, `fix/…`, `chore/…` or `docs/…`), then continue on it.
+1. If on `main`, first create a branch for the change from up-to-date `main` (`data/…`, `feat/…`, `fix/…`, `chore/…` or `docs/…`) and carry the uncommitted changes onto it. Never commit on `main`.
 2. Run `npm run check`. If anything fails, stop and show me the error.
 3. Commit with a short message and push the branch.
 4. Open a PR into `main` with `gh pr create`. In the body: the kind of change, what changed, spec behavior IDs touched (for feature changes), and what was checked (`npm run check`, browser).
