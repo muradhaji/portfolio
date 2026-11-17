@@ -25,13 +25,13 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 
 ## Specs
 
-| Spec                                         | Covers                                                       |
-| -------------------------------------------- | ------------------------------------------------------------ |
-| [layout-navigation.md](layout-navigation.md) | Page layout, header, mobile menu, section links, footer      |
-| [theme.md](theme.md)                         | Light and dark theme                                         |
-| [home.md](home.md)                           | Home page sections: intro, about, skills, services, projects |
-| [projects.md](projects.md)                   | Project data, projects grid, project cards, projects page    |
-| [project-details.md](project-details.md)     | Project details page                                         |
+| Spec                                         | Covers                                                                  |
+| -------------------------------------------- | ----------------------------------------------------------------------- |
+| [layout-navigation.md](layout-navigation.md) | Page layout, header, mobile menu, section links, footer, not-found page |
+| [theme.md](theme.md)                         | Light and dark theme                                                    |
+| [home.md](home.md)                           | Home page sections: intro, about, skills, services, projects            |
+| [projects.md](projects.md)                   | Project data, projects grid, project cards, projects page               |
+| [project-details.md](project-details.md)     | Project details page                                                    |
 
 ## Template
 

@@ -234,6 +234,16 @@ header {
     }
   }
 
+  section#notFound {
+    div.container {
+      div.content {
+        .notFoundText {
+          color: colors.$gray-light;
+        }
+      }
+    }
+  }
+
   footer {
     background-color: colors.$black;
   }

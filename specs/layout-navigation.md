@@ -39,10 +39,13 @@ Every page shares the same frame (header, content, footer), and every section of
 - **FOOTER-3** External social links open in a new tab with `rel="noopener noreferrer"`; the email link opens in the same tab. [test]
 - **FOOTER-4** At 600px and wider, the copyright is on the left and the icons on the right; the last icon lines up with the content's right edge. Below 600px both are centered and stacked. [manual]
 
+### Not found
+
+- **NOTFOUND-1** Any URL that matches no route (for example `/foo`), and any unknown project id (DETAILS-6), shows a not-found page inside the normal layout, with header and footer. [test]
+- **NOTFOUND-2** The not-found page has one `<h1>` "Page Not Found", the sentence "This page doesn't exist." and a "Go to home page" link to `/`. [test]
+- **NOTFOUND-3** The URL stays as typed; there is no redirect. [test]
+- **NOTFOUND-4** The page uses the same section header style as the other pages, sits between header and footer with the footer at the bottom of the window, and looks right at phone width and in light and dark theme. [manual]
+
 ## Out of scope
 
-- A 404 page.
-
-## Open questions
-
-- Unknown routes (for example `/foo`) currently show only the header and footer. Should they show a "Page not found" message or redirect to `/`?
+- A server-side 404 status code: the site is a single-page app, so the host always serves the page.

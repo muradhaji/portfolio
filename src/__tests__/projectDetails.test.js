@@ -1,6 +1,7 @@
 import { screen, within } from '@testing-library/react';
 import { renderApp } from '../testing/renderApp';
 import { getProjectById, getProjects } from '../services/projectsService';
+import { NOT_FOUND } from '../helpers/constants';
 
 jest.mock('../services/projectsService');
 
@@ -46,23 +47,30 @@ test('DETAILS-2 shows a skeleton while loading', async () => {
   expect(document.querySelector('.skeleton')).toBeInTheDocument();
 });
 
-test('DETAILS-3 redirects to /projects for an unknown id', async () => {
+const expectNotFoundAt = async (path) => {
+  const { currentPath } = await renderApp(path);
+  expect(
+    await screen.findByRole('heading', { level: 1, name: NOT_FOUND.title })
+  ).toBeInTheDocument();
+  expect(currentPath()).toBe(path);
+};
+
+test('DETAILS-6 shows the not-found page for an unknown id', async () => {
   getProjectById.mockResolvedValue(null);
-  await renderApp('/projects/details/99');
-  await expectRedirectToProjects();
+  await expectNotFoundAt('/projects/details/99');
 });
 
-test('DETAILS-3 redirects to /projects for a placeholder project', async () => {
+test('DETAILS-6 shows the not-found page for a placeholder project', async () => {
   getProjectById.mockResolvedValue({ ...payflow, mockComponent: true });
-  await renderApp('/projects/details/1');
-  await expectRedirectToProjects();
+  await expectNotFoundAt('/projects/details/1');
 });
 
-test('DETAILS-3 redirects to /projects when loading fails', async () => {
+test('DETAILS-7 redirects to /projects when loading fails', async () => {
   jest.spyOn(console, 'error').mockImplementation(() => {});
   getProjectById.mockRejectedValue(new Error('offline'));
-  await renderApp('/projects/details/1');
+  const { currentPath } = await renderApp('/projects/details/1');
   await expectRedirectToProjects();
+  expect(currentPath()).toBe('/projects');
   console.error.mockRestore();
 });
 

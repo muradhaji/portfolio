@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate, useParams } from 'react-router-dom';
 import Skeleton from './Skeleton';
+import NotFound from './NotFound';
 import { getProjectById } from '../services/projectsService';
 
 function DetailsRow({ label, className, children }) {
@@ -28,16 +29,19 @@ function ProjectDetails() {
 
   const [project, setProject] = useState(null);
   const [projectLoading, setProjectLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     let ignore = false;
 
     setProjectLoading(true);
+    setNotFound(false);
     getProjectById(id)
       .then((projectData) => {
         if (ignore) return;
+        // Placeholder projects have no details page, so they count as missing.
         if (!projectData || projectData.mockComponent) {
-          navigate('/projects', { replace: true });
+          setNotFound(true);
           return;
         }
         setProject(projectData);
@@ -54,6 +58,8 @@ function ProjectDetails() {
       ignore = true;
     };
   }, [id, navigate]);
+
+  if (notFound) return <NotFound />;
 
   return (
     <section id='projectDetails'>

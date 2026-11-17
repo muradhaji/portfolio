@@ -65,14 +65,14 @@ CI doesn't require a PR to be up to date with `main` before merging: one fewer c
 
 ## The specs
 
-| File                         | Covers                                               | ID prefixes                                        |
-| ---------------------------- | ---------------------------------------------------- | -------------------------------------------------- |
-| `specs/README.md`            | The workflow, ID rules, template                     |                                                    |
-| `specs/layout-navigation.md` | Layout, header, mobile menu, section links, footer   | LAYOUT, NAV, MENU, SCROLL, FOOTER                  |
-| `specs/theme.md`             | Light and dark theme                                 | THEME                                              |
-| `specs/home.md`              | Intro, About Me, My Skills, My Services, My Projects | HOME, INTRO, ABOUT, SKILLS, SERVICES, HOMEPROJECTS |
-| `specs/projects.md`          | Project data, grid, cards, projects page             | PDATA, GRID, COMPACT, CARD, PPAGE                  |
-| `specs/project-details.md`   | Project details page                                 | DETAILS                                            |
+| File                         | Covers                                                             | ID prefixes                                        |
+| ---------------------------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| `specs/README.md`            | The workflow, ID rules, template                                   |                                                    |
+| `specs/layout-navigation.md` | Layout, header, mobile menu, section links, footer, not-found page | LAYOUT, NAV, MENU, SCROLL, FOOTER, NOTFOUND        |
+| `specs/theme.md`             | Light and dark theme                                               | THEME                                              |
+| `specs/home.md`              | Intro, About Me, My Skills, My Services, My Projects               | HOME, INTRO, ABOUT, SKILLS, SERVICES, HOMEPROJECTS |
+| `specs/projects.md`          | Project data, grid, cards, projects page                           | PDATA, GRID, COMPACT, CARD, PPAGE                  |
+| `specs/project-details.md`   | Project details page                                               | DETAILS                                            |
 
 How to read a behavior line:
 
@@ -83,8 +83,6 @@ How to read a behavior line:
 - `THEME-3` is a permanent ID. The matching test is named `THEME-3 …`, so a failing test tells you exactly which promise broke.
 - `[test]`: checked automatically. `[manual]`: visual (hover, animation, layout), checked in the browser.
 - `(proposed)`: approved for building but not built yet.
-
-Open question waiting for you (in `specs/layout-navigation.md`): unknown URLs like `/foo` show only header and footer. Should they show "Page not found" or redirect home?
 
 ## The tests
 
