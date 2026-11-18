@@ -10,4 +10,4 @@ Make this data change: $ARGUMENTS
 3. Follow the text rules in `CLAUDE.md` (apostrophes, en dash for ranges, heading and label case).
 4. If the change needs a code or spec change (a new field, a new section, different behavior), stop and tell me instead of changing code.
 5. Run `npm run check`. Tests read from the data files, so a failure usually means the data shape is wrong.
-6. Show me the exact data changes. Do not commit unless I ask; when I do, open a PR with `/pr`.
+6. Show me the exact data changes. Do not commit unless I ask; when I do, open a PR with `/portfolio-pr`.
