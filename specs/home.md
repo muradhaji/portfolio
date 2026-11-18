@@ -32,6 +32,7 @@ Introduce Murad Hajiyev as a Front-End Developer: who he is, what he knows, what
 - **SKILLS-3** Below the slider, dots show the current group's name and up to two neighbors on each side. Dots are buttons labelled "Show <group> slide"; the current one is marked `aria-current`. Pressing a dot (click or keyboard) shows that slide. [manual]
 - **SKILLS-4** Shows the avatar (alt text "Murad Hajiyev"), a "Download CV" button and social icon links for LinkedIn, WhatsApp, Telegram and Email. [test]
 - **SKILLS-5** "Download CV" downloads `/resume.pdf` as `Murad Hajiyev - CV (Front-End Developer).pdf`. [test]
+- **SKILLS-6** The avatar shows in its original colors, with no grayscale or other color filter, in both light and dark theme. [manual]
 
 ### My Services
 
