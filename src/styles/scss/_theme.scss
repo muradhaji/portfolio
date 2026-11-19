@@ -63,7 +63,7 @@ header {
   }
 
   a.socialIcon {
-    &.stroke {
+    &.stroke::before {
       border-color: colors.$white;
     }
     svg {
