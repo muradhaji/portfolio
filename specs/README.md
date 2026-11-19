@@ -4,7 +4,7 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 
 ## Two kinds of change
 
-- **Data change** (new project, job, text, link, counter, CV): no spec. Edit only the data files (`src/helpers/constants.js`, `public/projects/projects.json`) and data assets (project images in `public/projects/`, `public/resume.pdf`). If the request needs a code change, say so first.
+- **Data change** (new project, job, text, link, counter, CV): no spec. Edit only the data files (`src/helpers/constants.js`, `public/projects/projects.json`) and data assets (project images in `public/projects/`, `public/resume.pdf`), and keep `public/portfolio.json` in sync (BUILD-16). If the request needs a code change, say so first.
 - **Feature or behavior change**: write or update the spec first, get it approved, then implement, then verify every behavior in it.
 
 ## Workflow for a feature or behavior change

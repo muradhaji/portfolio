@@ -31,7 +31,7 @@
 ## Workflow
 
 - Specs in `specs/` describe what the site does; read `specs/README.md` before changing behavior.
-- Data change (projects, jobs, text, links, counters, CV): edit only the data files `src/helpers/constants.js` and `public/projects/projects.json`, plus data assets (project images in `public/projects/`, the CV `public/resume.pdf`); no spec needed. If it needs a code change, say so first. Command: `/portfolio-data-change`.
+- Data change (projects, jobs, text, links, counters, CV): edit only the data files `src/helpers/constants.js` and `public/projects/projects.json`, plus data assets (project images in `public/projects/`, the CV `public/resume.pdf`); no spec needed. Every data change also updates `public/portfolio.json` (the public copy for other projects, `/portfolio-json`). If it needs a code change, say so first. Command: `/portfolio-data-change`.
 - Feature or behavior change: update the spec first (`/portfolio-spec`), wait for approval, then implement (`/portfolio-implement`). Code that changes behavior without a matching spec change is not done.
 - Every `[test]` behavior has a test in `src/__tests__/` named after its ID; every `[manual]` behavior is checked in the browser.
 - When changing a selector, class name or element type, check every style rule that targets it (hover, theme, responsive, animations).

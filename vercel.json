@@ -11,6 +11,15 @@
           "value": "attachment; filename=\"Murad Hajiyev - CV (Front-End Developer).pdf\""
         }
       ]
+    },
+    {
+      "source": "/portfolio.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]

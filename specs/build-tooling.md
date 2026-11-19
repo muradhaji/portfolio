@@ -21,6 +21,12 @@ Build, serve, test and lint the site with maintained tools (Vite, Vitest, ESLint
 - **BUILD-12** The production build targets Vite's default browsers (current, widely available versions of Chrome, Edge, Firefox and Safari). [manual]
 - **BUILD-13** On Vercel, `/resume.pdf` is sent with `Content-Disposition: attachment` and the file name `Murad Hajiyev - CV (Front-End Developer).pdf` (header in `vercel.json`), so "Download CV" (SKILLS-5) saves it under that name instead of `resume.pdf`. The path and name come from `CV` in `src/helpers/constants.js`; `vercel.json` can't read it, so a test fails if the header's name differs. [test]
 
+### Public data file
+
+- **BUILD-14** `public/portfolio.json` is a copy of the site's personal data for other projects, served at `https://muradhajiyev.vercel.app/portfolio.json`: `version`, `updated` (`YYYY-MM-DD`), `basics` (name, title, summary, email, phone, location, avatar, cv), `social`, `about`, `counters`, `experience`, `education`, `skills`, `services` and `projects` (the real projects from `projects.json`, without placeholders). List entries have unique `id`s, dates are `YYYY-MM` (`end: null` while ongoing) and every URL is absolute. The avatar lives only in `public/avatar.jpeg`, used by the site (SKILLS-4) and linked from `basics.avatar`. [manual]
+- **BUILD-15** On Vercel, `/portfolio.json` is sent with `Access-Control-Allow-Origin: *` (header in `vercel.json`), so other sites can fetch it. [test]
+- **BUILD-16** A test fails if `portfolio.json` disagrees with what the site shows: the intro name, title and summary, the CV, the social links, about text, counters, education, work history, skills and services in `src/helpers/constants.js`, the projects in `public/projects/projects.json`, or if `public/avatar.jpeg` is missing. Every data change updates `portfolio.json` in the same pull request (`/portfolio-data-change`, `/portfolio-json`). [test]
+
 ### Tests and lint
 
 - **BUILD-8** Tests run on Vitest with jsdom. Every test in `src/__tests__/` keeps its name (the behavior ID) and passes. [manual]
