@@ -1,7 +1,9 @@
+import { Fragment } from 'react';
 import Button from './Button';
 import DownArrow from '../images/icons/downArrow.svg?react';
 import SocialIcon from './SocialIcon';
 import AnimatedComponent from './AnimatedComponent';
+import { PROFILE } from '../helpers/constants';
 
 function Intro() {
   return (
@@ -13,17 +15,20 @@ function Intro() {
               <div className='greeting'>
                 <p className='hi'>Hi!</p>
                 <h1>
-                  <span>I'm</span> <span>Murad</span> <span>Hajiyev</span>
+                  <span>I'm</span>
+                  {PROFILE.name.split(' ').map((word) => (
+                    <Fragment key={word}>
+                      {' '}
+                      <span>{word}</span>
+                    </Fragment>
+                  ))}
                 </h1>
                 <div className='profession'>
                   <div className='line'></div>
-                  <div className='name'>Front-End Developer</div>
+                  <div className='name'>{PROFILE.title}</div>
                 </div>
               </div>
-              <p className='summary'>
-                Focused on building responsive, scalable applications and
-                delivering clean, user-centered solutions in agile environments.
-              </p>
+              <p className='summary'>{PROFILE.summary}</p>
               <div className='buttons'>
                 <Button
                   type='hashlink'

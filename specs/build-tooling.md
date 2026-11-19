@@ -19,7 +19,7 @@ Build, serve, test and lint the site with maintained tools (Vite, Vitest, ESLint
 - **BUILD-6** The page `<head>` is unchanged: title, description, `theme-color`, favicons, apple touch icon, manifest and the theme script (THEME-8). The HTML entry file is `index.html` at the repo root. [manual]
 - **BUILD-7** SVG icons render inline (imported with `?react` through `vite-plugin-svgr`), so they follow the theme color and hover styles; the avatar image and Plus Jakarta Sans fonts load in the dev server and the production build. [manual]
 - **BUILD-12** The production build targets Vite's default browsers (current, widely available versions of Chrome, Edge, Firefox and Safari). [manual]
-- **BUILD-13** On Vercel, `/resume.pdf` is sent with `Content-Disposition: attachment` and the file name `Murad Hajiyev - CV (Front-End Developer).pdf` (header in `vercel.json`), so "Download CV" (SKILLS-5) saves it under that name instead of `resume.pdf`. [manual]
+- **BUILD-13** On Vercel, `/resume.pdf` is sent with `Content-Disposition: attachment` and the file name `Murad Hajiyev - CV (Front-End Developer).pdf` (header in `vercel.json`), so "Download CV" (SKILLS-5) saves it under that name instead of `resume.pdf`. The path and name come from `CV` in `src/helpers/constants.js`; `vercel.json` can't read it, so a test fails if the header's name differs. [test]
 
 ### Tests and lint
 

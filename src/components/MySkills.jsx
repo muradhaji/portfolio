@@ -4,9 +4,7 @@ import AnimatedComponent from './AnimatedComponent';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import { MY_SKILLS } from '../helpers/constants';
-
-import Avatar from '../images/avatar.jpeg';
+import { CV, MY_SKILLS, PROFILE } from '../helpers/constants';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -52,8 +50,8 @@ function MySkills() {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Murad Hajiyev - CV (Front-End Developer).pdf';
+    link.href = CV.href;
+    link.download = CV.fileName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -94,7 +92,7 @@ function MySkills() {
           <div className='contactInfo'>
             <AnimatedComponent>
               <div className='avatar'>
-                <img src={Avatar} alt='Murad Hajiyev' />
+                <img src='/avatar.jpeg' alt={PROFILE.name} />
               </div>
             </AnimatedComponent>
             <AnimatedComponent>
