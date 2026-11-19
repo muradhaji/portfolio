@@ -47,8 +47,8 @@ export const SOCIAL_LINKS = {
 
 export const MY_SKILLS = [
   {
-    sliderLabel: 'LANGUAGES',
-    skills: ['JavaScript', 'TypeScript', 'HTML 5', 'CSS 3', 'Sass'],
+    sliderLabel: 'LANGUAGES & MARKUP',
+    skills: ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'Sass'],
   },
   {
     sliderLabel: 'REACT',
@@ -64,43 +64,36 @@ export const MY_SKILLS = [
   },
   {
     sliderLabel: 'ANGULAR',
-    skills: [
-      'Angular',
-      'Angular Signals',
-      'RxJS',
-      'NgRx',
-      'Reactive Forms',
-      'Angular Material',
-    ],
-  },
-  {
-    sliderLabel: 'UI & DESIGN',
-    skills: [
-      'Tailwind CSS',
-      'Bootstrap',
-      'Material UI',
-      'Ant Design',
-      'Mantine UI',
-      'Font Awesome',
-      'Figma',
-    ],
-  },
-  {
-    sliderLabel: 'LIBRARIES & BUILD',
-    skills: ['Lodash', 'Moment.js', 'HighCharts', 'Webpack', 'Vite', 'Nx'],
+    skills: ['Angular', 'Angular Signals', 'RxJS', 'NgRx', 'Reactive Forms'],
   },
   {
     sliderLabel: 'BACK-END & APIS',
     skills: [
       'Node.js',
       'Express.js',
-      'Rest API',
-      'Mongo DB',
+      'MongoDB',
       'Mongoose',
       'ORM',
+      'REST API',
       'JWT',
-      'Postman',
     ],
+  },
+  {
+    sliderLabel: 'UI/UX',
+    skills: [
+      'Figma',
+      'Tailwind CSS',
+      'Bootstrap',
+      'Material UI',
+      'Angular Material',
+      'Ant Design',
+      'Mantine UI',
+      'Font Awesome',
+    ],
+  },
+  {
+    sliderLabel: 'LIBRARIES',
+    skills: ['Highcharts', 'Chart.js', 'Lodash', 'Moment.js'],
   },
   {
     sliderLabel: 'TESTING & QUALITY',
@@ -134,12 +127,15 @@ export const MY_SKILLS = [
     ],
   },
   {
-    sliderLabel: 'WORKFLOW',
+    sliderLabel: 'BUILD & DEPLOYMENT TOOLS',
+    skills: ['Vite', 'Webpack', 'Nx', 'CI/CD', 'Postman'],
+  },
+  {
+    sliderLabel: 'VERSION CONTROL & PROJECT MANAGEMENT',
     skills: [
       'Git',
       'GitHub',
-      'BitBucket',
-      'CI/CD',
+      'Bitbucket',
       'Jira',
       'Confluence',
       'Agile / Scrum',
@@ -149,14 +145,14 @@ export const MY_SKILLS = [
     sliderLabel: 'SOFT SKILLS',
     skills: [
       'Problem Solving',
-      'Adaptability',
-      'Collaboration',
-      'Communication',
-      'Creativity',
       'Research',
       'Self Study',
-      'Time Management',
+      'Communication',
+      'Collaboration',
       'Mentoring',
+      'Adaptability',
+      'Creativity',
+      'Time Management',
     ],
   },
 ];
