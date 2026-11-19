@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "updated": "2026-11-19",
+  "basics": {
+    "name": "Murad Hajiyev",
+    "title": "Front-End Developer",
+    "summary": "Focused on building responsive, scalable applications and delivering clean, user-centered solutions in agile environments.",
+    "email": "muradhajiyev42@icloud.com",
+    "phone": "+994557088909",
+    "location": "Baku, Azerbaijan",
+    "avatar": "https://muradhajiyev.vercel.app/avatar.jpeg",
+    "cv": "https://muradhajiyev.vercel.app/resume.pdf"
+  },
+  "social": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/muradhajiev"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp",
+      "url": "https://wa.me/994557088909"
+    },
+    {
+      "id": "telegram",
+      "label": "Telegram",
+      "url": "https://t.me/muradhajiyev13"
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "url": "mailto:muradhajiyev42@icloud.com"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/muradhaji"
+    },
+    {
+      "id": "leetcode",
+      "label": "LeetCode",
+      "url": "https://leetcode.com/u/muradhajiyev/"
+    },
+    {
+      "id": "linktree",
+      "label": "Linktree",
+      "url": "https://linktr.ee/muradhajiyev"
+    }
+  ],
+  "about": [
+    {
+      "id": "user",
+      "icon": "user",
+      "text": "Front-End Developer with over three years of experience specializing in the MERN stack. Focused on building responsive, scalable applications and delivering clean, user-centered solutions in agile environments."
+    },
+    {
+      "id": "bulb",
+      "icon": "bulb",
+      "text": "I love turning ideas into user-friendly interfaces and solving challenges to deliver quality solutions. Besides front-end development, I excel at using data structures and algorithms to make my code efficient and perform well."
+    },
+    {
+      "id": "seed",
+      "icon": "seed",
+      "text": "Currently, I'm deepening my knowledge of TypeScript, testing and web performance to build faster, more reliable products."
+    },
+    {
+      "id": "rocket",
+      "icon": "rocket",
+      "text": "Whether it's building responsive websites, developing interactive web applications, or exploring new technologies, I'm dedicated to pushing the boundaries of what's possible in web development."
+    },
+    {
+      "id": "mug",
+      "icon": "mug",
+      "text": "When I'm not coding, you can find me exploring the latest trends in web design, working on personal projects, or contributing to open-source initiatives."
+    },
+    {
+      "id": "userplus",
+      "icon": "userPlus",
+      "text": "Let's connect and collaborate on exciting projects together!"
+    }
+  ],
+  "counters": [
+    {
+      "id": "years-of-experience",
+      "label": "Years of experience",
+      "value": 3,
+      "suffix": "+"
+    },
+    {
+      "id": "completed-projects",
+      "label": "Completed projects",
+      "value": 2
+    },
+    {
+      "id": "customers",
+      "label": "Customers",
+      "value": 0
+    }
+  ],
+  "experience": [
+    {
+      "id": "andersen-lab",
+      "organization": "Andersen Lab",
+      "role": "JavaScript Developer",
+      "start": "2025-06",
+      "end": null
+    },
+    {
+      "id": "algo-academy",
+      "organization": "Algo Academy",
+      "role": "Front-End Instructor",
+      "start": "2023-10",
+      "end": "2024-07"
+    },
+    {
+      "id": "qmeter",
+      "organization": "Qmeter",
+      "role": "Front-End Developer",
+      "start": "2021-06",
+      "end": "2022-06"
+    }
+  ],
+  "education": [
+    {
+      "id": "code-academy",
+      "organization": "Code Academy",
+      "field": "Software Development",
+      "start": "2021-10",
+      "end": "2022-02"
+    },
+    {
+      "id": "azerbaijan-technical-university",
+      "organization": "Azerbaijan Technical University",
+      "degree": "Bachelor",
+      "field": "Information Technologies Engineering",
+      "start": "2018-09",
+      "end": "2022-07"
+    }
+  ],
+  "skills": [
+    {
+      "id": "languages",
+      "group": "Languages",
+      "items": ["JavaScript", "TypeScript", "HTML 5", "CSS 3", "Sass"]
+    },
+    {
+      "id": "react",
+      "group": "React",
+      "items": [
+        "React",
+        "React Router",
+        "Context API",
+        "Redux",
+        "Redux Toolkit",
+        "React Query",
+        "React Hook Form"
+      ]
+    },
+    {
+      "id": "angular",
+      "group": "Angular",
+      "items": [
+        "Angular",
+        "Angular Signals",
+        "RxJS",
+        "NgRx",
+        "Reactive Forms",
+        "Angular Material"
+      ]
+    },
+    {
+      "id": "ui-design",
+      "group": "UI & Design",
+      "items": [
+        "Tailwind CSS",
+        "Bootstrap",
+        "Material UI",
+        "Ant Design",
+        "Mantine UI",
+        "Font Awesome",
+        "Figma"
+      ]
+    },
+    {
+      "id": "libraries-build",
+      "group": "Libraries & Build",
+      "items": ["Lodash", "Moment.js", "HighCharts", "Webpack", "Vite", "Nx"]
+    },
+    {
+      "id": "back-end-apis",
+      "group": "Back-End & APIs",
+      "items": [
+        "Node.js",
+        "Express.js",
+        "Rest API",
+        "Mongo DB",
+        "Mongoose",
+        "ORM",
+        "JWT",
+        "Postman"
+      ]
+    },
+    {
+      "id": "testing-quality",
+      "group": "Testing & Quality",
+      "items": [
+        "Jest",
+        "Jasmine & Karma",
+        "Playwright",
+        "ESLint & Prettier",
+        "Code Review"
+      ]
+    },
+    {
+      "id": "web-practices",
+      "group": "Web Practices",
+      "items": [
+        "Responsive Design",
+        "Accessibility (a11y)",
+        "Web Performance",
+        "SEO",
+        "i18n",
+        "Micro-frontends"
+      ]
+    },
+    {
+      "id": "fundamentals",
+      "group": "Fundamentals",
+      "items": [
+        "Algorithm Design",
+        "Data Structures",
+        "OOP",
+        "SOLID Principles",
+        "Clean Code"
+      ]
+    },
+    {
+      "id": "workflow",
+      "group": "Workflow",
+      "items": ["Git", "GitHub", "BitBucket", "CI/CD", "Jira", "Agile / Scrum"]
+    },
+    {
+      "id": "soft-skills",
+      "group": "Soft Skills",
+      "items": [
+        "Problem Solving",
+        "Adaptability",
+        "Collaboration",
+        "Communication",
+        "Creativity",
+        "Research",
+        "Self Study",
+        "Time Management",
+        "Mentoring"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "single-page-applications",
+      "title": "Single Page Applications",
+      "description": "A single-page application (SPA) is a website or web application that dynamically rewrites the current web page with new data from the web server, instead of loading entire new pages."
+    },
+    {
+      "id": "multi-page-applications",
+      "title": "Multi Page Applications",
+      "description": "A multi-page application (MPA) is a website made up of many different sub-websites, or pages. When you interact with the site, new pages are downloaded from the server."
+    },
+    {
+      "id": "responsive-design",
+      "title": "Responsive Design",
+      "description": "Responsive web design (RWD) is a web design approach to make web pages render well on all screen sizes and resolutions while ensuring good usability. It is the way to design for a multi-device web."
+    },
+    {
+      "id": "search-engine-optimization",
+      "title": "Search Engine Optimization",
+      "description": "Search engine optimization (SEO) is the art and science of getting pages to rank higher in search engines such as Google. It matters because search is one of the main ways people discover content online."
+    },
+    {
+      "id": "performance-optimization",
+      "title": "Performance Optimization",
+      "description": "Performance optimization is the process of refining the efficiency of systems and applications to improve their output, speed, or scalability. It plays a key role in ensuring that the available resources are put to the best use."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "PayFlow",
+      "description": "Debt tracking and payment management system.",
+      "timeline": {
+        "start": "Jun 2025",
+        "end": "Aug 2025"
+      },
+      "links": [
+        {
+          "label": "Live demo",
+          "url": "https://payflow-live.vercel.app/"
+        },
+        {
+          "label": "FE repo",
+          "url": "https://github.com/muradhaji/payflow-frontend"
+        },
+        {
+          "label": "BE repo",
+          "url": "https://github.com/muradhaji/payflow-backend"
+        },
+        {
+          "label": "Swagger",
+          "url": "https://payflow-backend-2aid.onrender.com/api-docs/"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Murad Hajiyev",
+          "roles": ["FE", "BE"],
+          "url": "https://github.com/muradhaji"
+        }
+      ],
+      "coverHorizontal": "https://muradhajiyev.vercel.app/projects/payflowHorizontal.svg",
+      "coverVertical": "https://muradhajiyev.vercel.app/projects/payflowVertical.svg",
+      "techStack": [
+        "React",
+        "Redux",
+        "Mantine UI",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "order": 0
+    }
+  ]
+}

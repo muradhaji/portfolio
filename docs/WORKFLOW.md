@@ -10,7 +10,7 @@ The project moved from "write code, check by hand" to **spec-driven development 
 2. **Tests** in `src/__tests__/` prove those behaviors automatically.
 3. **Automation** checks every change: formatting and lint on commit, the full check on every pull request (GitHub CI), and weekly dependency updates (Dependabot).
 4. **Pull requests only**: every change goes through a PR. `main` accepts a merge only after CI and the Vercel preview build pass, and Vercel deploys `main` to production.
-5. **Claude commands** (`/portfolio-spec`, `/portfolio-implement`, `/portfolio-data-change`, `/portfolio-pr`, `/portfolio-check`) run the workflow for you, following the rules in `CLAUDE.md`.
+5. **Claude commands** (`/portfolio-spec`, `/portfolio-implement`, `/portfolio-data-change`, `/portfolio-json`, `/portfolio-pr`, `/portfolio-check`) run the workflow for you, following the rules in `CLAUDE.md`.
 
 Commits on `main` that introduced this:
 
@@ -30,6 +30,7 @@ Examples: add a project, a job, a skill, a link; change a sentence or a counter.
 - Where the data lives:
   - `public/projects/projects.json`: projects (cards and details pages).
   - `src/helpers/constants.js`: about text, counters, education, work history, services, skills, social links, nav links.
+  - `public/portfolio.json`: a public copy of the personal data for other projects and resumes, at `https://muradhajiyev.vercel.app/portfolio.json`. `/portfolio-data-change` updates it with every data change (or run `/portfolio-json`); a test fails if it disagrees with the site.
   - `public/projects/*.svg`: project images, referenced from `projects.json`.
   - `public/resume.pdf`: the CV behind the "Download CV" button.
 - How: run `/portfolio-data-change <what to change>` in Claude (it starts a `data/…` branch), or edit the file yourself on a branch. Then `/portfolio-pr` to open the pull request.
