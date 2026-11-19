@@ -2,16 +2,51 @@
 
 @use '../mixins' as *;
 
+// Dash length of the intro ring, animatable because it is a registered property.
+@property --dash {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 15deg;
+}
+
 a.socialIcon {
   display: inline-flex;
   width: 2em;
   height: 2em;
   padding: 0.4em;
   &.stroke {
+    position: relative;
     align-items: center;
     justify-content: center;
-    border: 2px dashed colors.$black;
-    border-radius: 50%;
+    // 12 dashes around the ring; hover lengthens each dash and shrinks the gaps.
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid colors.$black;
+      border-radius: 50%;
+      mask: repeating-conic-gradient(
+        colors.$black 0 var(--dash),
+        transparent var(--dash) 30deg
+      );
+      transition: --dash 0.25s;
+      pointer-events: none;
+    }
+    &:hover,
+    &:focus-visible {
+      &::before {
+        --dash: 25deg;
+      }
+      svg {
+        scale: 1.2;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      &::before,
+      svg {
+        transition: none;
+      }
+    }
   }
   &:hover {
     svg {

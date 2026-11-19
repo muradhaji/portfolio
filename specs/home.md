@@ -18,6 +18,8 @@ Introduce Murad Hajiyev as a Front-End Developer: who he is, what he knows, what
 - **INTRO-1** Shows "Hi!", the name "I'm Murad Hajiyev" as the page heading, the title "Front-End Developer" and a one-line summary. [test]
 - **INTRO-2** Has buttons "Read more about me" (scrolls to About) and "View projects" (scrolls to My Projects). [test]
 - **INTRO-3** Shows social icon links for LinkedIn, Telegram, Email, GitHub and LeetCode. [test]
+- **INTRO-4** Each intro social icon sits in a dashed ring. Hovering an icon, or focusing it with the keyboard, grows the icon (as today) and at the same time smoothly lengthens the ring's dashes: the number of dashes stays the same and the gaps shrink. The ring keeps its size and thickness, and nothing around it moves. Leaving the icon reverses both. Works the same in light and dark theme. [manual]
+- **INTRO-5** With "reduce motion" turned on, INTRO-4 still applies but without the transition. The social icons in My Skills and the footer keep their current hover and get no ring. [manual]
 
 ### About Me
 
