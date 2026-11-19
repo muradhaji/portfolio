@@ -50,6 +50,9 @@
     border-radius: sizes.$size-s;
     outline-width: 3px;
     outline-offset: -3px;
+    &::before {
+      border-width: 3px;
+    }
   }
 
   a.socialIcon {

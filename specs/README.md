@@ -33,6 +33,7 @@ Specs describe what the site does. Code and tests follow the specs, not the othe
 | [projects.md](projects.md)                   | Project data, projects grid, project cards, projects page               |
 | [project-details.md](project-details.md)     | Project details page                                                    |
 | [build-tooling.md](build-tooling.md)         | Build, dev server, tests, lint and deployment tooling                   |
+| [buttons.md](buttons.md)                     | Button border and hover effect                                          |
 
 ## Template
 

@@ -43,8 +43,8 @@ header {
   button.button {
     outline-color: colors.$black;
     color: colors.$white;
-    &:hover {
-      outline-color: colors.$white;
+    &::before {
+      border-color: colors.$white;
     }
   }
   a.button.solid,
