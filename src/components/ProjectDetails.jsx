@@ -39,8 +39,7 @@ function ProjectDetails() {
     getProjectById(id)
       .then((projectData) => {
         if (ignore) return;
-        // Placeholder projects have no details page, so they count as missing.
-        if (!projectData || projectData.mockComponent) {
+        if (!projectData) {
           setNotFound(true);
           return;
         }

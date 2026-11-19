@@ -34,7 +34,7 @@ Examples: add a project, a job, a skill, a link; change a sentence or a counter.
   - `public/resume.pdf`: the CV behind the "Download CV" button.
 - How: run `/portfolio-data-change <what to change>` in Claude (it starts a `data/…` branch), or edit the file yourself on a branch. Then `/portfolio-pr` to open the pull request.
 - No spec is needed. If the change needs new code (a new field, a new section), Claude stops and tells you; then it becomes a feature change.
-- Placeholder ("upcoming") projects are entries with `"mockComponent": true`. Projects are shown sorted by `order`.
+- `projects.json` holds only real projects, shown sorted by `order`. The grid adds placeholder ("upcoming") cards by itself until there are 8 cards (`PROJECT_PLACEHOLDERS` in `constants.js`).
 
 ### 2. Feature or behavior change: spec first
 
@@ -88,7 +88,7 @@ How to read a behavior line:
 
 - Location: `src/__tests__/`, one file per spec (`theme.test.js`, `layoutNavigation.test.js`, `home.test.jsx`, `projects.test.js`, `projectDetails.test.js`) plus `projectsService.test.js` for data loading.
 - Runner: Vitest with jsdom, configured in `vite.config.mjs`. `test`, `expect` and `vi` are globals; files that contain JSX end in `.jsx`.
-- Helpers: `src/testing/renderApp.jsx` renders the whole app at a URL and provides `setSystemTheme('light' | 'dark')`, `realProject(id)` and `placeholderProject(id)`. `src/setupTests.jsx` stubs browser APIs jsdom lacks (IntersectionObserver, scrolling). In tests each SVG icon renders as its file name (for example `moon.svg`), so tests can tell icons apart.
+- Helpers: `src/testing/renderApp.jsx` renders the whole app at a URL and provides `setSystemTheme('light' | 'dark')` and `realProject(id)`. `src/setupTests.jsx` stubs browser APIs jsdom lacks (IntersectionObserver, scrolling). In tests each SVG icon renders as its file name (for example `moon.svg`), so tests can tell icons apart.
 - Tests read text from `constants.js`, so normal data changes don't break them.
 - Run: `npm test` (watch mode while coding) or `npm run test:ci` (once).
 
