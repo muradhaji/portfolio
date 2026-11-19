@@ -1,9 +1,5 @@
 import { fireEvent, screen, within } from '@testing-library/react';
-import {
-  placeholderProject,
-  realProject,
-  renderApp,
-} from '../testing/renderApp';
+import { realProject, renderApp } from '../testing/renderApp';
 import { getProjects } from '../services/projectsService';
 
 vi.mock('../services/projectsService');
@@ -47,24 +43,35 @@ test('GRID-2 the column count follows window resizes', async () => {
 test('PDATA-2 projects are shown in the order the service returns', async () => {
   getProjects.mockResolvedValue([realProject(5, 0), realProject(3, 1)]);
   await renderApp('/projects');
-  const names = [...cards()].map((card) => card.textContent);
-  expect(names[0]).toContain('Project 5');
-  expect(names[1]).toContain('Project 3');
+  const covers = screen.getAllByAltText(/ cover$/).map((img) => img.alt);
+  expect(covers).toEqual(['Project 5 cover', 'Project 3 cover']);
+});
+
+const realProjects = (count) =>
+  Array.from({ length: count }, (_, i) => realProject(i + 1));
+
+test('PDATA-3 the grid fills up to 8 cards with placeholders', async () => {
+  getProjects.mockResolvedValue(realProjects(1));
+  await renderApp('/projects');
+  expect(cards()).toHaveLength(8);
+  expect(screen.getAllByAltText('Upcoming project')).toHaveLength(7);
+});
+
+test('PDATA-3 with 8 or more real projects there are no placeholders', async () => {
+  getProjects.mockResolvedValue(realProjects(9));
+  await renderApp('/projects');
+  expect(cards()).toHaveLength(9);
+  expect(screen.queryByAltText('Upcoming project')).not.toBeInTheDocument();
 });
 
 test('COMPACT-1 the home grid shows at most two rows', async () => {
-  getProjects.mockResolvedValue(
-    Array.from({ length: 12 }, (_, i) => placeholderProject(i + 1))
-  );
+  getProjects.mockResolvedValue(realProjects(12));
   await renderApp('/');
   expect(cards(document.getElementById('projects'))).toHaveLength(8);
 });
 
 test('COMPACT-2 counts one hidden real project', async () => {
-  getProjects.mockResolvedValue([
-    ...Array.from({ length: 8 }, (_, i) => placeholderProject(i + 1)),
-    realProject(9),
-  ]);
+  getProjects.mockResolvedValue(realProjects(9));
   await renderApp('/');
   expect(
     homeProjects().getByText('There is 1 more project.')
@@ -74,13 +81,8 @@ test('COMPACT-2 counts one hidden real project', async () => {
   ).toHaveAttribute('href', '/projects');
 });
 
-test('COMPACT-2 counts several hidden real projects, not placeholders', async () => {
-  getProjects.mockResolvedValue([
-    ...Array.from({ length: 8 }, (_, i) => placeholderProject(i + 1)),
-    realProject(9),
-    realProject(10),
-    placeholderProject(11),
-  ]);
+test('COMPACT-2 counts several hidden real projects', async () => {
+  getProjects.mockResolvedValue(realProjects(10));
   await renderApp('/');
   const more = homeProjects().getByText(/more projects\./);
   expect(more.textContent).toMatch(/^There are \d* more projects\.$/);
@@ -90,10 +92,7 @@ test('COMPACT-2 counts several hidden real projects, not placeholders', async ()
 });
 
 test('COMPACT-3 with no hidden real projects it asks to check back', async () => {
-  getProjects.mockResolvedValue([
-    realProject(1),
-    ...Array.from({ length: 10 }, (_, i) => placeholderProject(i + 2)),
-  ]);
+  getProjects.mockResolvedValue(realProjects(1));
   await renderApp('/');
   expect(
     homeProjects().getByText('Check back soon for new projects!')
@@ -103,8 +102,8 @@ test('COMPACT-3 with no hidden real projects it asks to check back', async () =>
   ).not.toBeInTheDocument();
 });
 
-test('CARD-1 CARD-2 PDATA-3 only real projects are links to their details', async () => {
-  getProjects.mockResolvedValue([realProject(1), placeholderProject(2)]);
+test('CARD-1 CARD-2 only real projects are links to their details', async () => {
+  getProjects.mockResolvedValue(realProjects(1));
   await renderApp('/projects');
   const links = within(document.querySelector('.projectsGrid')).getAllByRole(
     'link'
@@ -115,16 +114,14 @@ test('CARD-1 CARD-2 PDATA-3 only real projects are links to their details', asyn
 });
 
 test('CARD-3 covers have descriptive alt text', async () => {
-  getProjects.mockResolvedValue([realProject(1), placeholderProject(2)]);
+  getProjects.mockResolvedValue(realProjects(1));
   await renderApp('/projects');
   expect(screen.getByAltText('Project 1 cover')).toBeInTheDocument();
-  expect(screen.getByAltText('Upcoming project')).toBeInTheDocument();
+  expect(screen.getAllByAltText('Upcoming project')[0]).toBeInTheDocument();
 });
 
 test('PPAGE-1 the projects page shows its heading and every project', async () => {
-  getProjects.mockResolvedValue(
-    Array.from({ length: 12 }, (_, i) => placeholderProject(i + 1))
-  );
+  getProjects.mockResolvedValue(realProjects(12));
   await renderApp('/projects');
   expect(
     screen.getByRole('heading', { level: 1, name: 'All Projects' })

@@ -8,9 +8,9 @@ Show finished projects attractively, keep space for upcoming ones, and never pro
 
 ### Data
 
-- **PDATA-1** Projects come from `public/projects/projects.json`, loaded once per visit and shared between pages. [test]
+- **PDATA-1** Projects come from `public/projects/projects.json`, which holds only real projects, loaded once per visit and shared between pages. [test]
 - **PDATA-2** Projects are shown sorted by their `order` field. [test]
-- **PDATA-3** A project with `mockComponent: true` is a placeholder for an upcoming project. [test]
+- **PDATA-3** Placeholders for upcoming projects are not data: the grid adds placeholder cards after the real projects until there are 8 cards (slot count and covers in `PROJECT_PLACEHOLDERS` in `src/helpers/constants.js`). Adding a real project replaces a placeholder; with 8 or more real projects there are none. [test]
 - **PDATA-4** If loading fails, the grid shows "Could not load projects." and a later visit to a projects view tries again. [test]
 
 ### Grid

@@ -8,7 +8,10 @@ import Project from './Project';
 import Button from './Button';
 import Skeleton from './Skeleton';
 
-import { PROJECT_COLUMN_COUNTS } from '../helpers/constants';
+import {
+  PROJECT_COLUMN_COUNTS,
+  PROJECT_PLACEHOLDERS,
+} from '../helpers/constants';
 import { getProjects } from '../services/projectsService';
 
 function ProjectsGrid({ compact = false }) {
@@ -32,9 +35,21 @@ function ProjectsGrid({ compact = false }) {
       .finally(() => setProjectsLoading(false));
   }, []);
 
-  const visibleProjects = compact
-    ? projects.slice(0, projectColumns * 2)
-    : projects;
+  const cards = useMemo(() => {
+    const { slots, ...placeholder } = PROJECT_PLACEHOLDERS;
+    const placeholders = Array.from(
+      { length: Math.max(0, slots - projects.length) },
+      (_, i) => ({
+        ...placeholder,
+        id: `placeholder-${i + 1}`,
+        order: projects.length + i,
+        placeholder: true,
+      })
+    );
+    return [...projects, ...placeholders];
+  }, [projects]);
+
+  const visibleProjects = compact ? cards.slice(0, projectColumns * 2) : cards;
 
   const groupedProjects = useMemo(() => {
     const groups = Array.from({ length: projectColumns }, () => []);
@@ -44,10 +59,8 @@ function ProjectsGrid({ compact = false }) {
     return groups;
   }, [projectColumns, visibleProjects]);
 
-  const countRealProjects = (list) =>
-    list.filter((p) => !p.mockComponent).length;
   const moreProjectsCount =
-    countRealProjects(projects) - countRealProjects(visibleProjects);
+    projects.length - visibleProjects.filter((p) => !p.placeholder).length;
 
   return (
     <div className='projectsGrid'>

@@ -152,6 +152,15 @@ export const PROJECT_COLUMN_COUNTS = {
   '6xl': 4,
 };
 
+// Upcoming-project cards the grid adds after the real projects until there
+// are `slots` cards (PDATA-3).
+export const PROJECT_PLACEHOLDERS = {
+  slots: 8,
+  name: 'Project Name',
+  coverHorizontal: '/projects/projectHorizontal.svg',
+  coverVertical: '/projects/projectVertical.svg',
+};
+
 export const ABOUT_ITEMS = [
   {
     icon: 'user',

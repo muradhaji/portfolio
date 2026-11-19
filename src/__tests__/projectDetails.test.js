@@ -15,7 +15,6 @@ const payflow = {
     { name: 'Murad Hajiyev', roles: ['FE', 'BE'], url: 'https://example.com' },
   ],
   techStack: ['React', 'Redux'],
-  mockComponent: false,
 };
 
 beforeEach(() => {
@@ -60,11 +59,6 @@ test('DETAILS-6 shows the not-found page for an unknown id', async () => {
   await expectNotFoundAt('/projects/details/99');
 });
 
-test('DETAILS-6 shows the not-found page for a placeholder project', async () => {
-  getProjectById.mockResolvedValue({ ...payflow, mockComponent: true });
-  await expectNotFoundAt('/projects/details/1');
-});
-
 test('DETAILS-7 redirects to /projects when loading fails', async () => {
   vi.spyOn(console, 'error').mockImplementation(() => {});
   getProjectById.mockRejectedValue(new Error('offline'));
@@ -92,7 +86,6 @@ test('DETAILS-4 hides rows without data', async () => {
   getProjectById.mockResolvedValue({
     id: 1,
     name: 'PayFlow',
-    mockComponent: false,
   });
   await renderApp('/projects/details/1');
   expect(screen.queryAllByRole('heading', { level: 3 })).toHaveLength(0);

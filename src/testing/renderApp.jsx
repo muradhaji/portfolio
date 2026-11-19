@@ -49,15 +49,5 @@ export const realProject = (id, order = id) => ({
   description: `Description of project ${id}.`,
   coverHorizontal: `/projects/p${id}Horizontal.svg`,
   coverVertical: `/projects/p${id}Vertical.svg`,
-  mockComponent: false,
-  order,
-});
-
-export const placeholderProject = (id, order = id) => ({
-  id,
-  name: 'Project Name',
-  coverHorizontal: '/projects/projectHorizontal.svg',
-  coverVertical: '/projects/projectVertical.svg',
-  mockComponent: true,
   order,
 });

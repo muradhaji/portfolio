@@ -10,7 +10,6 @@ beforeEach(() => {
   getProjectById.mockResolvedValue({
     id: 1,
     name: 'PayFlow',
-    mockComponent: false,
   });
 });
 
