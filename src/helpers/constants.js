@@ -8,6 +8,19 @@ export const THEME = {
   },
 };
 
+export const PROFILE = {
+  name: 'Murad Hajiyev',
+  title: 'Front-End Developer',
+  summary:
+    'Focused on building responsive, scalable applications and delivering clean, user-centered solutions in agile environments.',
+};
+
+// The file name must match the Content-Disposition header in vercel.json.
+export const CV = {
+  href: '/resume.pdf',
+  fileName: `${PROFILE.name} - CV (${PROFILE.title}).pdf`,
+};
+
 export const NAV_LINKS = [
   { label: 'Home', to: '/', menuOnly: true },
   { label: 'About', to: '/#about', hash: true },
