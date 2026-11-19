@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "basics": {
     "name": "Murad Hajiyev",
     "title": "Front-End Developer",
@@ -238,7 +238,15 @@
     {
       "id": "workflow",
       "group": "Workflow",
-      "items": ["Git", "GitHub", "BitBucket", "CI/CD", "Jira", "Agile / Scrum"]
+      "items": [
+        "Git",
+        "GitHub",
+        "BitBucket",
+        "CI/CD",
+        "Jira",
+        "Confluence",
+        "Agile / Scrum"
+      ]
     },
     {
       "id": "soft-skills",

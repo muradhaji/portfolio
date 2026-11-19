@@ -135,7 +135,15 @@ export const MY_SKILLS = [
   },
   {
     sliderLabel: 'WORKFLOW',
-    skills: ['Git', 'GitHub', 'BitBucket', 'CI/CD', 'Jira', 'Agile / Scrum'],
+    skills: [
+      'Git',
+      'GitHub',
+      'BitBucket',
+      'CI/CD',
+      'Jira',
+      'Confluence',
+      'Agile / Scrum',
+    ],
   },
   {
     sliderLabel: 'SOFT SKILLS',
