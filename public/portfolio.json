@@ -140,9 +140,9 @@
   ],
   "skills": [
     {
-      "id": "languages",
-      "group": "Languages",
-      "items": ["JavaScript", "TypeScript", "HTML 5", "CSS 3", "Sass"]
+      "id": "languages-markup",
+      "group": "Languages & Markup",
+      "items": ["JavaScript", "TypeScript", "HTML", "CSS", "Sass"]
     },
     {
       "id": "react",
@@ -160,32 +160,7 @@
     {
       "id": "angular",
       "group": "Angular",
-      "items": [
-        "Angular",
-        "Angular Signals",
-        "RxJS",
-        "NgRx",
-        "Reactive Forms",
-        "Angular Material"
-      ]
-    },
-    {
-      "id": "ui-design",
-      "group": "UI & Design",
-      "items": [
-        "Tailwind CSS",
-        "Bootstrap",
-        "Material UI",
-        "Ant Design",
-        "Mantine UI",
-        "Font Awesome",
-        "Figma"
-      ]
-    },
-    {
-      "id": "libraries-build",
-      "group": "Libraries & Build",
-      "items": ["Lodash", "Moment.js", "HighCharts", "Webpack", "Vite", "Nx"]
+      "items": ["Angular", "Angular Signals", "RxJS", "NgRx", "Reactive Forms"]
     },
     {
       "id": "back-end-apis",
@@ -193,13 +168,31 @@
       "items": [
         "Node.js",
         "Express.js",
-        "Rest API",
-        "Mongo DB",
+        "MongoDB",
         "Mongoose",
         "ORM",
-        "JWT",
-        "Postman"
+        "REST API",
+        "JWT"
       ]
+    },
+    {
+      "id": "ui-ux",
+      "group": "UI/UX",
+      "items": [
+        "Figma",
+        "Tailwind CSS",
+        "Bootstrap",
+        "Material UI",
+        "Angular Material",
+        "Ant Design",
+        "Mantine UI",
+        "Font Awesome"
+      ]
+    },
+    {
+      "id": "libraries",
+      "group": "Libraries",
+      "items": ["Highcharts", "Chart.js", "Lodash", "Moment.js"]
     },
     {
       "id": "testing-quality",
@@ -236,13 +229,17 @@
       ]
     },
     {
-      "id": "workflow",
-      "group": "Workflow",
+      "id": "build-deployment-tools",
+      "group": "Build & Deployment Tools",
+      "items": ["Vite", "Webpack", "Nx", "CI/CD", "Postman"]
+    },
+    {
+      "id": "version-control-project-management",
+      "group": "Version Control & Project Management",
       "items": [
         "Git",
         "GitHub",
-        "BitBucket",
-        "CI/CD",
+        "Bitbucket",
         "Jira",
         "Confluence",
         "Agile / Scrum"
@@ -253,14 +250,14 @@
       "group": "Soft Skills",
       "items": [
         "Problem Solving",
-        "Adaptability",
-        "Collaboration",
-        "Communication",
-        "Creativity",
         "Research",
         "Self Study",
-        "Time Management",
-        "Mentoring"
+        "Communication",
+        "Collaboration",
+        "Mentoring",
+        "Adaptability",
+        "Creativity",
+        "Time Management"
       ]
     }
   ],
