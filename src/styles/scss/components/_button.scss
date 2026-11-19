@@ -2,6 +2,13 @@
 @use '../colors';
 @use '../text';
 
+// How much of the hover border is drawn, animatable because it is a registered property.
+@property --sweep {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 button.button {
   font-family: inherit;
   line-height: inherit;
@@ -11,6 +18,7 @@ button.button {
 
 a.button,
 button.button {
+  position: relative;
   display: inline-block;
   padding: sizes.$size-xs sizes.$size-m;
   border-radius: sizes.$size-s;
@@ -21,8 +29,27 @@ button.button {
   font-weight: sizes.$font-weight-9;
   cursor: pointer;
   transition: all 0.25s;
-  &:hover {
-    outline-color: colors.$black;
+  // Hover border, drawn clockwise from the top center over the resting outline.
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid colors.$black;
+    border-radius: inherit;
+    mask: conic-gradient(colors.$black var(--sweep), transparent 0);
+    transition: --sweep 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+    pointer-events: none;
+  }
+  &:hover,
+  &:focus-visible {
+    &::before {
+      --sweep: 360deg;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none;
+    }
   }
 }
 
